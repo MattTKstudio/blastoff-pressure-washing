@@ -1,98 +1,107 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact Us | Blastoff Pressure Washing</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Blastoff Pressure Washing | Home</title>
   <link rel="icon" type="image/png" href="favicon.png">
   <link rel="stylesheet" href="style.css">
+
   <style>
-    .contact-container {
+    :root {
+      --blue: #1e3a8a;
+      --yellow: #facc15;
+      --gray: #c7c7c7;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: var(--gray);
+      color: #222;
+    }
+
+    main {
+      padding: 8vh 2rem 4rem;
       text-align: center;
-      padding: 10vh 1rem 4rem;
+    }
+
+    .hero {
       display: flex;
       flex-direction: column;
-      justify-content: center;
       align-items: center;
-      min-height: 80vh;
+      margin-bottom: 3rem;
     }
 
-    .contact-icon {
-      font-size: 4rem;
-      margin-bottom: 1rem;
+    .hero img {
+      max-width: 100%;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.15);
     }
 
-    .contact-section {
-      margin: 3rem 0;
-    }
-
-    .contact-section h2 {
-      font-family: 'Paytone One', sans-serif;
-      font-size: 2rem;
-      margin-bottom: 0.5rem;
-    }
-
-    .contact-section a {
-      color: var(--blue);
-      font-size: 1.4rem;
+    .cta-button {
+      margin-top: 1.5rem;
+      background-color: var(--yellow);
+      color: #000;
+      padding: 1rem 2rem;
+      border: none;
+      border-radius: 8px;
+      font-size: 1.2rem;
+      cursor: pointer;
       font-weight: bold;
-      text-decoration: none;
+      transition: transform 0.2s;
     }
 
-    .contact-section a:hover {
-      text-decoration: underline;
+    .cta-button:hover {
+      transform: scale(1.05);
     }
 
     @media (max-width: 768px) {
-      .logo-img {
-        max-width: 120px;
+      main {
+        padding: 6vh 1rem 3rem;
       }
-      .contact-icon {
-        font-size: 3rem;
-      }
-      .contact-section h2 {
-        font-size: 1.6rem;
-      }
-      .contact-section a {
-        font-size: 1.2rem;
+
+      .cta-button {
+        width: 90%;
       }
     }
   </style>
 </head>
+
 <body>
   <div id="header"></div>
 
-  <main class="contact-container">
-    <div class="contact-section">
-      <div class="contact-icon">✉️</div>
-      <h2>Email Us</h2>
-      <a href="mailto:321blastoffpressurewashing@gmail.com">321blastoffpressurewashing@gmail.com</a>
+  <main>
+    <div class="hero">
+      <img src="images/team-photo.webp" alt="Matt and James in gear">
+      <button class="cta-button" onclick="window.location.href='contact.html'">Get a Free Quote</button>
     </div>
-    <div class="contact-section">
-      <div class="contact-icon">📞</div>
-      <h2>Call or Text</h2>
-      <a href="tel:+13607706438">(360) 770-6438</a>
-    </div>
+
+    <p style="font-size: 1.3rem; max-width: 700px; margin: auto;">
+      Call, text, or email us your job and address. We’ll respond quickly with your free quote.
+    </p>
   </main>
 
   <div id="footer"></div>
 
   <script>
     async function loadPartial(id, file) {
-      const res = await fetch(file);
-      const html = await res.text();
-      document.getElementById(id).innerHTML = html;
+      try {
+        const res = await fetch(file);
+        if (!res.ok) throw new Error(`HTTP ${res.status}: ${file}`);
+        const html = await res.text();
+        const target = document.getElementById(id);
+        if (target) target.innerHTML = html;
+      } catch (err) {
+        console.error(`Failed to load ${file}`, err);
+      }
     }
 
     loadPartial("header", "assets/header.html").then(() => {
       const logo = document.getElementById('logoBanner');
       if (logo) {
         window.addEventListener('scroll', () => {
-          if (window.scrollY > 50) {
-            logo.classList.add('shrink');
-          } else {
-            logo.classList.remove('shrink');
-          }
+          logo.classList.toggle('shrink', window.scrollY > 50);
         });
       }
     });
