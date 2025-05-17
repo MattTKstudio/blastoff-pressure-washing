@@ -84,7 +84,7 @@
       document.getElementById(id).innerHTML = html;
     }
 
-    loadPartial("header", "/assets/header.html").then(() => {
+    loadPartial("header", "assets/header.html").then(() => {
       const logo = document.getElementById('logoBanner');
       if (logo) {
         window.addEventListener('scroll', () => {
@@ -97,7 +97,7 @@
       }
     });
 
-    loadPartial("footer", "/assets/footer.html");
+    loadPartial("footer", "assets/footer.html");
   </script>
 </body>
 </html>
