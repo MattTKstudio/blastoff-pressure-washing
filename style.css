@@ -1,0 +1,254 @@
+/* style.css for Blastoff Pressure Washing */
+
+:root {
+  --blue: #1f6feb;
+  --yellow: #f9c80e;
+  --grey: #C7C7C7;
+  --white: #ffffff;
+  --dark: #1a1a1a;
+
+  --font-header: 'Paytone One', sans-serif;
+  --font-body: 'Lato', sans-serif;
+}
+
+body {
+  font-family: var(--font-body);
+  margin: 0;
+  background-color: var(--grey);
+  color: var(--dark);
+  line-height: 1.6;
+  padding-top: 80px;
+}
+
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: var(--blue);
+  z-index: 1000;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+}
+
+.nav-bar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}
+
+.nav-container {
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-link {
+  color: var(--white);
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.nav-link:hover {
+  color: var(--yellow);
+}
+
+.site-logo {
+  text-align: center;
+  background-color: var(--blue);
+  padding: 0.15rem 0;
+  transition: all 0.3s ease;
+}
+
+.logo-img {
+  max-width: 160px;
+  transition: max-width 0.3s ease;
+}
+
+.site-logo.shrink .logo-img {
+  max-width: 80px;
+}
+
+.site-logo .tagline {
+  font-size: 0.7rem;
+  color: var(--white);
+  margin-top: 0.3rem;
+  transition: opacity 0.3s ease;
+}
+
+.site-logo.shrink .tagline {
+  opacity: 0;
+  height: 0;
+  overflow: hidden;
+}
+
+.hero {
+  width: 100%;
+  height: 60vh;
+  background: url('images/matthew-james.jpg') center top / contain no-repeat;
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding-top: 50rem; /* 👈 adjust this value as needed */
+}
+.alt-button {
+  background-color: var(--blue);
+  color: var(--dark);
+  border: none;
+  padding: 1rem 2rem;
+  font-size: 1.3rem;
+  font-family: var(--font-header);
+  border-radius: 10px;
+  text-decoration: none;
+  display: inline-block;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 1rem;
+}
+
+.cta-button {
+  background-color: var(--yellow);
+  color: var(--dark);
+  border: none;
+  padding: 1rem 2rem;
+  font-size: 1.3rem;
+  font-family: var(--font-header);
+  border-radius: 10px;
+  text-decoration: none;
+  display: inline-block;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 1rem;
+}
+
+
+.cta-container {
+  background-color: var(--grey);
+  text-align: center;
+  padding: 3rem 1rem;
+}
+
+.cta-instructions {
+  font-size: 1.1rem;
+  max-width: 600px;
+  margin: auto;
+  color: var(--dark);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+  padding: 2rem;
+  max-width: 1100px;
+  margin: auto;
+}
+
+.card {
+  background: var(--white);
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card h3 {
+  font-size: 1.4rem;
+  margin-bottom: 0.5rem;
+}
+
+.card p {
+  font-size: 1rem;
+  color: #444;
+}
+
+.card a {
+  display: inline-block;
+  margin-top: 1rem;
+  font-weight: bold;
+  color: var(--blue);
+}
+
+.review-carousel {
+  background-color: var(--blue);
+  color: var(--white);
+  padding: 2rem 1rem;
+  text-align: center;
+}
+
+.review {
+  display: none;
+  font-style: italic;
+  max-width: 800px;
+  margin: auto;
+}
+
+.review.active {
+  display: block;
+}
+
+.stars {
+  color: gold;
+  font-size: 1.5rem;
+  margin: 0.5rem 0;
+}
+
+.reviewer {
+  font-weight: bold;
+  margin-top: 1rem;
+}
+
+.carousel-controls button {
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: var(--white);
+  cursor: pointer;
+}
+
+.substack {
+  background-color: var(--yellow);
+  color: var(--dark);
+  padding: 3rem 1rem;
+  text-align: center;
+}
+
+.substack iframe {
+  max-width: 100%;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+}
+
+footer {
+  background-color: var(--dark);
+  color: var(--grey);
+  text-align: center;
+  font-size: 0.9rem;
+  padding: 2rem 1rem;
+}
+
+@media (max-width: 768px) {
+  .logo-img {
+    max-width: 130px;
+  }
+
+  .site-logo.shrink .logo-img {
+    max-width: 90px;
+  }
+
+  .grid {
+    padding: 1rem;
+  }
+
+  .cta-button {
+    font-size: 1.1rem;
+  }
+
+  .nav-container {
+    flex-direction: column;
+    gap: 1rem;
+  }
+}

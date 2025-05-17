@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us | Blastoff Pressure Washing</title>
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .contact-container {
+      text-align: center;
+      padding: 10vh 1rem 4rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      min-height: 80vh;
+    }
+
+    .contact-icon {
+      font-size: 4rem;
+      margin-bottom: 1rem;
+    }
+
+    .contact-section {
+      margin: 3rem 0;
+    }
+
+    .contact-section h2 {
+      font-family: 'Paytone One', sans-serif;
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .contact-section a {
+      color: var(--blue);
+      font-size: 1.4rem;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    .contact-section a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 768px) {
+      .logo-img {
+        max-width: 120px;
+      }
+      .contact-icon {
+        font-size: 3rem;
+      }
+      .contact-section h2 {
+        font-size: 1.6rem;
+      }
+      .contact-section a {
+        font-size: 1.2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div id="header"></div>
+
+  <main class="contact-container">
+    <div class="contact-section">
+      <div class="contact-icon">✉️</div>
+      <h2>Email Us</h2>
+      <a href="mailto:321blastoffpressurewashing@gmail.com">321blastoffpressurewashing@gmail.com</a>
+    </div>
+    <div class="contact-section">
+      <div class="contact-icon">📞</div>
+      <h2>Call or Text</h2>
+      <a href="tel:+13607706438">(360) 770-6438</a>
+    </div>
+  </main>
+
+  <div id="footer"></div>
+
+  <script>
+    async function loadPartial(id, file) {
+      const res = await fetch(file);
+      const html = await res.text();
+      document.getElementById(id).innerHTML = html;
+    }
+
+    loadPartial("header", "/assets/header.html").then(() => {
+      const logo = document.getElementById('logoBanner');
+      if (logo) {
+        window.addEventListener('scroll', () => {
+          if (window.scrollY > 50) {
+            logo.classList.add('shrink');
+          } else {
+            logo.classList.remove('shrink');
+          }
+        });
+      }
+    });
+
+    loadPartial("footer", "/assets/footer.html");
+  </script>
+</body>
+</html>

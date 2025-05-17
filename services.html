@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Services | Blastoff Pressure Washing</title>
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="stylesheet" href="../style.css">
+  <script src="../pricing/pricing.js" defer></script>
+</head>
+<body>
+  <div id="header"></div>
+
+  <section>
+    <h1 style="text-align: center; padding-top: 6rem;">Our Services</h1>
+    <p style="text-align: center;">Based in Arlington and proudly serving Snohomish & Skagit County.</p>
+  </section>
+
+  <section class="grid">
+    <div class="card">
+      <img src="../images/soft-washing-house.jpg" alt="Soft Washing" style="width: 100%; border-radius: 12px;">
+      <h3>Soft Washing</h3>
+      <p>Gentle siding and house exterior cleaning.</p>
+      <p><strong id="softwash-price"></strong></p>
+      <a href="service-pages/soft-washing-arlington.html">Learn More →</a>
+    </div>
+
+    <div class="card">
+      <img src="../images/roof-cleaning-moss.jpg" alt="Roof Cleaning" style="width: 100%; border-radius: 12px;">
+      <h3>Roof Cleaning</h3>
+      <p>Remove moss and debris with care.</p>
+      <p><strong id="roof-price"></strong></p>
+      <a href="service-pages/roof-cleaning-snohomish.html">Learn More →</a>
+      
+    </div>
+
+    <div class="card">
+      <img src="../images/window-cleaning-clear.jpg" alt="Window Cleaning" style="width: 100%; border-radius: 12px;">
+      <h3>Window Cleaning</h3>
+      <p>Let the sunlight back in with crystal clear panes.</p>
+      <p><strong id="window-price"></strong></p>
+      <a href="service-pages/window-cleaning-marysville.html">Learn More →</a>
+    </div>
+
+    <div class="card">
+      <img src="../images/driveway-pressure-wash.jpg" alt="Driveway Cleaning" style="width: 100%; border-radius: 12px;">
+      <h3>Driveway Cleaning</h3>
+      <p>Pressure washing to restore your driveway’s look.</p>
+      <p><strong id="driveway-price"></strong></p>
+      <a href="service-pages/driveway-cleaning.html">Learn More →</a>
+    </div>
+
+    <div class="card">
+      <img src="../images/gutter-cleaning.jpg" alt="Gutter Cleaning" style="width: 100%; border-radius: 12px;">
+      <h3>Gutter Cleaning</h3>
+      <p>Clear, functional gutters that protect your home.</p>
+      <p><strong id="gutter-price"></strong></p>
+      <a href="service-pages/gutter-cleaning.html">Learn More →</a>
+    </div>
+  </section>
+
+  <div id="footer"></div>
+
+  <script>
+    async function loadPartial(id, file) {
+      const res = await fetch(file);
+      const html = await res.text();
+      document.getElementById(id).innerHTML = html;
+    }
+
+    loadPartial("header", "/assets/header.html").then(() => {
+      const logo = document.getElementById('logoBanner');
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+          logo.classList.add('shrink');
+        } else {
+          logo.classList.remove('shrink');
+        }
+      });
+    });
+
+    loadPartial("footer", "/assets/footer.html");
+
+    window.addEventListener('DOMContentLoaded', () => {
+      document.getElementById("softwash-price").textContent = pricing.getPrice("Soft Washing");
+      document.getElementById("roof-price").textContent = pricing.getPrice("Roof Cleaning");
+      document.getElementById("window-price").textContent = pricing.getPrice("Window Cleaning");
+      document.getElementById("driveway-price").textContent = pricing.getPrice("Driveway Cleaning");
+      document.getElementById("gutter-price").textContent = pricing.getPrice("Gutter Cleaning");
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gutter Cleaning | Blastoff Pressure Washing</title>
+  <link rel="stylesheet" href="../style.css">
+  <script src="../pricing/pricing.js" defer></script>
+</head>
+<body>
+  <div id="header"></div>
+
+  <section class="cta-container" style="text-align: center;">
+    <h1>Gutter Cleaning</h1>
+    <img src="../images/gutter-cleaning.jpg" alt="Gutter Cleaning" style="max-width: 100%; border-radius: 12px; margin: 2rem auto;">
+    <p style="font-size: 1.2rem; max-width: 700px; margin: auto;">
+      Keep your home protected from water damage with clean, flowing gutters. We safely clear out leaves, dirt, and blockages to help your roof drain properly and avoid costly repairs.
+    </p>
+    <p style="margin-top: 2rem; font-size: 1.2rem;"><strong id="gutter-price"></strong> per linear foot</p>
+    <a href="../contact.html" class="cta-button" style="margin-top: 2rem; display: inline-block;">🚀 Get a Free Quote</a>
+  </section>
+
+  <div id="footer"></div>
+
+  <script>
+    async function loadPartial(id, file) {
+      const res = await fetch(file);
+      const html = await res.text();
+      document.getElementById(id).innerHTML = html;
+    }
+
+    loadPartial("header", "/assets/header.html").then(() => {
+      const logo = document.getElementById('logoBanner');
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+          logo.classList.add('shrink');
+        } else {
+          logo.classList.remove('shrink');
+        }
+      });
+    });
+
+    loadPartial("footer", "/assets/footer.html");
+
+    window.addEventListener('DOMContentLoaded', () => {
+      document.getElementById("gutter-price").textContent = pricing.getPrice("Gutter Cleaning");
+    });
+  </script>
+</body>
+</html>

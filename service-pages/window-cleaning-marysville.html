@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Window Cleaning | Blastoff Pressure Washing</title>
+  <link rel="stylesheet" href="../style.css">
+  <script src="../pricing/pricing.js" defer></script>
+</head>
+<body>
+  <div id="header"></div>
+
+  <section class="cta-container" style="text-align: center;">
+    <h1>Window Cleaning</h1>
+    <img src="../images/window-cleaning-clear.jpg" alt="Window Cleaning" style="max-width: 100%; border-radius: 12px; margin: 2rem auto;">
+    <p style="font-size: 1.2rem; max-width: 700px; margin: auto;">
+      Let the light in! Our professional window cleaning removes grime, spots, and buildup inside and out, giving you crystal-clear views and better natural light.
+    </p>
+    <p style="margin-top: 2rem; font-size: 1.2rem;"><strong id="window-price"></strong> per window</p>
+    <a href="../contact.html" class="cta-button" style="margin-top: 2rem; display: inline-block;">🚀 Get a Free Quote</a>
+  </section>
+
+  <div id="footer"></div>
+
+  <script>
+    async function loadPartial(id, file) {
+      const res = await fetch(file);
+      const html = await res.text();
+      document.getElementById(id).innerHTML = html;
+    }
+
+    loadPartial("header", "/assets/header.html").then(() => {
+      const logo = document.getElementById('logoBanner');
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+          logo.classList.add('shrink');
+        } else {
+          logo.classList.remove('shrink');
+        }
+      });
+    });
+
+    loadPartial("footer", "/assets/footer.html");
+
+    window.addEventListener('DOMContentLoaded', () => {
+      document.getElementById("window-price").textContent = pricing.getPrice("Window Cleaning");
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Soft Washing | Blastoff Pressure Washing</title>
+  <link rel="stylesheet" href="../style.css">
+  <script src="../pricing/pricing.js" defer></script>
+</head>
+<body>
+  <div id="header"></div>
+
+  <section class="cta-container" style="text-align: center;">
+    <h1>Soft Washing</h1>
+    <img src="../images/soft-washing-house.jpg" alt="Soft Washing" style="max-width: 100%; border-radius: 12px; margin: 2rem auto;">
+    <p style="font-size: 1.2rem; max-width: 700px; margin: auto;">
+      Our gentle soft washing method uses low-pressure water mixed with eco-friendly cleaning solutions to safely clean siding, trim, and other delicate surfaces.
+      It’s the ideal solution for homes with vinyl, stucco, or painted wood.
+    </p>
+    <p style="margin-top: 2rem; font-size: 1.2rem;"><strong id="softwash-price"></strong> per square foot</p>
+    <a href="../contact.html" class="cta-button" style="margin-top: 2rem; display: inline-block;">🚀 Get a Free Quote</a>
+  </section>
+
+  <div id="footer"></div>
+
+  <script>
+    async function loadPartial(id, file) {
+      const res = await fetch(file);
+      const html = await res.text();
+      document.getElementById(id).innerHTML = html;
+    }
+
+    loadPartial("header", "/assets/header.html").then(() => {
+      const logo = document.getElementById('logoBanner');
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+          logo.classList.add('shrink');
+        } else {
+          logo.classList.remove('shrink');
+        }
+      });
+    });
+
+    loadPartial("footer", "/assets/footer.html");
+
+    window.addEventListener('DOMContentLoaded', () => {
+      document.getElementById("softwash-price").textContent = pricing.getPrice("Soft Washing");
+    });
+  </script>
+</body>
+</html>

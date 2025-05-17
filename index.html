@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blastoff Pressure Washing</title>
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="stylesheet" href="style.css">
+  <script src="pricing/pricing.js" defer></script>
+  <style>
+    .hero {
+      width: 100%;
+      height: 60vh;
+      background: url('images/matthew-james.jpg') center top / contain no-repeat;
+      position: relative;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+    }
+    .cta-floating {
+      position: absolute;
+      bottom: -2.5rem;
+      z-index: 10;
+      background: var(--yellow);
+      color: var(--dark);
+      padding: 1rem 2rem;
+      font-size: 1.3rem;
+      font-family: var(--font-header);
+      border-radius: 10px;
+      text-decoration: none;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+    }
+    .cta-underpic {
+      text-align: center;
+      margin-top: 5rem;
+      font-size: 1.1rem;
+    }
+  </style>
+</head>
+<body style="background-color: #C7C7C7;">
+
+  <div id="header"></div>
+
+  <!-- HERO IMAGE WITH FLOATING BUTTON -->
+  <div class="hero">
+    <a href="contact.html" class="cta-floating">🚀 Get a Free Quote</a>
+  </div>
+
+  <!-- CTA INSTRUCTIONS BELOW IMAGE -->
+  <div class="cta-underpic">
+    Call, text, or email us your job and address. We’ll respond quickly with your free quote.
+  </div>
+
+  <!-- REVIEW SECTION -->
+  <section class="review-carousel">
+    <h2>What Our Clients Say</h2>
+    <div class="review active">
+      <div class="stars">★★★★★</div>
+      <p>"Blast Off Pressure Washing did an exceptional job beautifying the Church and School campus... Fast, professional, and courteous."</p>
+      <div class="reviewer">– Caitlin Bowers</div>
+    </div>
+    <div class="review">
+      <div class="stars">★★★★★</div>
+      <p>"Superior service. Fair pricing. Clean truck. Great communication and professionalism. Exceeded my expectations!"</p>
+      <div class="reviewer">– Jody B</div>
+    </div>
+    <div class="review">
+      <div class="stars">★★★★★</div>
+      <p>"Restored our concrete walkways in Edmonds—night and day difference! Professional and efficient."</p>
+      <div class="reviewer">– Adam F</div>
+    </div>
+    <div class="review">
+      <div class="stars">★★★★★</div>
+      <p>"Professional, efficient, great communicators. I couldn’t be more pleased with their work!"</p>
+      <div class="reviewer">– maryksfavs</div>
+    </div>
+    <div class="review">
+      <div class="stars">★★★★★</div>
+      <p>"Fabulous work! Reliable and honest. Our driveway turned out beautifully."</p>
+      <div class="reviewer">– Dianne Stockwell</div>
+    </div>
+    <div class="carousel-controls">
+      <button onclick="prevReview()">‹</button>
+      <button onclick="nextReview()">›</button>
+    </div>
+  </section>
+
+  <!-- SERVICE HIGHLIGHTS -->
+  <section>
+    <h2 style="text-align: center; padding-top: 1rem;">What We Offer</h2>
+    <div class="grid">
+
+      <div class="card">
+        <img src="images/soft-washing-house.jpg" alt="Soft Washing" style="width: 100%; border-radius: 12px;">
+        <h3>Soft Washing</h3>
+        <p>Gentle siding and house exterior cleaning.</p>
+        <p><strong id="softwash-price"></strong></p>
+        <a href="service-pages/soft-washing-arlington.html">Learn More →</a>
+      </div>
+
+      <div class="card">
+        <img src="images/roof-cleaning-moss.jpg" alt="Roof Cleaning" style="width: 100%; border-radius: 12px;">
+        <h3>Roof Cleaning</h3>
+        <p>Remove moss and debris with care.</p>
+        <p><strong id="roof-price"></strong></p>
+        <a href="service-pages/roof-cleaning-snohomish.html">Learn More →</a>
+      </div>
+
+      <div class="card">
+        <img src="images/window-cleaning-clear.jpg" alt="Window Cleaning" style="width: 100%; border-radius: 12px;">
+        <h3>Window Cleaning</h3>
+        <p>Let the sunlight back in with crystal clear panes.</p>
+        <p><strong id="window-price"></strong></p>
+        <a href="service-pages/window-cleaning-marysville.html">Learn More →</a>
+      </div>
+    </div>
+
+    <div style="text-align: center; margin-top: 2rem;">
+      <a href="services.html" class="alt-button">View All Services</a>
+    </div>
+  </section>
+
+  <!-- SUBSTACK SIGNUP -->
+  <section class="substack">
+    <h2>Join the Mission Reports</h2>
+    <p>Get seasonal cleaning tips, before/after stories, and homeowner advice from the crew at Blastoff Pressure Washing.</p>
+    <iframe src="https://blastoffpressurewashing.substack.com/embed" width="480" height="320" style="border:1px solid #EEE; background:white;" frameborder="0" scrolling="no"></iframe>
+  </section>
+
+  <div id="footer"></div>
+
+  <script>
+    async function loadPartial(id, file) {
+      const res = await fetch(file);
+      const html = await res.text();
+      document.getElementById(id).innerHTML = html;
+    }
+
+    loadPartial("header", "/assets/header.html").then(() => {
+      const logo = document.getElementById('logoBanner');
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+          logo.classList.add('shrink');
+        } else {
+          logo.classList.remove('shrink');
+        }
+      });
+    });
+
+    loadPartial("footer", "/assets/footer.html");
+
+    window.addEventListener('DOMContentLoaded', () => {
+      document.getElementById("softwash-price").textContent = pricing.getPrice("Soft Washing");
+      document.getElementById("roof-price").textContent = pricing.getPrice("Roof Cleaning");
+      document.getElementById("window-price").textContent = pricing.getPrice("Window Cleaning");
+    });
+
+    const reviews = document.querySelectorAll('.review');
+    let currentReview = 0;
+
+    function showReview(index) {
+      reviews.forEach((r, i) => r.classList.toggle('active', i === index));
+    }
+
+    function nextReview() {
+      currentReview = (currentReview + 1) % reviews.length;
+      showReview(currentReview);
+    }
+
+    function prevReview() {
+      currentReview = (currentReview - 1 + reviews.length) % reviews.length;
+      showReview(currentReview);
+    }
+  </script>
+</body>
+</html>
