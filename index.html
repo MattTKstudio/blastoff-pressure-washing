@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Blastoff Pressure Washing</title>
   <link rel="icon" type="image/png" href="favicon.png">
@@ -39,7 +39,19 @@
 </head>
 <body style="background-color: #C7C7C7;">
 
-  <div id="header"></div>
+  <header class="site-header" style="background-color: var(--blue);">
+    <nav class="nav-bar" style="padding: .7rem 1rem;">
+      <div class="nav-container" style="gap: 2.5rem;">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="services.html" class="nav-link">Services</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </div>
+    </nav>
+    <div class="site-logo" id="logoBanner" style="padding: 0.15rem 0;">
+      <img class="logo-img" src="images/nameandlogo.png" alt="Blastoff Pressure Washing LLC Logo">
+      <div class="tagline" style="font-size: 0.9rem; color: white;">Local. Professional. Family-Run.</div>
+    </div>
+  </header>
 
   <!-- HERO IMAGE WITH FLOATING BUTTON -->
   <div class="hero">
@@ -89,7 +101,6 @@
   <section>
     <h2 style="text-align: center; padding-top: 1rem;">What We Offer</h2>
     <div class="grid">
-
       <div class="card">
         <img src="images/soft-washing-house.jpg" alt="Soft Washing" style="width: 100%; border-radius: 12px;">
         <h3>Soft Washing</h3>
@@ -127,27 +138,17 @@
     <iframe src="https://blastoffpressurewashing.substack.com/embed" width="480" height="320" style="border:1px solid #EEE; background:white;" frameborder="0" scrolling="no"></iframe>
   </section>
 
-  <div id="footer"></div>
+  <footer>
+    &copy; 2024 Blastoff Pressure Washing LLC – Based in Arlington, WA | Serving Snohomish & Skagit County
+  </footer>
 
   <script>
-    async function loadPartial(id, file) {
-      const res = await fetch(file);
-      const html = await res.text();
-      document.getElementById(id).innerHTML = html;
-    }
-
-    loadPartial("header", "/assets/header.html").then(() => {
-      const logo = document.getElementById('logoBanner');
-      window.addEventListener('scroll', () => {
-        if (window.scrollY > 50) {
-          logo.classList.add('shrink');
-        } else {
-          logo.classList.remove('shrink');
-        }
-      });
+    window.addEventListener('scroll', () => {
+      const logo = document.getElementById('logoBanner')?.querySelector('.logo-img');
+      if (logo) {
+        logo.classList.toggle('shrink', window.scrollY > 50);
+      }
     });
-
-    loadPartial("footer", "/assets/footer.html");
 
     window.addEventListener('DOMContentLoaded', () => {
       document.getElementById("softwash-price").textContent = pricing.getPrice("Soft Washing");
