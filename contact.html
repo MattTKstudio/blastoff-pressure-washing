@@ -8,21 +8,31 @@
   <link rel="stylesheet" href="style.css">
   <style>
     :root {
-      --blue: #1e3a8a;
-      --yellow: #facc15;
-      --gray: #c7c7c7;
+      --blue: #1f6feb;
+      --yellow: #f9c80e;
+      --gray: #C7C7C7;
+      --white: #ffffff;
+      --dark: #1a1a1a;
     }
 
     body {
       margin: 0;
       font-family: Arial, sans-serif;
       background-color: var(--gray);
-      color: #111;
+      color: var(--dark);
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    main {
+      flex: 1;
+      padding: 10vh 2rem 4rem;
+      text-align: center;
     }
 
     .site-header {
       background-color: var(--blue);
-      color: white;
     }
 
     .nav-bar {
@@ -37,7 +47,7 @@
     }
 
     .nav-link {
-      color: white;
+      color: var(--white);
       text-decoration: none;
       font-weight: bold;
       font-size: 1.1rem;
@@ -65,13 +75,8 @@
 
     .tagline {
       font-size: 0.9rem;
-      color: white;
+      color: var(--white);
       margin-top: 0.3rem;
-    }
-
-    main {
-      padding: 10vh 2rem 4rem;
-      text-align: center;
     }
 
     .contact-section {
@@ -101,8 +106,8 @@
     }
 
     footer {
-      background-color: #111;
-      color: white;
+      background-color: var(--dark);
+      color: var(--white);
       text-align: center;
       padding: 1rem;
       font-size: 0.9rem;

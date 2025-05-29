@@ -1,47 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Roof Cleaning | Blastoff Pressure Washing</title>
-  <link rel="stylesheet" href="../style.css">
-  <script src="../pricing/pricing.js" defer></script>
+  <link rel="stylesheet" href="/style.css" />
+  <script src="/pricing/pricing.js" defer></script>
 </head>
-<body>
+<body style="background-color: #C7C7C7; font-family: sans-serif; margin: 0;">
   <div id="header"></div>
 
-  <section class="cta-container" style="text-align: center;">
-    <h1>Roof Cleaning</h1>
-    <img src="../images/roof-cleaning-moss.jpg" alt="Roof Cleaning" style="max-width: 100%; border-radius: 12px; margin: 2rem auto;">
-    <p style="font-size: 1.2rem; max-width: 700px; margin: auto;">
-      Safely remove moss, algae, and debris from your roof to improve appearance, prolong lifespan, and prevent costly damage. We use low-pressure and safe chemicals to preserve roof integrity.
-    </p>
-    <p style="margin-top: 2rem; font-size: 1.2rem;"><strong id="roof-price"></strong> per square foot</p>
-    <a href="../contact.html" class="cta-button" style="margin-top: 2rem; display: inline-block;">🚀 Get a Free Quote</a>
+  <section style="display: flex; flex-wrap: wrap; align-items: center; justify-content: center; padding: 2rem;">
+    <div style="flex: 1; min-width: 300px; padding: 1rem; text-align: center;">
+      <h1 style="font-size: 2.5rem; color: #003366;">Roof Cleaning That Lasts</h1>
+      <p style="font-size: 1.2rem; max-width: 600px; margin: auto;">
+        Moss, mildew, and debris shorten roof life. We clean with precision and care, so you can stay dry and confident.
+      </p>
+      <a href="/contact.html" class="cta-button" style="margin-top: 1rem; display: inline-block; background-color: #FFD700; padding: 0.75rem 1.5rem; border-radius: 8px; font-weight: bold; text-decoration: none; color: black;">🚀 Get a Free Quote</a>
+    </div>
+    <div style="flex: 1; min-width: 300px; padding: 1rem;">
+      <img src="/images/roof-cleaning-moss.jpg" alt="Roof Cleaning" style="width: 100%; max-width: 400px; border-radius: 12px; display: block; margin: auto;" />
+    </div>
+  </section>
+
+  <section style="background-color: white; padding: 2rem; text-align: center;">
+    <h2 style="font-size: 2rem; color: #003366;">Why Clean Your Roof?</h2>
+    <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 2rem; margin-top: 1rem;">
+      <div>🌿 <strong>Stop Moss Growth</strong><br/>Protect shingles from root damage.</div>
+      <div>💧 <strong>Improve Drainage</strong><br/>Avoid clogs and leaks caused by buildup.</div>
+      <div>🏡 <strong>Boost Curb Appeal</strong><br/>A clean roof makes a clean impression.</div>
+    </div>
+  </section>
+
+  <section style="background-color: #E8F0FA; padding: 2rem; text-align: center;">
+    <h2 style="font-size: 2rem; color: #003366;">How We Clean</h2>
+    <ol style="list-style-position: inside; max-width: 600px; margin: auto; text-align: left;">
+      <li><strong>Gentle Blow-Off</strong> – Remove loose debris without damage</li>
+      <li><strong>Moss Treatment</strong> – Biodegradable application to kill growth</li>
+      <li><strong>Detail Rinse (if needed)</strong> – Wash without pressure</li>
+      <li><strong>Final Inspection</strong> – Ensure roof health and cleanliness</li>
+    </ol>
+  </section>
+
+  <section style="background-color: white; padding: 2rem; text-align: center;">
+    <h2 style="font-size: 2rem; color: #003366;">Pricing</h2>
+    <p><strong id="roof-price">Loading...</strong></p>
+    <p style="max-width: 600px; margin: auto;">We price roof cleaning by square footage, depending on pitch and material. Send a photo or address and we’ll reply fast with a quote.</p>
+  </section>
+
+  <section style="background-color: #C7C7C7; padding: 2rem; text-align: center;">
+    <h2 style="font-size: 2rem; color: #003366;">Get a Clean Roof, the Safe Way</h2>
+    <p>We don’t pressure wash roofs. Ever. Our soft clean approach ensures safety and longevity.</p>
+    <a href="/contact.html" class="cta-button" style="background-color: #FFD700; padding: 0.75rem 1.5rem; border-radius: 8px; font-weight: bold; text-decoration: none; color: black; display: inline-block;">🚀 Get a Free Quote</a>
   </section>
 
   <div id="footer"></div>
-
+  <script src="/assets/injectPartials.js"></script>
   <script>
-    async function loadPartial(id, file) {
-      const res = await fetch(file);
-      const html = await res.text();
-      document.getElementById(id).innerHTML = html;
-    }
-
-    loadPartial("header", "/assets/header.html").then(() => {
-      const logo = document.getElementById('logoBanner');
-      window.addEventListener('scroll', () => {
-        if (window.scrollY > 50) {
-          logo.classList.add('shrink');
-        } else {
-          logo.classList.remove('shrink');
-        }
-      });
-    });
-
-    loadPartial("footer", "/assets/footer.html");
-
     window.addEventListener('DOMContentLoaded', () => {
       document.getElementById("roof-price").textContent = pricing.getPrice("Roof Cleaning");
     });
