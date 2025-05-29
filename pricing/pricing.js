@@ -5,7 +5,7 @@ const pricing = {
     "Driveway Cleaning": {
       pricePerSqFt: .5,
       unit: "sq ft",
-      sale: true,
+      sale: false,
       salePrice: 0.35
     },
     "Soft Washing": {

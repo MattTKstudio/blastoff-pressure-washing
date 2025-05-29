@@ -7,23 +7,23 @@
   <link rel="icon" type="image/png" href="favicon.png">
   <link rel="stylesheet" href="style.css">
   <script src="/assets/injectPartials.js" defer></script>
-  <script src="pricing/pricing.js" defer></script>
   <script src="pricing/pricing.js?v=2" defer></script>
-  <meta charset="UTF-8" />
   <style>
     :root {
-  --blue: #1f6feb;
-  --yellow: #f9c80e;
-  --grey: #C7C7C7;
-  --white: #ffffff;
-  --dark: #1a1a1a;
+      --blue: #1f6feb;
+      --yellow: #f9c80e;
+      --grey: #C7C7C7;
+      --white: #ffffff;
+      --dark: #1a1a1a;
       --font-header: 'Paytone One', sans-serif;
     }
+
     body {
       margin: 0;
       font-family: sans-serif;
-      background-color: var(--gray);
+      background-color: var(--grey);
     }
+
     header.site-header {
       background-color: var(--blue);
       padding: 1rem;
@@ -31,10 +31,12 @@
       justify-content: center;
       align-items: center;
     }
+
     .nav-container {
       display: flex;
       gap: 2rem;
     }
+
     .nav-link {
       color: white;
       background-color: var(--blue);
@@ -44,6 +46,7 @@
       font-size: 1.2rem;
       font-weight: bold;
     }
+
     .hero-section {
       display: flex;
       flex-wrap: wrap;
@@ -52,16 +55,19 @@
       padding: 2rem;
       background-color: white;
     }
+
     .hero-section img {
       width: 100%;
       max-width: 400px;
       border-radius: 12px;
     }
+
     .hero-callout {
       flex: 1;
       padding: 1rem;
       text-align: center;
     }
+
     .cta-button {
       background-color: var(--yellow);
       padding: 1rem 2rem;
@@ -71,27 +77,33 @@
       text-decoration: none;
       color: black;
     }
+
     .services-block {
       background-color: #E8F0FA;
       padding: 2rem;
       text-align: center;
     }
+
     .review-carousel {
       background-color: var(--blue);
       color: white;
       text-align: center;
       padding: 3rem 1rem;
     }
+
     .review-carousel .stars {
       font-size: 2rem;
       color: var(--yellow);
     }
+
     .review {
       display: none;
     }
+
     .review.active {
       display: block;
     }
+
     .carousel-controls button {
       font-size: 2rem;
       background: none;
@@ -100,10 +112,19 @@
       margin: 1rem;
       cursor: pointer;
     }
+
     .substack {
-      background-color: var(--gray);
+      background-color: var(--grey);
       padding: 2rem;
       text-align: center;
+    }
+
+    footer {
+      text-align: center;
+      background-color: var(--dark);
+      color: white;
+      padding: 1rem;
+      font-size: 0.9rem;
     }
   </style>
 </head>
@@ -169,10 +190,9 @@
     <iframe src="https://blastoffpressurewashing.substack.com/embed" width="480" height="320" style="border:1px solid #EEE; background:white;" frameborder="0" scrolling="no"></iframe>
   </section>
 
-<footer style="text-align: center; background-color: #1a1a1a; color: white; padding: 1rem; font-size: 0.9rem;">
-  &copy; 2024 Blastoff Pressure Washing LLC – Based in Arlington, WA | Serving Snohomish & Skagit County
-</footer>
-
+  <footer>
+    &copy; 2024 Blastoff Pressure Washing LLC – Based in Arlington, WA | Serving Snohomish & Skagit County
+  </footer>
 
   <script>
     const reviews = document.querySelectorAll('.review');
