@@ -2,120 +2,121 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Soft Washing | Blastoff Pressure Washing</title>
-  <link rel="icon" href="../favicon.png" type="image/png" />
-  <link rel="stylesheet" href="../style.css" />
-  <script src="../pricing/pricing.js" defer></script>
-  <script src="../scripts/injectPrices.js" defer></script>
+  <link rel="icon" href="/favicon.png" type="image/png">
+  <link rel="stylesheet" href="/style.css">
+  <script src="/assets/injectPartials.js" defer></script>
+  <script src="/pricing/pricing.js?v=3" defer></script>
   <style>
-    main {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 12vh 2rem 4rem;
+    :root {
+      --blue: #1f6feb;
+      --yellow: #f9c80e;
+      --grey: #C7C7C7;
+      --white: #ffffff;
+      --dark: #1a1a1a;
+      --font-header: 'Paytone One', sans-serif;
     }
 
-    .hero-img {
-      width: 100%;
-      border-radius: 16px;
-      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
-      margin-bottom: 2rem;
+    body {
+      margin: 0;
+      font-family: sans-serif;
+      background-color: var(--grey);
     }
 
-    h1 {
-      color: var(--blue);
-      font-size: 2.5rem;
-      margin-bottom: 0.5rem;
+    h1, h2 {
+      font-family: var(--font-header);
     }
 
-    .subhead {
-      font-size: 1.2rem;
-      margin-bottom: 1.5rem;
-      color: var(--dark);
+    ol {
+      max-width: 600px;
+      margin: auto;
+      text-align: left;
     }
 
-    .price-tag {
-      font-size: 1.1rem;
-      font-weight: bold;
-      color: var(--blue);
-      margin-bottom: 2rem;
-    }
-
-    .get-quote-btn {
-      display: inline-block;
-      padding: 0.75rem 1.5rem;
+    .cta-button {
       background-color: var(--yellow);
-      color: black;
+      padding: 0.75rem 1.5rem;
+      border-radius: 8px;
       font-weight: bold;
-      border: none;
-      border-radius: 10px;
       text-decoration: none;
-      font-size: 1rem;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-      transition: background-color 0.3s ease;
+      color: black;
+      display: inline-block;
+      margin-top: 1rem;
     }
 
-    .get-quote-btn:hover {
-      background-color: #f0b800;
-    }
-
-    ul {
-      margin-top: 2rem;
-      padding-left: 1.5rem;
-      list-style-type: disc;
-    }
-
-    ul li {
-      margin-bottom: 0.75rem;
-      font-size: 1rem;
-    }
-
-    @media (max-width: 768px) {
-      h1 {
-        font-size: 2rem;
-      }
-
-      .subhead {
-        font-size: 1rem;
-      }
+    footer {
+      background-color: var(--dark);
+      color: var(--white);
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.9rem;
     }
   </style>
 </head>
-
 <body>
-  <header class="site-header">
-    <nav class="nav-bar">
-      <div class="nav-container">
-        <a href="../index.html" class="nav-link">Home</a>
-        <a href="../services.html" class="nav-link">Services</a>
-        <a href="../contact.html" class="nav-link">Contact</a>
-      </div>
-    </nav>
-    <div class="site-logo" id="logoBanner">
-      <img class="logo-img" src="../images/nameandlogo.png" alt="Blastoff Pressure Washing LLC Logo" />
-      <div class="tagline">Local. Professional. Family-Run.</div>
+
+  <div id="header"></div>
+
+  <!-- Hero Section -->
+  <section style="display: flex; flex-wrap: wrap; align-items: center; justify-content: center; padding: 2rem;">
+    <div style="flex: 1; min-width: 300px; padding: 1rem; text-align: center;">
+      <h1 style="font-size: 2.5rem; color: #003366;">Soft Washing in Arlington, WA</h1>
+      <p style="font-size: 1.2rem; max-width: 600px; margin: auto;">
+        Safe for siding. Tough on grime. Our low-pressure cleaning restores beauty without damage.
+      </p>
+      <a href="/contact.html" class="cta-button">🚀 Get a Free Quote</a>
     </div>
-  </header>
+    <div style="flex: 1; min-width: 300px; padding: 1rem;">
+      <img src="/images/soft-washing-house.jpg" alt="Soft Washing House Siding" style="width: 100%; max-width: 400px; border-radius: 12px;" />
+    </div>
+  </section>
 
-  <main>
-    <img src="../images/soft-washing-house.jpg" alt="Soft washing siding" class="hero-img" />
+  <!-- Why Soft Wash -->
+  <section style="background-color: white; padding: 2rem; text-align: center;">
+    <h2 style="font-size: 2rem; color: #003366;">Why Soft Wash Instead of Pressure Wash?</h2>
+    <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 2rem; margin-top: 1rem;">
+      <div>🏡 <strong>Safe for Homes</strong><br/>Perfect for siding, trim, and painted surfaces.</div>
+      <div>🧫 <strong>Kills Mold & Algae</strong><br/>Biodegradable soap neutralizes growth at the root.</div>
+      <div>🔧 <strong>Prevents Damage</strong><br/>No risk of blasting or water intrusion.</div>
+    </div>
+  </section>
 
-    <h1>Soft Washing</h1>
-    <p class="subhead">Siding and home exterior cleaning — gentle on surfaces, tough on grime.</p>
-    <p class="price-tag" data-service="Soft Washing">Loading price...</p>
+  <!-- How We Clean -->
+  <section style="background-color: #E8F0FA; padding: 2rem; text-align: center;">
+    <h2 style="font-size: 2rem; color: #003366;">Our Process</h2>
+    <ol style="list-style-position: inside;">
+      <li><strong>Inspection & Prep</strong> – Protect electrical, cover delicate plants</li>
+      <li><strong>Soap Application</strong> – Eco-safe solution breaks down grime</li>
+      <li><strong>Soak & Sit</strong> – Let chemistry do the heavy lifting</li>
+      <li><strong>Low-Pressure Rinse</strong> – Soft spray rinses away residue</li>
+      <li><strong>Final Check</strong> – Ensure all surfaces look great</li>
+    </ol>
+  </section>
 
-    <a href="../contact.html" class="get-quote-btn">Get a Free Quote</a>
+  <!-- Pricing -->
+  <section style="background-color: white; padding: 2rem; text-align: center;">
+    <h2 style="font-size: 2rem; color: #003366;">Pricing</h2>
+    <p><strong>Standard Rate:</strong> <span id="Soft Washing">Loading...</span></p>
+    <p style="max-width: 600px; margin: auto;">Our pricing is per square foot. We’ll measure your home and give a clear, fast quote via text or email.</p>
+  </section>
 
-    <ul>
-      <li>Safe for vinyl, stucco, and painted wood siding</li>
-      <li>Removes mildew, algae, and grime without damage</li>
-      <li>Eco-friendly detergents and low-pressure technique</li>
-      <li>Great for HOA requirements or pre-sale prep</li>
-    </ul>
-  </main>
+  <!-- Final CTA -->
+  <section style="background-color: var(--grey); padding: 2rem; text-align: center;">
+    <h2 style="font-size: 2rem; color: #003366;">Gentle. Effective. Local.</h2>
+    <p>We’re a brother-owned company born in Arlington, WA. Call us to soft wash your house right.</p>
+    <a href="/contact.html" class="cta-button">🚀 Get a Free Quote</a>
+  </section>
 
-  <footer>
-    &copy; 2024 Blastoff Pressure Washing LLC – Based in Arlington, WA | Serving Snohomish & Skagit County
-  </footer>
+  <div id="footer"></div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const el = document.getElementById("Soft Washing");
+      if (el && typeof pricing !== "undefined") {
+        el.textContent = pricing.getPrice("Soft Washing");
+      }
+    });
+  </script>
 </body>
 </html>

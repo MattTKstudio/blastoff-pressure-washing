@@ -2,27 +2,78 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Roof Cleaning | Blastoff Pressure Washing</title>
-  <link rel="stylesheet" href="/style.css" />
-  <script src="/pricing/pricing.js" defer></script>
+  <link rel="icon" href="/favicon.png" type="image/png">
+  <link rel="stylesheet" href="/style.css">
+  <script src="/assets/injectPartials.js" defer></script>
+  <script src="/pricing/pricing.js?v=3" defer></script>
+  <style>
+    :root {
+      --blue: #1f6feb;
+      --yellow: #f9c80e;
+      --grey: #C7C7C7;
+      --white: #ffffff;
+      --dark: #1a1a1a;
+      --font-header: 'Paytone One', sans-serif;
+    }
+
+    body {
+      margin: 0;
+      font-family: sans-serif;
+      background-color: var(--grey);
+    }
+
+    h1, h2 {
+      font-family: var(--font-header);
+    }
+
+    ol {
+      max-width: 600px;
+      margin: auto;
+      text-align: left;
+    }
+
+    .cta-button {
+      background-color: var(--yellow);
+      padding: 0.75rem 1.5rem;
+      border-radius: 8px;
+      font-weight: bold;
+      text-decoration: none;
+      color: black;
+      display: inline-block;
+      margin-top: 1rem;
+    }
+
+    footer {
+      background-color: var(--dark);
+      color: var(--white);
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.9rem;
+    }
+  </style>
 </head>
-<body style="background-color: #C7C7C7; font-family: sans-serif; margin: 0;">
+<body>
+
+  <!-- Injected Header -->
   <div id="header"></div>
 
+  <!-- Hero Section -->
   <section style="display: flex; flex-wrap: wrap; align-items: center; justify-content: center; padding: 2rem;">
     <div style="flex: 1; min-width: 300px; padding: 1rem; text-align: center;">
       <h1 style="font-size: 2.5rem; color: #003366;">Roof Cleaning That Lasts</h1>
       <p style="font-size: 1.2rem; max-width: 600px; margin: auto;">
         Moss, mildew, and debris shorten roof life. We clean with precision and care, so you can stay dry and confident.
       </p>
-      <a href="/contact.html" class="cta-button" style="margin-top: 1rem; display: inline-block; background-color: #FFD700; padding: 0.75rem 1.5rem; border-radius: 8px; font-weight: bold; text-decoration: none; color: black;">🚀 Get a Free Quote</a>
+      <a href="/contact.html" class="cta-button">🚀 Get a Free Quote</a>
     </div>
     <div style="flex: 1; min-width: 300px; padding: 1rem;">
       <img src="/images/roof-cleaning-moss.jpg" alt="Roof Cleaning" style="width: 100%; max-width: 400px; border-radius: 12px; display: block; margin: auto;" />
     </div>
   </section>
 
+  <!-- Why Clean -->
   <section style="background-color: white; padding: 2rem; text-align: center;">
     <h2 style="font-size: 2rem; color: #003366;">Why Clean Your Roof?</h2>
     <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 2rem; margin-top: 1rem;">
@@ -32,9 +83,10 @@
     </div>
   </section>
 
+  <!-- How We Clean -->
   <section style="background-color: #E8F0FA; padding: 2rem; text-align: center;">
     <h2 style="font-size: 2rem; color: #003366;">How We Clean</h2>
-    <ol style="list-style-position: inside; max-width: 600px; margin: auto; text-align: left;">
+    <ol style="list-style-position: inside;">
       <li><strong>Gentle Blow-Off</strong> – Remove loose debris without damage</li>
       <li><strong>Moss Treatment</strong> – Biodegradable application to kill growth</li>
       <li><strong>Detail Rinse (if needed)</strong> – Wash without pressure</li>
@@ -42,23 +94,30 @@
     </ol>
   </section>
 
+  <!-- Pricing -->
   <section style="background-color: white; padding: 2rem; text-align: center;">
     <h2 style="font-size: 2rem; color: #003366;">Pricing</h2>
-    <p><strong id="roof-price">Loading...</strong></p>
-    <p style="max-width: 600px; margin: auto;">We price roof cleaning by square footage, depending on pitch and material. Send a photo or address and we’ll reply fast with a quote.</p>
+    <p><strong>Standard Rate:</strong> <span id="Roof Cleaning">Loading...</span></p>
+    <p style="max-width: 600px; margin: auto;">We price roof cleaning by square footage, depending on pitch and material. Send us a photo or address — we’ll text back a fast, honest quote.</p>
   </section>
 
-  <section style="background-color: #C7C7C7; padding: 2rem; text-align: center;">
-    <h2 style="font-size: 2rem; color: #003366;">Get a Clean Roof, the Safe Way</h2>
-    <p>We don’t pressure wash roofs. Ever. Our soft clean approach ensures safety and longevity.</p>
-    <a href="/contact.html" class="cta-button" style="background-color: #FFD700; padding: 0.75rem 1.5rem; border-radius: 8px; font-weight: bold; text-decoration: none; color: black; display: inline-block;">🚀 Get a Free Quote</a>
+  <!-- Final CTA -->
+  <section style="background-color: var(--grey); padding: 2rem; text-align: center;">
+    <h2 style="font-size: 2rem; color: #003366;">A Brother-Owned Business You Can Trust</h2>
+    <p>We don’t pressure wash roofs. Ever. Our soft clean method protects your home and your investment.</p>
+    <a href="/contact.html" class="cta-button">🚀 Get a Free Quote</a>
   </section>
 
+  <!-- Injected Footer -->
   <div id="footer"></div>
-  <script src="/assets/injectPartials.js"></script>
+
+  <!-- Pricing Loader -->
   <script>
-    window.addEventListener('DOMContentLoaded', () => {
-      document.getElementById("roof-price").textContent = pricing.getPrice("Roof Cleaning");
+    document.addEventListener("DOMContentLoaded", () => {
+      const el = document.getElementById("Roof Cleaning");
+      if (el && typeof pricing !== "undefined") {
+        el.textContent = pricing.getPrice("Roof Cleaning");
+      }
     });
   </script>
 </body>

@@ -2,120 +2,120 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Pressure Washing | Blastoff Pressure Washing</title>
-  <link rel="icon" href="../favicon.png" type="image/png" />
-  <link rel="stylesheet" href="../style.css" />
-  <script src="../pricing/pricing.js" defer></script>
-  <script src="../scripts/injectPrices.js" defer></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Driveway Cleaning | Blastoff Pressure Washing</title>
+  <link rel="icon" href="/favicon.png" type="image/png">
+  <link rel="stylesheet" href="/style.css">
+  <script src="/assets/injectPartials.js" defer></script>
+  <script src="/pricing/pricing.js?v=3" defer></script>
   <style>
-    main {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 12vh 2rem 4rem;
+    :root {
+      --blue: #1f6feb;
+      --yellow: #f9c80e;
+      --grey: #C7C7C7;
+      --white: #ffffff;
+      --dark: #1a1a1a;
+      --font-header: 'Paytone One', sans-serif;
     }
 
-    .hero-img {
-      width: 100%;
-      border-radius: 16px;
-      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
-      margin-bottom: 2rem;
+    body {
+      margin: 0;
+      font-family: sans-serif;
+      background-color: var(--grey);
     }
 
-    h1 {
-      color: var(--blue);
-      font-size: 2.5rem;
-      margin-bottom: 0.5rem;
+    h1, h2 {
+      font-family: var(--font-header);
     }
 
-    .subhead {
-      font-size: 1.2rem;
-      margin-bottom: 1.5rem;
-      color: var(--dark);
+    ol {
+      max-width: 600px;
+      margin: auto;
+      text-align: left;
     }
 
-    .price-tag {
-      font-size: 1.1rem;
-      font-weight: bold;
-      color: var(--blue);
-      margin-bottom: 2rem;
-    }
-
-    .get-quote-btn {
-      display: inline-block;
-      padding: 0.75rem 1.5rem;
+    .cta-button {
       background-color: var(--yellow);
-      color: black;
+      padding: 0.75rem 1.5rem;
+      border-radius: 8px;
       font-weight: bold;
-      border: none;
-      border-radius: 10px;
       text-decoration: none;
-      font-size: 1rem;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-      transition: background-color 0.3s ease;
+      color: black;
+      display: inline-block;
+      margin-top: 1rem;
     }
 
-    .get-quote-btn:hover {
-      background-color: #f0b800;
-    }
-
-    ul {
-      margin-top: 2rem;
-      padding-left: 1.5rem;
-      list-style-type: disc;
-    }
-
-    ul li {
-      margin-bottom: 0.75rem;
-      font-size: 1rem;
-    }
-
-    @media (max-width: 768px) {
-      h1 {
-        font-size: 2rem;
-      }
-
-      .subhead {
-        font-size: 1rem;
-      }
+    footer {
+      background-color: var(--dark);
+      color: var(--white);
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.9rem;
     }
   </style>
 </head>
-
 <body>
-  <header class="site-header">
-    <nav class="nav-bar">
-      <div class="nav-container">
-        <a href="../index.html" class="nav-link">Home</a>
-        <a href="../services.html" class="nav-link">Services</a>
-        <a href="../contact.html" class="nav-link">Contact</a>
-      </div>
-    </nav>
-    <div class="site-logo" id="logoBanner">
-      <img class="logo-img" src="../images/nameandlogo.png" alt="Blastoff Pressure Washing LLC Logo" />
-      <div class="tagline">Local. Professional. Family-Run.</div>
+
+  <div id="header"></div>
+
+  <!-- Hero Section -->
+  <section style="display: flex; flex-wrap: wrap; align-items: center; justify-content: center; padding: 2rem;">
+    <div style="flex: 1; min-width: 300px; padding: 1rem; text-align: center;">
+      <h1 style="font-size: 2.5rem; color: #003366;">Pressure Wash That Driveway 🚿</h1>
+      <p style="font-size: 1.2rem; max-width: 600px; margin: auto;">
+        Say goodbye to oil stains, algae, and grime. We restore concrete to a like-new shine with care and consistency.
+      </p>
+      <a href="/contact.html" class="cta-button">🚀 Get a Free Quote</a>
     </div>
-  </header>
+    <div style="flex: 1; min-width: 300px; padding: 1rem;">
+      <img src="/images/driveway-cleaning.jpg" alt="Driveway Cleaning" style="width: 100%; max-width: 400px; border-radius: 12px; display: block; margin: auto;" />
+    </div>
+  </section>
 
-  <main>
-    <img src="../images/driveway-cleaning.jpg" alt="Pressure washing a driveway" class="hero-img" />
+  <!-- Why Clean -->
+  <section style="background-color: white; padding: 2rem; text-align: center;">
+    <h2 style="font-size: 2rem; color: #003366;">Why Clean Your Driveway?</h2>
+    <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 2rem; margin-top: 1rem;">
+      <div>🧼 <strong>Stain Removal</strong><br/>Get rid of oil spots, dirt, and algae.</div>
+      <div>🏡 <strong>Boost Curb Appeal</strong><br/>Your home’s first impression starts with the driveway.</div>
+      <div>🛡️ <strong>Prevent Damage</strong><br/>Clean concrete lasts longer and is safer to walk on.</div>
+    </div>
+  </section>
 
-    <h1>Pressure Washing</h1>
-    <p class="subhead">Restore your property's curb appeal with deep-cleaned driveways, walkways, patios, and more.</p>
-    <p class="price-tag" data-service="Driveway Cleaning">Loading price...</p>
+  <!-- How We Clean -->
+  <section style="background-color: #E8F0FA; padding: 2rem; text-align: center;">
+    <h2 style="font-size: 2rem; color: #003366;">How We Clean</h2>
+    <ol style="list-style-position: inside;">
+      <li><strong>Debris Blow-Off</strong> – We start by clearing loose debris.</li>
+      <li><strong>Eco Soap Pre-Treat</strong> – Lifts stains from the surface.</li>
+      <li><strong>High-Pressure Surface Clean</strong> – Professional-grade results.</li>
+      <li><strong>Detail Spray Edges</strong> – No missed corners or edges.</li>
+    </ol>
+  </section>
 
-    <a href="../contact.html" class="get-quote-btn">Get a Free Quote</a>
+  <!-- Pricing -->
+  <section style="background-color: white; padding: 2rem; text-align: center;">
+    <h2 style="font-size: 2rem; color: #003366;">Pricing</h2>
+    <p><strong>Standard Rate:</strong> <span id="Pressure Washing">Loading...</span></p>
+    <p style="max-width: 600px; margin: auto;">We charge by square foot. Most driveways fall between 400–1200 sq ft. Send us a photo and we’ll quote fast!</p>
+  </section>
 
-    <ul>
-      <li>Removes years of built-up grime, algae, and stains</li>
-      <li>Safe for concrete, brick, and pavers</li>
-      <li>Environmentally friendly detergents available</li>
-      <li>Boosts property value and presentation</li>
-    </ul>
-  </main>
+  <!-- Final CTA -->
+  <section style="background-color: var(--grey); padding: 2rem; text-align: center;">
+    <h2 style="font-size: 2rem; color: #003366;">Brother-Owned. Detail-Driven.</h2>
+    <p>We treat every job like it's our own home. Fast replies, clear pricing, and no nonsense.</p>
+    <a href="/contact.html" class="cta-button">🚀 Get a Free Quote</a>
+  </section>
 
-  <footer>
-    &copy; 2024 Blastoff Pressure Washing LLC – Based in Arlington, WA | Serving Snohomish & Skagit County
-  </footer>
+  <div id="footer"></div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const el = document.getElementById("Pressure Washing");
+      if (el && typeof pricing !== "undefined") {
+        el.textContent = pricing.getPrice("Pressure Washing");
+      }
+    });
+  </script>
 </body>
 </html>

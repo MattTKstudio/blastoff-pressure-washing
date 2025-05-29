@@ -3,10 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Blastoff Pressure Washing</title>
+  <title>Services | Blastoff Pressure Washing</title>
   <link rel="icon" type="image/png" href="favicon.png">
   <link rel="stylesheet" href="style.css">
+  <script src="/assets/injectPartials.js" defer></script>
   <script src="pricing/pricing.js" defer></script>
+  <script src="pricing/pricing.js?v=2" defer></script>
+  <meta charset="UTF-8" />
   <style>
     :root {
   --blue: #1f6feb;
@@ -105,13 +108,7 @@
   </style>
 </head>
 <body>
-  <header class="site-header">
-    <div class="nav-container">
-      <a href="index.html" class="nav-link">Home</a>
-      <a href="services.html" class="nav-link">Services</a>
-      <a href="contact.html" class="nav-link">Contact</a>
-    </div>
-  </header>
+  <div id="header"></div>
 
   <section class="hero-section">
     <div class="hero-callout">
@@ -172,9 +169,10 @@
     <iframe src="https://blastoffpressurewashing.substack.com/embed" width="480" height="320" style="border:1px solid #EEE; background:white;" frameborder="0" scrolling="no"></iframe>
   </section>
 
-  <footer style="text-align: center; padding: 1rem; font-size: 0.9rem;">
-    &copy; 2024 Blastoff Pressure Washing LLC – Based in Arlington, WA | Serving Snohomish & Skagit County
-  </footer>
+<footer style="text-align: center; background-color: #1a1a1a; color: white; padding: 1rem; font-size: 0.9rem;">
+  &copy; 2024 Blastoff Pressure Washing LLC – Based in Arlington, WA | Serving Snohomish & Skagit County
+</footer>
+
 
   <script>
     const reviews = document.querySelectorAll('.review');
