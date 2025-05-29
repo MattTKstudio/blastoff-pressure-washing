@@ -3,95 +3,109 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Services | Blastoff Pressure Washing</title>
+  <title>Blastoff Pressure Washing | Home</title>
   <link rel="icon" type="image/png" href="favicon.png">
   <link rel="stylesheet" href="style.css">
   <script src="/assets/injectPartials.js" defer></script>
-  <script src="pricing/pricing.js" defer></script>
   <script src="pricing/pricing.js?v=2" defer></script>
-  <meta charset="UTF-8" />
   <style>
     :root {
-  --blue: #1f6feb;
-  --yellow: #f9c80e;
-  --grey: #C7C7C7;
-  --white: #ffffff;
-  --dark: #1a1a1a;
+      --blue: #1f6feb;
+      --yellow: #f9c80e;
+      --grey: #C7C7C7;
+      --white: #ffffff;
+      --dark: #1a1a1a;
       --font-header: 'Paytone One', sans-serif;
     }
+
     body {
       margin: 0;
       font-family: sans-serif;
-      background-color: var(--gray);
+      background-color: var(--grey);
+      line-height: 1.6;
     }
-    header.site-header {
-      background-color: var(--blue);
-      padding: 1rem;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+
+    h1, h2 {
+      font-family: var(--font-header);
     }
-    .nav-container {
-      display: flex;
-      gap: 2rem;
-    }
-    .nav-link {
-      color: white;
-      background-color: var(--blue);
-      padding: 0.5rem 1rem;
-      border-radius: 8px;
-      text-decoration: none;
-      font-size: 1.2rem;
-      font-weight: bold;
-    }
+
     .hero-section {
       display: flex;
       flex-wrap: wrap;
       align-items: center;
-      justify-content: space-between;
-      padding: 2rem;
+      justify-content: center;
+      padding: 2rem 1rem;
       background-color: white;
     }
-    .hero-section img {
-      width: 100%;
-      max-width: 400px;
-      border-radius: 12px;
-    }
+
     .hero-callout {
       flex: 1;
-      padding: 1rem;
+      min-width: 280px;
       text-align: center;
+      padding: 1rem;
     }
+
+    .hero-section img {
+      flex: 1;
+      min-width: 280px;
+      max-width: 400px;
+      width: 100%;
+      border-radius: 12px;
+      margin: 1rem auto;
+    }
+
     .cta-button {
       background-color: var(--yellow);
       padding: 1rem 2rem;
-      font-size: 1.2rem;
+      font-size: 1.1rem;
       border-radius: 10px;
       font-weight: bold;
       text-decoration: none;
       color: black;
+      display: inline-block;
+      margin-top: 1rem;
     }
+
     .services-block {
       background-color: #E8F0FA;
-      padding: 2rem;
+      padding: 2rem 1rem;
       text-align: center;
     }
+
+    .services-block img {
+      width: 45%;
+      max-width: 150px;
+      border-radius: 8px;
+    }
+
+    .services-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: center;
+      margin-top: 1rem;
+    }
+
     .review-carousel {
       background-color: var(--blue);
       color: white;
       text-align: center;
       padding: 3rem 1rem;
     }
-    .review-carousel .stars {
+
+    .stars {
       font-size: 2rem;
       color: var(--yellow);
     }
+
     .review {
       display: none;
     }
+
     .review.active {
       display: block;
     }
+
     .carousel-controls button {
       font-size: 2rem;
       background: none;
@@ -100,10 +114,46 @@
       margin: 1rem;
       cursor: pointer;
     }
+
     .substack {
-      background-color: var(--gray);
-      padding: 2rem;
+      background-color: var(--grey);
+      padding: 2rem 1rem;
       text-align: center;
+    }
+
+    footer {
+      text-align: center;
+      background-color: var(--dark);
+      color: white;
+      padding: 1rem;
+      font-size: 0.9rem;
+    }
+
+    /* Mobile adjustments */
+    @media (max-width: 600px) {
+      .hero-section {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .hero-callout, .hero-section img {
+        flex: unset;
+        width: 100%;
+        padding: 0.5rem;
+      }
+
+      .services-block img {
+        width: 100px;
+      }
+
+      .cta-button.sticky {
+        position: fixed;
+        bottom: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 999;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      }
     }
   </style>
 </head>
@@ -123,10 +173,10 @@
     <h2 style="font-size: 2rem; color: var(--blue);">Our Services</h2>
     <p>Explore everything we do: roof, gutters, siding, windows and more!</p>
     <a href="services.html" class="cta-button">🔍 Go See All Services</a>
-    <div style="margin-top: 1rem; display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
-      <img src="images/soft-washing-house.jpg" alt="Soft Washing" style="width: 150px; border-radius: 8px;">
-      <img src="images/roof-cleaning-moss.jpg" alt="Roof Cleaning" style="width: 150px; border-radius: 8px;">
-      <img src="images/window-cleaning-clear.jpg" alt="Window Cleaning" style="width: 150px; border-radius: 8px;">
+    <div class="services-grid">
+      <img src="images/soft-washing-house.jpg" alt="Soft Washing">
+      <img src="images/roof-cleaning-moss.jpg" alt="Roof Cleaning">
+      <img src="images/window-cleaning-clear.jpg" alt="Window Cleaning">
     </div>
   </section>
 
@@ -149,11 +199,6 @@
     </div>
     <div class="review">
       <div class="stars">★★★★★</div>
-      <p>"Professional, efficient, great communicators. I couldn’t be more pleased with their work!"</p>
-      <div class="reviewer">– maryksfavs</div>
-    </div>
-    <div class="review">
-      <div class="stars">★★★★★</div>
       <p>"Fabulous work! Reliable and honest. Our driveway turned out beautifully."</p>
       <div class="reviewer">– Dianne Stockwell</div>
     </div>
@@ -166,13 +211,12 @@
   <section class="substack">
     <h2>Subscribe to Our Mission Logs</h2>
     <p>Get seasonal cleaning tips, before/after stories, and homeowner advice from the crew at Blastoff Pressure Washing.</p>
-    <iframe src="https://blastoffpressurewashing.substack.com/embed" width="480" height="320" style="border:1px solid #EEE; background:white;" frameborder="0" scrolling="no"></iframe>
+    <iframe src="https://blastoffpressurewashing.substack.com/embed" width="100%" height="320" style="border:1px solid #EEE; background:white;" frameborder="0" scrolling="no"></iframe>
   </section>
 
-<footer style="text-align: center; background-color: #1a1a1a; color: white; padding: 1rem; font-size: 0.9rem;">
-  &copy; 2024 Blastoff Pressure Washing LLC – Based in Arlington, WA | Serving Snohomish & Skagit County
-</footer>
 
+
+  <a href="contact.html" class="cta-button sticky">🚀 Get a Free Quote</a>
 
   <script>
     const reviews = document.querySelectorAll('.review');
@@ -196,5 +240,8 @@
       showReview(currentReview);
     });
   </script>
+    <footer>
+    &copy; 2024 Blastoff Pressure Washing LLC – Based in Arlington, WA | Serving Snohomish & Skagit County
+  </footer>
 </body>
 </html>

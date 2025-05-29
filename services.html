@@ -4,12 +4,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Services | Blastoff Pressure Washing</title>
-  <link rel="icon" type="image/png" href="favicon.png">
-  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <link rel="stylesheet" href="/style.css">
   <script src="/assets/injectPartials.js" defer></script>
-  <script src="pricing/pricing.js" defer></script>
-  <script src="pricing/pricing.js?v=2" defer></script>
-    <meta charset="UTF-8" />
+  <script src="/pricing/pricing.js" defer></script>
   <style>
     :root {
       --blue: #1f6feb;
@@ -26,63 +24,15 @@
       color: var(--dark);
     }
 
-    .site-header {
-      background-color: var(--blue);
-      color: white;
-    }
-
-    .nav-bar {
-      display: flex;
-      justify-content: center;
-      padding: 0.7rem 1rem;
-    }
-
-    .nav-container {
-      display: flex;
-      gap: 2.5rem;
-    }
-
-    .nav-link {
-      color: white;
-      text-decoration: none;
-      font-weight: bold;
-      font-size: 1.1rem;
-    }
-
-    .nav-link:hover {
-      text-decoration: underline;
-    }
-
-    .site-logo {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 0.15rem 0;
-    }
-
-    .logo-img {
-      max-width: 180px;
-      transition: all 0.3s ease;
-    }
-
-    .logo-img.shrink {
-      max-width: 120px;
-    }
-
-    .tagline {
-      font-size: 0.9rem;
-      color: white;
-      margin-top: 0.3rem;
-    }
-
     main {
-      padding: 10vh 2rem 4rem;
+      padding: 8vh 1rem 4rem;
       text-align: center;
     }
 
     h1 {
-      margin-bottom: 0.5rem;
       color: var(--blue);
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
     }
 
     .intro-text {
@@ -92,16 +42,15 @@
 
     .grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 2rem;
-      margin-top: 2rem;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.5rem;
     }
 
     .card {
       background-color: white;
       border-radius: 12px;
       padding: 1rem;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
       text-align: left;
     }
 
@@ -113,6 +62,7 @@
 
     .card h3 {
       margin: 0.5rem 0;
+      color: var(--blue);
     }
 
     .card p {
@@ -136,84 +86,71 @@
       padding: 1rem;
       font-size: 0.9rem;
     }
-
-    @media (max-width: 768px) {
-      .logo-img {
-        max-width: 120px;
-      }
-
-      .nav-container {
-        flex-direction: column;
-        align-items: center;
-        gap: 1rem;
-      }
-    }
   </style>
 </head>
 <body>
+
   <div id="header"></div>
 
   <main>
-    <h1>What We Offer</h1> 
+    <h1>What We Offer</h1>
     <p class="intro-text">Exterior cleaning services for homes, roofs, windows, gutters, and more — delivered with care.</p>
 
     <div class="grid">
       <div class="card">
-        <img src="images/driveway-cleaning.jpg" alt="Driveway Cleaning">
+        <img src="/images/driveway-cleaning.jpg" alt="Driveway Cleaning">
         <h3>Pressure Washing</h3>
         <p>Restore curb appeal with a clean driveway.</p>
-        <p><strong id="driveway-cleaning-price"></strong></p>
-        <a href="service-pages/driveway-cleaning.html">Learn More →</a>
+        <p><strong id="driveway-cleaning-price">Loading...</strong></p>
+        <a href="/service-pages/driveway-cleaning.html">Learn More →</a>
       </div>
 
       <div class="card">
-        <img src="images/soft-washing-house.jpg" alt="Soft Washing">
+        <img src="/images/soft-washing-house.jpg" alt="Soft Washing">
         <h3>Soft Washing</h3>
         <p>Gentle siding and exterior cleaning.</p>
-        <p><strong id="soft-washing-price"></strong></p>
-        <a href="service-pages/soft-washing-arlington.html">Learn More →</a>
+        <p><strong id="soft-washing-price">Loading...</strong></p>
+        <a href="/service-pages/soft-washing-arlington.html">Learn More →</a>
       </div>
 
       <div class="card">
-        <img src="images/roof-cleaning-moss.jpg" alt="Roof Cleaning">
+        <img src="/images/roof-cleaning-moss.jpg" alt="Roof Cleaning">
         <h3>Roof Cleaning</h3>
         <p>Remove moss and organic buildup safely.</p>
-        <p><strong id="roof-cleaning-price"></strong></p>
-        <a href="service-pages/roof-cleaning-snohomish.html">Learn More →</a>
+        <p><strong id="roof-cleaning-price">Loading...</strong></p>
+        <a href="/service-pages/roof-cleaning-snohomish.html">Learn More →</a>
       </div>
 
       <div class="card">
-        <img src="images/window-cleaning-clear.jpg" alt="Window Cleaning">
+        <img src="/images/window-cleaning-clear.jpg" alt="Window Cleaning">
         <h3>Window Cleaning</h3>
         <p>Crystal clear windows, inside and out.</p>
-        <p><strong id="window-cleaning-price"></strong></p>
-        <a href="service-pages/window-cleaning-marysville.html">Learn More →</a>
+        <p><strong id="window-cleaning-price">Loading...</strong></p>
+        <a href="/service-pages/window-cleaning-marysville.html">Learn More →</a>
       </div>
 
       <div class="card">
-        <img src="images/gutter-cleaning.jpg" alt="Gutter Cleaning">
+        <img src="/images/gutter-cleaning.jpg" alt="Gutter Cleaning">
         <h3>Gutter Cleaning</h3>
         <p>Clear clogs and keep water flowing right.</p>
-        <p><strong id="gutter-cleaning-price"></strong></p>
-        <a href="service-pages/gutter-cleaning.html">Learn More →</a>
+        <p><strong id="gutter-cleaning-price">Loading...</strong></p>
+        <a href="/service-pages/gutter-cleaning.html">Learn More →</a>
       </div>
 
       <div class="card">
-        <img src="images/ac-unit-cleaning.jpg" alt="AC Unit Cleaning">
+        <img src="/images/ac-unit-cleaning.jpg" alt="AC Unit Cleaning">
         <h3>HVAC Unit Cleaning</h3>
         <p>Improve airflow and efficiency by removing built-up grime.</p>
-        <p><strong id="ac-unit-cleaning-price"></strong></p>
-        <a href="service-pages/ac-unit-cleaning.html">Learn More →</a>
+        <p><strong id="ac-unit-cleaning-price">Loading...</strong></p>
+        <a href="/service-pages/ac-unit-cleaning.html">Learn More →</a>
       </div>
     </div>
   </main>
 
-  <footer>
-    &copy; 2024 Blastoff Pressure Washing LLC – Based in Arlington, WA | Serving Snohomish & Skagit County
-  </footer>
+  <div id="footer"></div>
 
   <script>
-    function injectPrices() {
+    document.addEventListener("DOMContentLoaded", () => {
       const services = [
         { id: "soft-washing-price", name: "Soft Washing" },
         { id: "driveway-cleaning-price", name: "Driveway Cleaning" },
@@ -223,21 +160,12 @@
         { id: "ac-unit-cleaning-price", name: "AC Unit Cleaning" }
       ];
 
-      services.forEach(service => {
-        const el = document.getElementById(service.id);
-        if (el) {
-          el.textContent = pricing.getPrice(service.name);
-        }
-      });
-    }
-
-    window.addEventListener("DOMContentLoaded", () => {
-      injectPrices();
-
-      const logo = document.getElementById('logoBanner')?.querySelector('.logo-img');
-      if (logo) {
-        window.addEventListener('scroll', () => {
-          logo.classList.toggle('shrink', window.scrollY > 50);
+      if (typeof pricing !== "undefined") {
+        services.forEach(service => {
+          const el = document.getElementById(service.id);
+          if (el) {
+            el.textContent = pricing.getPrice(service.name);
+          }
         });
       }
     });

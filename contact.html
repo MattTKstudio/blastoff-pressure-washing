@@ -3,174 +3,112 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Services | Blastoff Pressure Washing</title>
-  <link rel="icon" type="image/png" href="favicon.png">
-  <link rel="stylesheet" href="style.css">
+  <title>Contact | Blastoff Pressure Washing</title>
+  <link rel="icon" type="image/png" href="/favicon.png" />
+  <link rel="stylesheet" href="/style.css" />
   <script src="/assets/injectPartials.js" defer></script>
-  <script src="pricing/pricing.js" defer></script>
-  <script src="pricing/pricing.js?v=2" defer></script>
-  <meta charset="UTF-8" />
   <style>
     :root {
-  --blue: #1f6feb;
-  --yellow: #f9c80e;
-  --grey: #C7C7C7;
-  --white: #ffffff;
-  --dark: #1a1a1a;
+      --blue: #1f6feb;
+      --yellow: #f9c80e;
+      --grey: #C7C7C7;
+      --white: #ffffff;
+      --dark: #1a1a1a;
       --font-header: 'Paytone One', sans-serif;
     }
 
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
-      background-color: var(--gray);
-      color: var(--dark);
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
+      font-family: sans-serif;
+      background-color: var(--grey);
     }
 
-    main {
-      flex: 1;
-      padding: 10vh 2rem 4rem;
+    h1, h2 {
+      font-family: var(--font-header);
       text-align: center;
-    }
-
-    .site-header {
-      background-color: var(--blue);
-    }
-
-    .nav-bar {
-      display: flex;
-      justify-content: center;
-      padding: 0.7rem 1rem;
-    }
-
-    .nav-container {
-      display: flex;
-      gap: 2.5rem;
-    }
-
-    .nav-link {
-      color: var(--white);
-      text-decoration: none;
-      font-weight: bold;
-      font-size: 1.1rem;
-    }
-
-    .nav-link:hover {
-      text-decoration: underline;
-    }
-
-    .site-logo {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 0.15rem 0;
-    }
-
-    .logo-img {
-      max-width: 180px;
-      transition: all 0.3s ease;
-    }
-
-    .logo-img.shrink {
-      max-width: 120px;
-    }
-
-    .tagline {
-      font-size: 0.9rem;
-      color: var(--white);
-      margin-top: 0.3rem;
+      color: var(--blue);
     }
 
     .contact-section {
-      margin: 3rem 0;
+      padding: 2rem 1rem;
+      text-align: center;
+      background-color: white;
     }
 
-    .contact-icon {
-      font-size: 4rem;
-      margin-bottom: 1rem;
+    .contact-methods {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+      margin-top: 2rem;
     }
 
-    .contact-section h2 {
-      font-family: 'Paytone One', sans-serif;
-      font-size: 2rem;
-      margin-bottom: 0.5rem;
+    .contact-box {
+      background-color: #E8F0FA;
+      padding: 1.5rem;
+      border-radius: 12px;
+      text-align: center;
+      width: 260px;
+      max-width: 90%;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
     }
 
-    .contact-section a {
-      color: var(--blue);
-      font-size: 1.4rem;
-      font-weight: bold;
+    .contact-box a {
       text-decoration: none;
+      color: var(--dark);
+      font-size: 1.1rem;
+      font-weight: bold;
+      display: block;
+      margin-top: 0.5rem;
     }
 
-    .contact-section a:hover {
-      text-decoration: underline;
+    .contact-box a:hover {
+      color: var(--blue);
+    }
+
+    .cta-button {
+      background-color: var(--yellow);
+      color: black;
+      font-weight: bold;
+      padding: 1rem 2rem;
+      border-radius: 10px;
+      text-decoration: none;
+      display: inline-block;
+      margin-top: 2rem;
     }
 
     footer {
-      background-color: var(--dark);
-      color: var(--white);
       text-align: center;
+      background-color: var(--dark);
+      color: white;
       padding: 1rem;
       font-size: 0.9rem;
-    }
-
-    @media (max-width: 768px) {
-      .logo-img {
-        max-width: 120px;
-      }
-
-      .contact-icon {
-        font-size: 3rem;
-      }
-
-      .contact-section h2 {
-        font-size: 1.6rem;
-      }
-
-      .contact-section a {
-        font-size: 1.2rem;
-      }
-
-      .nav-container {
-        flex-direction: column;
-        align-items: center;
-        gap: 1rem;
-      }
     }
   </style>
 </head>
 <body>
   <div id="header"></div>
 
-  <main>
-    <div class="contact-section">
-      <div class="contact-icon">✉️</div>
-      <h2>Email Us</h2>
-      <a href="mailto:321blastoffpressurewashing@gmail.com">321blastoffpressurewashing@gmail.com</a>
+  <section class="contact-section">
+    <h1>Contact Us</h1>
+    <p style="max-width: 600px; margin: auto;">We're happy to answer questions, provide quotes, or help you figure out what your property needs. Get in touch below:</p>
+
+    <div class="contact-methods">
+      <div class="contact-box">
+        📞 <h2>Call or Text Us</h2>
+        <h5 href="tel:3607706438">(360) 770-6438</h5>
+      </div>
+      <div class="contact-box">
+        📧 <h2>Email</h2>
+        <h5 href="mailto:321blastoffpressurewashing@gmail.com">321blastoffpressurewashing@gmail.com</h5>
+      </div>
     </div>
 
-    <div class="contact-section">
-      <div class="contact-icon">📞</div>
-      <h2>Call or Text</h2>
-      <a href="tel:+13607706438">(360) 770-6438</a>
-    </div>
-  </main>
+    <a href="mailto:321blastoffpressurewashing@gmail.com" class="cta-button">🚀 Send Us an Email</a>
+  </section>
 
   <footer>
     &copy; 2024 Blastoff Pressure Washing LLC – Based in Arlington, WA | Serving Snohomish & Skagit County
   </footer>
-
-  <script>
-    window.addEventListener('scroll', () => {
-      const logo = document.getElementById('logoBanner')?.querySelector('.logo-img');
-      if (logo) {
-        logo.classList.toggle('shrink', window.scrollY > 50);
-      }
-    });
-  </script>
 </body>
 </html>

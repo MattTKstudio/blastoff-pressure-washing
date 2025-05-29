@@ -1,72 +1,82 @@
-/*===========================
-  Root Variables & Theme
-===========================*/
 :root {
   --blue: #1f6feb;
   --yellow: #f9c80e;
-  --gray: #C7C7C7;
+  --grey: #C7C7C7;
   --white: #ffffff;
   --dark: #1a1a1a;
   --font-header: 'Paytone One', sans-serif;
 }
 
-/*===========================
-  Header Styles
-===========================*/
+body {
+  margin: 0;
+  font-family: sans-serif;
+  background-color: var(--grey);
+  color: var(--dark);
+}
+
+/* HEADER */
 .site-header {
   background-color: var(--blue);
   padding: 1rem;
+}
+
+.nav-wrapper {
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: space-between;
+  max-width: 1100px;
+  margin: auto;
+}
+
+.logo-img {
+  max-height: 50px;
+}
+
+.menu-toggle {
+  display: none;
+  font-size: 2rem;
+  color: white;
+  background: none;
+  border: none;
+  cursor: pointer;
 }
 
 .nav-container {
   display: flex;
-  flex-wrap: wrap;
-  gap: 1rem 2rem;
-  justify-content: center;
+  gap: 1.5rem;
 }
 
 .nav-link {
-  color: var(--white);
-  background-color: var(--blue);
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
   padding: 0.5rem 1rem;
   border-radius: 8px;
-  text-decoration: none;
-  font-size: 1.2rem;
-  font-weight: bold;
-  transition: background-color 0.2s ease, color 0.2s ease;
 }
 
 .nav-link:hover {
   background-color: var(--yellow);
-  color: var(--dark);
+  color: black;
 }
 
-/*===========================
-  Hero Section
-===========================*/
+/* HERO SECTION */
 .hero-section {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
   padding: 2rem;
-  background-color: var(--white);
+  background-color: white;
 }
 
 .hero-section img {
   width: 100%;
   max-width: 400px;
   border-radius: 12px;
-  display: block;
-  margin: auto;
 }
 
 .hero-callout {
   flex: 1;
-  min-width: 280px;
   padding: 1rem;
   text-align: center;
 }
@@ -78,38 +88,77 @@
   border-radius: 10px;
   font-weight: bold;
   text-decoration: none;
-  color: var(--dark);
+  color: black;
   display: inline-block;
   margin-top: 1rem;
-  transition: background-color 0.2s ease;
 }
 
 .cta-button:hover {
-  background-color: #ffe25e;
+  background-color: #ffd000;
 }
 
-/*===========================
-  Responsive Adjustments
-===========================*/
+/* CONTENT SECTIONS */
+section {
+  padding: 2rem;
+  text-align: center;
+}
+
+h1, h2 {
+  font-family: var(--font-header);
+  color: var(--blue);
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  background-color: var(--dark);
+  color: white;
+  padding: 1rem;
+  font-size: 0.9rem;
+}
+
+/* MOBILE NAVIGATION */
 @media (max-width: 768px) {
-  .hero-section {
-    flex-direction: column-reverse;
-    text-align: center;
+  .menu-toggle {
+    display: block;
   }
 
   .nav-container {
+    display: none;
     flex-direction: column;
-    align-items: center;
+    background-color: var(--blue);
+    position: absolute;
+    top: 4.5rem;
+    left: 1rem;
+    right: 1rem;
+    z-index: 10;
+    padding: 1rem;
+    border-radius: 12px;
     gap: 1rem;
   }
 
-  .nav-link {
-    font-size: 1rem;
-    padding: 0.5rem 1rem;
+  .nav-container.active {
+    display: flex;
+  }
+
+  .logo-img {
+    max-height: 45px;
   }
 
   .cta-button {
-    font-size: 1rem;
-    padding: 0.75rem 1.5rem;
+    font-size: 1.1rem;
+  }
+
+  .hero-section {
+    flex-direction: column;
+    padding: 1.5rem;
+  }
+
+  .hero-callout {
+    text-align: center;
+  }
+
+  .hero-section img {
+    margin-top: 1rem;
   }
 }
