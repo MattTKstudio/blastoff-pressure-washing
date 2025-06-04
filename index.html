@@ -6,9 +6,8 @@
   <title>Blastoff Pressure Washing | Home</title>
   <link rel="icon" type="image/png" href="favicon.png">
   <link rel="stylesheet" href="style.css">
-  <script src="/assets/injectPartials.js" defer></script>
+  <script src="assets/injectPartials.js" defer></script>
   <script src="pricing/pricing.js?v=2" defer></script>
-  
   <style>
     :root {
       --blue: #1f6feb;
@@ -36,13 +35,13 @@
       align-items: center;
       justify-content: center;
       padding: 2rem 1rem;
-      background-color: white;
+      background-color: var(--white);
+      text-align: center;
     }
 
     .hero-callout {
       flex: 1;
       min-width: 280px;
-      text-align: center;
       padding: 1rem;
     }
 
@@ -53,6 +52,7 @@
       width: 100%;
       border-radius: 12px;
       margin: 1rem auto;
+      display: block;
     }
 
     .cta-button {
@@ -130,17 +130,9 @@
       font-size: 0.9rem;
     }
 
-    /* Mobile adjustments */
     @media (max-width: 600px) {
       .hero-section {
         flex-direction: column;
-        text-align: center;
-      }
-
-      .hero-callout, .hero-section img {
-        flex: unset;
-        width: 100%;
-        padding: 0.5rem;
       }
 
       .services-block img {
@@ -159,28 +151,32 @@
   </style>
 </head>
 <body>
+
   <div id="header"></div>
 
+  <!-- Hero -->
   <section class="hero-section">
     <div class="hero-callout">
       <h1 style="font-size: 2.5rem; color: var(--blue);">Local. Reliable. Family-Run.</h1>
       <p>We clean roofs, windows, driveways, gutters, siding and more — with care and precision.</p>
       <a href="contact.html" class="cta-button">🚀 Get a Free Quote</a>
     </div>
-    <img src="images/matthew-james.jpg" alt="James and Matthew - BPW" />
+    <img src="images/matthew-james.webp" alt="James and Matthew - BPW Crew" loading="lazy" width="400">
   </section>
 
+  <!-- Services -->
   <section class="services-block">
     <h2 style="font-size: 2rem; color: var(--blue);">Our Services</h2>
     <p>Explore everything we do: roof, gutters, siding, windows and more!</p>
     <a href="services.html" class="cta-button">🔍 Go See All Services</a>
     <div class="services-grid">
-      <img src="images/soft-washing-house.jpg" alt="Soft Washing">
-      <img src="images/roof-cleaning-moss.jpg" alt="Roof Cleaning">
-      <img src="images/window-cleaning-clear.jpg" alt="Window Cleaning">
+      <img src="images/soft-washing-house.webp" alt="Soft Washing" loading="lazy">
+      <img src="images/roof-cleaning-moss.webp" alt="Roof Cleaning" loading="lazy">
+      <img src="images/window-cleaning-clear.webp" alt="Window Cleaning" loading="lazy">
     </div>
   </section>
 
+  <!-- Reviews -->
   <section class="review-carousel">
     <h2 style="font-size: 2rem;">5 Stars</h2>
     <div class="review active">
@@ -209,13 +205,18 @@
     </div>
   </section>
 
+  <!-- Substack Signup -->
   <section class="substack">
     <h2>Subscribe to Our Mission Logs</h2>
     <p>Get seasonal cleaning tips, before/after stories, and homeowner advice from the crew at Blastoff Pressure Washing.</p>
     <iframe src="https://blastoffpressurewashing.substack.com/embed" width="100%" height="320" style="border:1px solid #EEE; background:white;" frameborder="0" scrolling="no"></iframe>
   </section>
 
+  <footer>
+    &copy; 2024 Blastoff Pressure Washing LLC – Based in Arlington, WA | Serving Snohomish & Skagit County
+  </footer>
 
+  <!-- Reviews Script -->
   <script>
     const reviews = document.querySelectorAll('.review');
     let currentReview = 0;
@@ -238,8 +239,5 @@
       showReview(currentReview);
     });
   </script>
-    <footer>
-    &copy; 2024 Blastoff Pressure Washing LLC – Based in Arlington, WA | Serving Snohomish & Skagit County
-  </footer>
 </body>
 </html>

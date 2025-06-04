@@ -4,10 +4,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>AC Unit Cleaning | Blastoff Pressure Washing</title>
-  <link rel="icon" href="/favicon.png" type="image/png">
-  <link rel="stylesheet" href="/style.css">
-  <script src="/assets/injectPartials.js" defer></script>
-  <script src="/pricing/pricing.js?v=3" defer></script>
+  <link rel="icon" href="../favicon.png" type="image/png">
+  <link rel="stylesheet" href="../style.css">
+  <script src="../assets/injectPartials.js" defer></script>
+  <script src="../pricing/pricing.js?v=3" defer></script>
   <style>
     :root {
       --blue: #1f6feb;
@@ -32,6 +32,7 @@
       max-width: 600px;
       margin: auto;
       text-align: left;
+      padding-left: 1rem;
     }
 
     .cta-button {
@@ -43,6 +44,31 @@
       color: black;
       display: inline-block;
       margin-top: 1rem;
+    }
+
+    .section {
+      padding: 2rem;
+      text-align: center;
+    }
+
+    .hero-img {
+      width: 100%;
+      max-width: 400px;
+      border-radius: 12px;
+      display: block;
+      margin: auto;
+    }
+
+    .icon-blurb {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+      margin-top: 1rem;
+    }
+
+    .icon-blurb div {
+      max-width: 180px;
     }
 
     footer {
@@ -59,33 +85,39 @@
   <div id="header"></div>
 
   <!-- Hero Section -->
-  <section style="display: flex; flex-wrap: wrap; align-items: center; justify-content: center; padding: 2rem;">
+  <section class="section" style="display: flex; flex-wrap: wrap; align-items: center; justify-content: center;">
     <div style="flex: 1; min-width: 300px; padding: 1rem; text-align: center;">
       <h1 style="font-size: 2.5rem; color: #003366;">AC Unit Cleaning Done Right</h1>
       <p style="font-size: 1.2rem; max-width: 600px; margin: auto;">
         Clogged coils and dirty fins reduce cooling efficiency and raise energy bills. We keep your unit clean and your home cool.
       </p>
-      <a href="/contact.html" class="cta-button">🚀 Get a Free Quote</a>
+      <a href="../contact.html" class="cta-button">🚀 Get a Free Quote</a>
     </div>
     <div style="flex: 1; min-width: 300px; padding: 1rem;">
-      <img src="/images/ac-unit-cleaning.jpg" alt="AC Unit Cleaning" style="width: 100%; max-width: 400px; border-radius: 12px; display: block; margin: auto;" />
+      <img 
+        src="../images/ac-unit-cleaning.webp" 
+        alt="Professional AC Unit Cleaning" 
+        loading="lazy" 
+        width="400"
+        class="hero-img"
+      />
     </div>
   </section>
 
   <!-- Why Clean -->
-  <section style="background-color: white; padding: 2rem; text-align: center;">
+  <section class="section" style="background-color: white;">
     <h2 style="font-size: 2rem; color: #003366;">Why Clean Your AC Unit?</h2>
-    <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 2rem; margin-top: 1rem;">
+    <div class="icon-blurb">
       <div>💸 <strong>Lower Energy Bills</strong><br/>Dirty coils make your system work harder.</div>
       <div>❄️ <strong>Cool More Efficiently</strong><br/>Air flows freely through clean fins and fans.</div>
       <div>🛠 <strong>Prevent Costly Repairs</strong><br/>Reduce wear and tear on your compressor.</div>
     </div>
   </section>
 
-  <!-- How We Clean -->
-  <section style="background-color: #E8F0FA; padding: 2rem; text-align: center;">
+  <!-- Our Process -->
+  <section class="section" style="background-color: #E8F0FA;">
     <h2 style="font-size: 2rem; color: #003366;">Our Process</h2>
-    <ol style="list-style-position: inside;">
+    <ol>
       <li><strong>Visual Inspection</strong> – Check fins, lines, and airflow zones.</li>
       <li><strong>Debris Removal</strong> – Blow out leaves, dust, and insects.</li>
       <li><strong>Coil Cleaning</strong> – Spray and scrub for optimal heat exchange.</li>
@@ -94,24 +126,28 @@
   </section>
 
   <!-- Pricing -->
-  <section style="background-color: white; padding: 2rem; text-align: center;">
+  <section class="section" style="background-color: white;">
     <h2 style="font-size: 2rem; color: #003366;">Pricing</h2>
-    <p><strong>Standard Rate:</strong> <span id="AC Unit Cleaning">Loading...</span></p>
+    <p><strong>Standard Rate:</strong> <span id="ac-unit-cleaning-price">Loading...</span></p>
     <p style="max-width: 600px; margin: auto;">Price includes full outdoor unit cleaning. Multiple units? We offer discounted bundles for duplexes and multi-unit homes.</p>
   </section>
 
   <!-- Final CTA -->
-  <section style="background-color: var(--grey); padding: 2rem; text-align: center;">
+  <section class="section" style="background-color: var(--grey);">
     <h2 style="font-size: 2rem; color: #003366;">Breathe Easier. Run Cooler.</h2>
     <p>We’re a brother-owned local crew — clean, careful, and clear on pricing.</p>
-    <a href="/contact.html" class="cta-button">🚀 Get a Free Quote</a>
+    <a href="../contact.html" class="cta-button">🚀 Get a Free Quote</a>
   </section>
 
   <div id="footer"></div>
 
+  <footer>
+    &copy; 2024 Blastoff Pressure Washing LLC – Serving Arlington, WA and surrounding areas.
+  </footer>
+
   <script>
     document.addEventListener("DOMContentLoaded", () => {
-      const el = document.getElementById("AC Unit Cleaning");
+      const el = document.getElementById("ac-unit-cleaning-price");
       if (el && typeof pricing !== "undefined") {
         el.textContent = pricing.getPrice("AC Unit Cleaning");
       }

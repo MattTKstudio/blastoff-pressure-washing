@@ -4,10 +4,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Driveway Cleaning | Blastoff Pressure Washing</title>
-  <link rel="icon" href="/favicon.png" type="image/png">
-  <link rel="stylesheet" href="/style.css">
-  <script src="/assets/injectPartials.js" defer></script>
-  <script src="/pricing/pricing.js?v=3" defer></script>
+  <link rel="icon" href="../favicon.png" type="image/png">
+  <link rel="stylesheet" href="../style.css">
+  <script src="../assets/injectPartials.js" defer></script>
+  <script src="../pricing/pricing.js?v=3" defer></script>
   <style>
     :root {
       --blue: #1f6feb;
@@ -32,6 +32,7 @@
       max-width: 600px;
       margin: auto;
       text-align: left;
+      padding-left: 1rem;
     }
 
     .cta-button {
@@ -52,6 +53,31 @@
       padding: 1rem;
       font-size: 0.9rem;
     }
+
+    .section {
+      padding: 2rem;
+      text-align: center;
+    }
+
+    .hero-img {
+      width: 100%;
+      max-width: 400px;
+      border-radius: 12px;
+      display: block;
+      margin: auto;
+    }
+
+    .icon-blurb {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+      margin-top: 1rem;
+    }
+
+    .icon-blurb div {
+      max-width: 180px;
+    }
   </style>
 </head>
 <body>
@@ -59,59 +85,54 @@
   <div id="header"></div>
 
   <!-- Hero Section -->
-  <section style="display: flex; flex-wrap: wrap; align-items: center; justify-content: center; padding: 2rem;">
+  <section class="section" style="display: flex; flex-wrap: wrap; align-items: center; justify-content: center;">
     <div style="flex: 1; min-width: 300px; padding: 1rem; text-align: center;">
       <h1 style="font-size: 2.5rem; color: #003366;">Pressure Wash That Driveway 🚿</h1>
       <p style="font-size: 1.2rem; max-width: 600px; margin: auto;">
         Say goodbye to oil stains, algae, and grime. We restore concrete to a like-new shine with care and consistency.
       </p>
-      <a href="/contact.html" class="cta-button">🚀 Get a Free Quote</a>
+      <a href="../contact.html" class="cta-button">🚀 Get a Free Quote</a>
     </div>
     <div style="flex: 1; min-width: 300px; padding: 1rem;">
-      <img src="/images/driveway-cleaning.jpg" alt="Driveway Cleaning" style="width: 100%; max-width: 400px; border-radius: 12px; display: block; margin: auto;" />
+      <img 
+        src="../images/driveway-cleaning.webp" 
+        alt="Driveway cleaning in progress with pressure washer" 
+        loading="lazy" 
+        width="400"
+        class="hero-img"
+      />
     </div>
   </section>
 
   <!-- Why Clean -->
-  <section style="background-color: white; padding: 2rem; text-align: center;">
+  <section class="section" style="background-color: white;">
     <h2 style="font-size: 2rem; color: #003366;">Why Clean Your Driveway?</h2>
-    <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 2rem; margin-top: 1rem;">
+    <div class="icon-blurb">
       <div>🧼 <strong>Stain Removal</strong><br/>Get rid of oil spots, dirt, and algae.</div>
       <div>🏡 <strong>Boost Curb Appeal</strong><br/>Your home’s first impression starts with the driveway.</div>
       <div>🛡️ <strong>Prevent Damage</strong><br/>Clean concrete lasts longer and is safer to walk on.</div>
     </div>
   </section>
 
-  <!-- How We Clean -->
-  <section style="background-color: #E8F0FA; padding: 2rem; text-align: center;">
-    <h2 style="font-size: 2rem; color: #003366;">How We Clean</h2>
-    <ol style="list-style-position: inside;">
-      <li><strong>Debris Blow-Off</strong> – We start by clearing loose debris.</li>
-      <li><strong>Eco Soap Pre-Treat</strong> – Lifts stains from the surface.</li>
-      <li><strong>High-Pressure Surface Clean</strong> – Professional-grade results.</li>
-      <li><strong>Detail Spray Edges</strong> – No missed corners or edges.</li>
-    </ol>
-  </section>
-
   <!-- Pricing -->
-  <section style="background-color: white; padding: 2rem; text-align: center;">
+  <section class="section" style="background-color: white;">
     <h2 style="font-size: 2rem; color: #003366;">Pricing</h2>
-    <p><strong>Standard Rate:</strong> <span id="Pressure Washing">Loading...</span></p>
+    <p><strong>Standard Rate:</strong> <span id="pressure-washing-price">Loading...</span></p>
     <p style="max-width: 600px; margin: auto;">We charge by square foot. Most driveways fall between 400–1200 sq ft. Send us a photo and we’ll quote fast!</p>
   </section>
 
   <!-- Final CTA -->
-  <section style="background-color: var(--grey); padding: 2rem; text-align: center;">
+  <section class="section" style="background-color: var(--grey);">
     <h2 style="font-size: 2rem; color: #003366;">Brother-Owned. Detail-Driven.</h2>
     <p>We treat every job like it's our own home. Fast replies, clear pricing, and no nonsense.</p>
-    <a href="/contact.html" class="cta-button">🚀 Get a Free Quote</a>
+    <a href="../contact.html" class="cta-button">🚀 Get a Free Quote</a>
   </section>
 
   <div id="footer"></div>
 
   <script>
     document.addEventListener("DOMContentLoaded", () => {
-      const el = document.getElementById("Pressure Washing");
+      const el = document.getElementById("pressure-washing-price");
       if (el && typeof pricing !== "undefined") {
         el.textContent = pricing.getPrice("Pressure Washing");
       }

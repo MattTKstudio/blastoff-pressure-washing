@@ -4,10 +4,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Gutter Cleaning | Blastoff Pressure Washing</title>
-  <link rel="icon" href="/favicon.png" type="image/png">
-  <link rel="stylesheet" href="/style.css">
-  <script src="/assets/injectPartials.js" defer></script>
-  <script src="/pricing/pricing.js?v=3" defer></script>
+  <link rel="icon" href="../favicon.png" type="image/png">
+  <link rel="stylesheet" href="../style.css">
+  <script src="../assets/injectPartials.js" defer></script>
+  <script src="../pricing/pricing.js?v=3" defer></script>
   <style>
     :root {
       --blue: #1f6feb;
@@ -32,6 +32,7 @@
       max-width: 600px;
       margin: auto;
       text-align: left;
+      padding-left: 1rem;
     }
 
     .cta-button {
@@ -43,6 +44,31 @@
       color: black;
       display: inline-block;
       margin-top: 1rem;
+    }
+
+    .section {
+      padding: 2rem;
+      text-align: center;
+    }
+
+    .hero-img {
+      width: 100%;
+      max-width: 400px;
+      border-radius: 12px;
+      display: block;
+      margin: auto;
+    }
+
+    .icon-blurb {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+      margin-top: 1rem;
+    }
+
+    .icon-blurb div {
+      max-width: 180px;
     }
 
     footer {
@@ -59,23 +85,29 @@
   <div id="header"></div>
 
   <!-- Hero Section -->
-  <section style="display: flex; flex-wrap: wrap; align-items: center; justify-content: center; padding: 2rem;">
+  <section class="section" style="display: flex; flex-wrap: wrap; align-items: center; justify-content: center;">
     <div style="flex: 1; min-width: 300px; padding: 1rem; text-align: center;">
       <h1 style="font-size: 2.5rem; color: #003366;">Gutters Cleaned. Homes Protected.</h1>
       <p style="font-size: 1.2rem; max-width: 600px; margin: auto;">
         Clogged gutters lead to water damage, rot, and big bills. We clear them fast and leave no mess behind.
       </p>
-      <a href="/contact.html" class="cta-button">🚀 Get a Free Quote</a>
+      <a href="../contact.html" class="cta-button">🚀 Get a Free Quote</a>
     </div>
     <div style="flex: 1; min-width: 300px; padding: 1rem;">
-      <img src="/images/gutter-cleaning.jpg" alt="Gutter Cleaning" style="width: 100%; max-width: 400px; border-radius: 12px; display: block; margin: auto;" />
+      <img 
+        src="../images/gutter-cleaning.webp" 
+        alt="Gutter Cleaning in Progress" 
+        loading="lazy" 
+        width="400"
+        class="hero-img"
+      />
     </div>
   </section>
 
   <!-- Why Clean -->
-  <section style="background-color: white; padding: 2rem; text-align: center;">
+  <section class="section" style="background-color: white;">
     <h2 style="font-size: 2rem; color: #003366;">Why Clean Your Gutters?</h2>
-    <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 2rem; margin-top: 1rem;">
+    <div class="icon-blurb">
       <div>💧 <strong>Prevent Overflow</strong><br/>Avoid flooding around your home’s foundation.</div>
       <div>🛠 <strong>Protect Fascia</strong><br/>Clogs trap moisture that causes wood rot.</div>
       <div>🐦 <strong>Stop Pests</strong><br/>Clear gutters deter nesting birds and insects.</div>
@@ -83,9 +115,9 @@
   </section>
 
   <!-- How We Clean -->
-  <section style="background-color: #E8F0FA; padding: 2rem; text-align: center;">
+  <section class="section" style="background-color: #E8F0FA;">
     <h2 style="font-size: 2rem; color: #003366;">How We Clean</h2>
-    <ol style="list-style-position: inside;">
+    <ol>
       <li><strong>Debris Scoop</strong> – We remove all leaves and clogs by hand.</li>
       <li><strong>Rinse & Flush</strong> – Test downspouts for smooth flow.</li>
       <li><strong>Bag & Haul Away</strong> – No debris left behind on your lawn.</li>
@@ -94,24 +126,28 @@
   </section>
 
   <!-- Pricing -->
-  <section style="background-color: white; padding: 2rem; text-align: center;">
+  <section class="section" style="background-color: white;">
     <h2 style="font-size: 2rem; color: #003366;">Pricing</h2>
-    <p><strong>Standard Rate:</strong> <span id="Gutter Cleaning">Loading...</span></p>
+    <p><strong>Standard Rate:</strong> <span id="gutter-cleaning-price">Loading...</span></p>
     <p style="max-width: 600px; margin: auto;">Pricing is based on total linear feet and gutter accessibility. Text us a photo or address to get a custom quote in minutes.</p>
   </section>
 
   <!-- Final CTA -->
-  <section style="background-color: var(--grey); padding: 2rem; text-align: center;">
+  <section class="section" style="background-color: var(--grey);">
     <h2 style="font-size: 2rem; color: #003366;">Clean Gutters. Clear Mind.</h2>
     <p>We’re a brother-owned local business. Honest quotes, real results, no hassle.</p>
-    <a href="/contact.html" class="cta-button">🚀 Get a Free Quote</a>
+    <a href="../contact.html" class="cta-button">🚀 Get a Free Quote</a>
   </section>
 
   <div id="footer"></div>
 
+  <footer>
+    &copy; 2024 Blastoff Pressure Washing LLC – Serving Arlington, WA and surrounding areas.
+  </footer>
+
   <script>
     document.addEventListener("DOMContentLoaded", () => {
-      const el = document.getElementById("Gutter Cleaning");
+      const el = document.getElementById("gutter-cleaning-price");
       if (el && typeof pricing !== "undefined") {
         el.textContent = pricing.getPrice("Gutter Cleaning");
       }

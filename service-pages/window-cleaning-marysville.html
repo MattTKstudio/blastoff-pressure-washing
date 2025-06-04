@@ -4,10 +4,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Window Cleaning | Blastoff Pressure Washing</title>
-  <link rel="icon" href="/favicon.png" type="image/png">
-  <link rel="stylesheet" href="/style.css">
-  <script src="/assets/injectPartials.js" defer></script>
-  <script src="/pricing/pricing.js?v=3" defer></script>
+  <link rel="icon" href="../favicon.png" type="image/png">
+  <link rel="stylesheet" href="../style.css">
+  <script src="../assets/injectPartials.js" defer></script>
+  <script src="../pricing/pricing.js?v=3" defer></script>
   <style>
     :root {
       --blue: #1f6feb;
@@ -26,6 +26,59 @@
 
     h1, h2 {
       font-family: var(--font-header);
+    }
+
+    .cta-button {
+      background-color: var(--yellow);
+      padding: 0.75rem 1.5rem;
+      border-radius: 8px;
+      font-weight: bold;
+      text-decoration: none;
+      color: black;
+      display: inline-block;
+      margin-top: 1rem;
+    }
+
+    .hero-section {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem 1rem;
+      background-color: white;
+      gap: 2rem;
+    }
+
+    .hero-callout {
+      flex: 1;
+      min-width: 280px;
+      text-align: center;
+      padding: 1rem;
+    }
+
+    .hero-section img {
+      flex: 1;
+      min-width: 280px;
+      max-width: 400px;
+      width: 100%;
+      border-radius: 12px;
+    }
+
+    .section {
+      padding: 2rem 1rem;
+      text-align: center;
+    }
+
+    .icon-blurb {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+      margin-top: 1rem;
+    }
+
+    .icon-blurb div {
+      max-width: 180px;
     }
 
     table {
@@ -51,6 +104,11 @@
       text-align: left;
     }
 
+    ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
     footer {
       background-color: var(--dark);
       color: var(--white);
@@ -62,7 +120,6 @@
 </head>
 <body>
 
-  <!-- Injected Header -->
   <div id="header"></div>
 
   <!-- Hero Section -->
@@ -70,15 +127,15 @@
     <div class="hero-callout">
       <h1 style="font-size: 2.5rem; color: #6c869f;">Clear Windows. Clean Conscience.</h1>
       <p style="font-size: 1.2rem;">Crystal-clear results from a brother-owned crew that cares.</p>
-      <a href="/contact.html" class="cta-button">🚀 Get a Free Quote</a>
+      <a href="../contact.html" class="cta-button">🚀 Get a Free Quote</a>
     </div>
-    <img src="/images/window-cleaning-clear.jpg" alt="Window Cleaning">
+    <img src="../images/window-cleaning-clear.webp" alt="Window Cleaning" loading="lazy">
   </section>
 
   <!-- Why Clean -->
-  <section style="background-color: white; padding: 2rem; text-align: center;">
+  <section class="section" style="background-color: white;">
     <h2 style="font-size: 2rem; color: #003366;">Why Clean Your Windows?</h2>
-    <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 2rem; margin-top: 1rem;">
+    <div class="icon-blurb">
       <div>🏡 <strong>Curb Appeal Boost</strong><br/>Make your home look fresh and cared for.</div>
       <div>💡 <strong>More Natural Light</strong><br/>Enjoy brighter interiors and clearer views.</div>
       <div>🧼 <strong>Protect Your Glass</strong><br/>Dirt buildup can etch and damage over time.</div>
@@ -86,7 +143,7 @@
   </section>
 
   <!-- How We Clean -->
-  <section style="background-color: #E8F0FA; padding: 2rem; text-align: center;">
+  <section class="section" style="background-color: #E8F0FA;">
     <h2 style="font-size: 2rem; color: #003366;">How We Clean</h2>
     <ol style="list-style-position: inside;">
       <li><strong>Pre-Rinse & Inspection</strong> – Remove dust and debris</li>
@@ -98,42 +155,43 @@
   </section>
 
   <!-- Pricing Table -->
-  <section style="background-color: white; padding: 2rem; text-align: center;">
+  <section class="section" style="background-color: white;">
     <h2 style="font-size: 2rem; color: #003366;">Pricing Guide</h2>
     <table>
       <tr><th>Window Type</th><th>Size Guide</th><th>Price Range</th></tr>
-      <tr><td>Small / Pane</td><td>Up to 3x3 ft</td><td>$6 – $8</td></tr>
-      <tr><td>Standard</td><td>Up to 3x5 ft</td><td>$8 – $10</td></tr>
-      <tr><td>Large / Bay</td><td>Over 3x5 ft</td><td>$12 – $20+</td></tr>
+      <tr><td>Small / Pane</td><td>Up to 3×3 ft</td><td>$6 – $8</td></tr>
+      <tr><td>Standard</td><td>Up to 3×5 ft</td><td>$8 – $10</td></tr>
+      <tr><td>Large / Bay</td><td>Over 3×5 ft</td><td>$12 – $20+</td></tr>
     </table>
     <p><strong>Minimum Service:</strong> $80 (covers up to 10 small windows)</p>
-    <p><strong>Standard Rate:</strong> <span id="Window Cleaning">Loading...</span></p>
+    <p><strong>Standard Rate:</strong> <span id="window-cleaning-price">Loading...</span></p>
   </section>
 
   <!-- Add-Ons -->
-  <section style="background-color: #F8F8F8; padding: 2rem; text-align: center;">
+  <section class="section" style="background-color: #F8F8F8;">
     <h2 style="font-size: 2rem; color: #003366;">Add-On Services</h2>
-    <ul style="list-style: none; padding: 0;">
+    <ul>
       <li><strong>Screen Cleaning:</strong> +$2 per screen</li>
       <li><strong>Hard Water Removal:</strong> +$5 per window</li>
     </ul>
   </section>
 
-
-
-  <!-- Final Call to Action -->
-  <section style="background-color: var(--grey); padding: 2rem; text-align: center;">
+  <!-- Final CTA -->
+  <section class="section" style="background-color: var(--grey);">
     <h2 style="font-size: 2rem; color: #003366;">We’ll Make It Shine ✨</h2>
     <p>Text us a photo of your home, or let us know your window count — we’ll shoot back a quote quickly.</p>
-    <a href="/contact.html" class="cta-button">🚀 Get a Free Quote</a>
+    <a href="../contact.html" class="cta-button">🚀 Get a Free Quote</a>
   </section>
 
-  <!-- Injected Footer -->
   <div id="footer"></div>
+
+  <footer>
+    &copy; 2024 Blastoff Pressure Washing LLC – Based in Arlington, WA | Serving Snohomish & Skagit Counties
+  </footer>
 
   <script>
     document.addEventListener("DOMContentLoaded", () => {
-      const el = document.getElementById("Window Cleaning");
+      const el = document.getElementById("window-cleaning-price");
       if (el && typeof pricing !== "undefined") {
         el.textContent = pricing.getPrice("Window Cleaning");
       }
