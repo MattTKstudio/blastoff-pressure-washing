@@ -1,81 +1,77 @@
-// pricing/pricing.js — Central pricing configuration and utility for BPW website
+// pricing/pricing.js — Central pricing configuration and injection system for BPW site
 
 const pricing = {
   services: {
     "Driveway Cleaning": {
-      pricePerSqFt: .5,
-      unit: "sq ft",
+      type: "sqFt",
+      price: 0.5,
       sale: false,
       salePrice: 0.35
     },
     "Soft Washing": {
-      pricePerSqFt: .5,
-      unit: "sq ft",
+      type: "sqFt",
+      price: 0.5,
       sale: false,
       salePrice: 0.35
     },
     "Roof Cleaning": {
-      pricePerSqFt: 0.5,
-      unit: "sq ft",
+      type: "sqFt",
+      price: 0.5,
       sale: false,
       salePrice: 0.35
     },
     "Gutter Cleaning": {
-      pricePerLinearFt: 1.0,
-      unit: "linear ft",
+      type: "linearFt",
+      price: 1.0,
       sale: false,
       salePrice: 0.35
     },
     "Window Cleaning": {
-      pricePerWindow: 7.0,
-      unit: "per window",
+      type: "perWindow",
+      price: 7.0,
       sale: false,
       salePrice: 5.0
     },
     "AC Unit Cleaning": {
-      pricePerUnit: 85.0,
-      unit: "per unit",
+      type: "perUnit",
+      price: 85.0,
       sale: true,
       salePrice: 60.0
     }
   },
 
+  units: {
+    sqFt: "sq ft",
+    linearFt: "linear ft",
+    perWindow: "per window",
+    perUnit: "per unit"
+  },
+
   /**
-   * Get formatted price string for a given service
-   * @param {string} serviceName - The name of the service
-   * @returns {string} - A price string or "Pricing unavailable"
+   * Returns formatted price string for a given service name.
+   * @param {string} serviceName
+   * @returns {string}
    */
   getPrice(serviceName) {
     const service = this.services[serviceName];
     if (!service) return "Pricing unavailable";
 
-    // Show sale price if applicable
-    if (service.sale && service.salePrice) {
-      return `$${service.salePrice.toFixed(2)} ${service.unit} (sale)`;
+    const unitLabel = this.units[service.type] || "";
+    const basePrice = service.price;
+    const salePrice = service.sale ? service.salePrice : null;
+
+    if (salePrice) {
+      return `$${salePrice.toFixed(2)} ${unitLabel} (sale)`;
     }
 
-    // Determine pricing format
-    if ("pricePerSqFt" in service) {
-      return `$${service.pricePerSqFt.toFixed(2)} ${service.unit}`;
-    }
-    if ("pricePerLinearFt" in service) {
-      return `$${service.pricePerLinearFt.toFixed(2)} ${service.unit}`;
-    }
-    if ("pricePerWindow" in service) {
-      return `$${service.pricePerWindow.toFixed(2)} ${service.unit}`;
-    }
-    if ("pricePerUnit" in service) {
-      return `$${service.pricePerUnit.toFixed(2)} ${service.unit}`;
-    }
-
-    return "Contact us for pricing";
+    return `$${basePrice.toFixed(2)} ${unitLabel}`;
   },
 
   /**
-   * Inject prices into the DOM based on expected element IDs
+   * Injects prices into the DOM using known IDs for each service
    */
   injectPrices() {
-    const serviceToId = {
+    const ids = {
       "Soft Washing": "soft-washing-price",
       "Driveway Cleaning": "driveway-cleaning-price",
       "Roof Cleaning": "roof-cleaning-price",
@@ -84,16 +80,16 @@ const pricing = {
       "AC Unit Cleaning": "ac-unit-cleaning-price"
     };
 
-    for (const [service, id] of Object.entries(serviceToId)) {
-      const el = document.getElementById(id);
+    for (const [serviceName, elementId] of Object.entries(ids)) {
+      const el = document.getElementById(elementId);
       if (el) {
-        el.textContent = this.getPrice(service);
+        el.textContent = this.getPrice(serviceName);
       }
     }
   }
 };
 
-// Automatically inject prices on page load
+// Inject prices once the DOM is fully loaded
 window.addEventListener("DOMContentLoaded", () => {
   pricing.injectPrices();
 });

@@ -20,26 +20,50 @@
 
     body {
       margin: 0;
-      font-family: sans-serif;
+      font-family: 'Segoe UI', sans-serif;
       background-color: var(--grey);
       line-height: 1.6;
+      scroll-behavior: smooth;
     }
 
     h1, h2 {
       font-family: var(--font-header);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      text-align: center;
+    }
+
+    .cta-button {
+      background-color: var(--yellow);
+      padding: 1rem 2rem;
+      font-size: 1.1rem;
+      border-radius: 999px;
+      font-weight: bold;
+      text-decoration: none;
+      color: black;
+      display: inline-block;
+      margin-top: 1rem;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      transition: transform 0.2s ease;
+    }
+
+    .cta-button:hover {
+      transform: scale(1.05);
     }
 
     .hero-section {
+      background: linear-gradient(to right, #dff2ff, #f9f9f9);
       display: flex;
       flex-wrap: wrap;
       align-items: center;
       justify-content: center;
-      padding: 2rem 1rem;
-      background-color: var(--white);
+      gap: 2rem;
+      padding: 3rem 1rem;
       text-align: center;
     }
 
     .hero-callout {
+      animation: fadeInUp 1s ease forwards;
       flex: 1;
       min-width: 280px;
       padding: 1rem;
@@ -50,32 +74,18 @@
       min-width: 280px;
       max-width: 400px;
       width: 100%;
-      border-radius: 12px;
-      margin: 1rem auto;
-      display: block;
-    }
-
-    .cta-button {
-      background-color: var(--yellow);
-      padding: 1rem 2rem;
-      font-size: 1.1rem;
-      border-radius: 10px;
-      font-weight: bold;
-      text-decoration: none;
-      color: black;
-      display: inline-block;
-      margin-top: 1rem;
+      border-radius: 18px;
+      animation: fadeIn 2s ease forwards;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.1);
     }
 
     .services-block {
       background-color: #E8F0FA;
-      padding: 2rem 1rem;
-      text-align: center;
+      padding: 3rem 1rem;
     }
 
     .services-block img {
-      width: 45%;
-      max-width: 150px;
+      width: 100px;
       border-radius: 8px;
     }
 
@@ -84,7 +94,7 @@
       flex-wrap: wrap;
       gap: 1rem;
       justify-content: center;
-      margin-top: 1rem;
+      margin-top: 2rem;
     }
 
     .review-carousel {
@@ -118,7 +128,7 @@
 
     .substack {
       background-color: var(--grey);
-      padding: 2rem 1rem;
+      padding: 3rem 1rem;
       text-align: center;
     }
 
@@ -130,23 +140,14 @@
       font-size: 0.9rem;
     }
 
-    @media (max-width: 600px) {
-      .hero-section {
-        flex-direction: column;
-      }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(40px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
 
-      .services-block img {
-        width: 100px;
-      }
-
-      .cta-button.sticky {
-        position: fixed;
-        bottom: 10px;
-        left: 50%;
-        transform: translateX(-50%);
-        z-index: 999;
-        box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-      }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
     }
   </style>
 </head>
@@ -157,7 +158,7 @@
   <!-- Hero -->
   <section class="hero-section">
     <div class="hero-callout">
-      <h1 style="font-size: 2.5rem; color: var(--blue);">Local. Reliable. Family-Run.</h1>
+      <h1>Local. Reliable. Brother-Owned.</h1>
       <p>We clean roofs, windows, driveways, gutters, siding and more — with care and precision.</p>
       <a href="contact.html" class="cta-button">🚀 Get a Free Quote</a>
     </div>
@@ -166,7 +167,7 @@
 
   <!-- Services -->
   <section class="services-block">
-    <h2 style="font-size: 2rem; color: var(--blue);">Our Services</h2>
+    <h2>Our Services</h2>
     <p>Explore everything we do: roof, gutters, siding, windows and more!</p>
     <a href="services.html" class="cta-button">🔍 Go See All Services</a>
     <div class="services-grid">
@@ -178,7 +179,7 @@
 
   <!-- Reviews -->
   <section class="review-carousel">
-    <h2 style="font-size: 2rem;">5 Stars</h2>
+    <h2>5 Stars</h2>
     <div class="review active">
       <div class="stars">★★★★★</div>
       <p>"Blast Off Pressure Washing did an exceptional job beautifying the Church and School campus... Fast, professional, and courteous."</p>

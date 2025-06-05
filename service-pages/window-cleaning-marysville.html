@@ -12,7 +12,7 @@
     :root {
       --blue: #1f6feb;
       --yellow: #f9c80e;
-      --grey: #C7C7C7;
+      --grey: #F3F3F3;
       --white: #ffffff;
       --dark: #1a1a1a;
       --font-header: 'Paytone One', sans-serif;
@@ -20,77 +20,97 @@
 
     body {
       margin: 0;
-      font-family: sans-serif;
+      font-family: 'Segoe UI', sans-serif;
       background-color: var(--grey);
+      scroll-behavior: smooth;
     }
 
     h1, h2 {
       font-family: var(--font-header);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-size: clamp(2rem, 5vw, 3rem);
     }
 
     .cta-button {
       background-color: var(--yellow);
-      padding: 0.75rem 1.5rem;
-      border-radius: 8px;
+      padding: 1rem 2rem;
+      border-radius: 999px;
       font-weight: bold;
+      font-size: 1.1rem;
       text-decoration: none;
       color: black;
       display: inline-block;
-      margin-top: 1rem;
+      margin-top: 1.5rem;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, background 0.3s ease;
+    }
+
+    .cta-button:hover {
+      transform: scale(1.05);
+      background-color: #ffdd57;
+    }
+
+    section {
+      padding: 4rem 1.5rem;
+      text-align: center;
     }
 
     .hero-section {
+      background: radial-gradient(circle at center, #dff2ff, #f9f9f9);
       display: flex;
-      flex-wrap: wrap;
+      flex-direction: column-reverse;
       align-items: center;
       justify-content: center;
-      padding: 2rem 1rem;
-      background-color: white;
       gap: 2rem;
     }
 
     .hero-callout {
-      flex: 1;
-      min-width: 280px;
-      text-align: center;
-      padding: 1rem;
+      animation: fadeInUp 1.5s ease forwards;
     }
 
     .hero-section img {
-      flex: 1;
-      min-width: 280px;
-      max-width: 400px;
       width: 100%;
-      border-radius: 12px;
-    }
-
-    .section {
-      padding: 2rem 1rem;
-      text-align: center;
+      max-width: 420px;
+      border-radius: 18px;
+      animation: fadeIn 2s ease forwards;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.1);
     }
 
     .icon-blurb {
       display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
+      flex-direction: column;
+      align-items: center;
       gap: 2rem;
-      margin-top: 1rem;
+      margin-top: 2rem;
     }
 
     .icon-blurb div {
-      max-width: 180px;
+      max-width: 300px;
+      background: #fff;
+      padding: 1.5rem;
+      border-radius: 14px;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.06);
+      transition: transform 0.4s ease;
+    }
+
+    .icon-blurb div:hover {
+      transform: scale(1.05);
     }
 
     table {
       width: 100%;
       max-width: 600px;
-      margin: auto;
+      margin: 2rem auto;
       border-collapse: collapse;
+      background: #fff;
+      border-radius: 10px;
+      overflow: hidden;
     }
 
     th, td {
       border: 1px solid #ccc;
-      padding: 0.75rem;
+      padding: 1rem;
     }
 
     th {
@@ -102,11 +122,12 @@
       max-width: 600px;
       margin: auto;
       text-align: left;
+      padding-left: 1.5rem;
     }
 
-    ul {
-      list-style: none;
-      padding-left: 0;
+    ul li::before {
+      content: '✨';
+      margin-right: 0.5rem;
     }
 
     footer {
@@ -116,70 +137,84 @@
       padding: 1rem;
       font-size: 0.9rem;
     }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(40px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @media (min-width: 768px) {
+      .hero-section {
+        flex-direction: row;
+        text-align: left;
+        padding: 4rem;
+      }
+      .icon-blurb {
+        flex-direction: row;
+        justify-content: center;
+      }
+    }
   </style>
 </head>
 <body>
-
   <div id="header"></div>
 
-  <!-- Hero Section -->
   <section class="hero-section">
     <div class="hero-callout">
-      <h1 style="font-size: 2.5rem; color: #6c869f;">Clear Windows. Clean Conscience.</h1>
-      <p style="font-size: 1.2rem;">Crystal-clear results from a brother-owned crew that cares.</p>
-      <a href="../contact.html" class="cta-button">🚀 Get a Free Quote</a>
+      <h1>✨ Crystal Clear Every Time ✨</h1>
+      <p style="font-size: 1.25rem; max-width: 500px; margin: auto;">Windows so clean you’ll think we removed the glass.</p>
+      <a href="../contact.html" class="cta-button">🚀 Let’s Clean WA</a>
     </div>
     <img src="../images/window-cleaning-clear.webp" alt="Window Cleaning" loading="lazy">
   </section>
 
-  <!-- Why Clean -->
-  <section class="section" style="background-color: white;">
-    <h2 style="font-size: 2rem; color: #003366;">Why Clean Your Windows?</h2>
+  <section style="background-color: white;">
+    <h2>Why Window Cleaning?</h2>
     <div class="icon-blurb">
-      <div>🏡 <strong>Curb Appeal Boost</strong><br/>Make your home look fresh and cared for.</div>
-      <div>💡 <strong>More Natural Light</strong><br/>Enjoy brighter interiors and clearer views.</div>
-      <div>🧼 <strong>Protect Your Glass</strong><br/>Dirt buildup can etch and damage over time.</div>
+      <div>🏡 <strong>Curb Appeal</strong><br/>A bright home stands out on every street.</div>
+      <div>💡 <strong>Light In, Mood Up</strong><br/>Let the sunshine flood in — naturally.</div>
+      <div>🛡 <strong>Protect Your Glass</strong><br/>Prevent etching from dirt and debris.</div>
     </div>
   </section>
 
-  <!-- How We Clean -->
-  <section class="section" style="background-color: #E8F0FA;">
-    <h2 style="font-size: 2rem; color: #003366;">How We Clean</h2>
-    <ol style="list-style-position: inside;">
-      <li><strong>Pre-Rinse & Inspection</strong> – Remove dust and debris</li>
-      <li><strong>Eco-Safe Soap Scrub</strong> – Gentle, effective suds</li>
-      <li><strong>Precision Squeegee Finish</strong> – No streaks, no smears</li>
-      <li><strong>Frame & Sill Detailing</strong> – Final polish, zero drips</li>
-      <li><strong>Add-ons Available</strong> – Screens, coating, spot-removal</li>
+  <section style="background-color: #E8F0FA;">
+    <h2>Our 5-Step Shine Method</h2>
+    <ol>
+      <li><strong>Dust & Debris Sweep</strong> – We start fresh with a clear surface.</li>
+      <li><strong>Eco-Friendly Soap Scrub</strong> – Safe for glass, pets, and soil.</li>
+      <li><strong>Squeegee Finish</strong> – Expert touch leaves no streak behind.</li>
+      <li><strong>Frame & Sill Detail</strong> – Every detail matters.</li>
+      <li><strong>Add-ons Optional</strong> – Screens, water spots, or coating? Just ask.</li>
     </ol>
   </section>
 
-  <!-- Pricing Table -->
-  <section class="section" style="background-color: white;">
-    <h2 style="font-size: 2rem; color: #003366;">Pricing Guide</h2>
+  <section style="background-color: white;">
+    <h2>Window Cleaning Pricing</h2>
     <table>
-      <tr><th>Window Type</th><th>Size Guide</th><th>Price Range</th></tr>
+      <tr><th>Type</th><th>Size</th><th>Price</th></tr>
       <tr><td>Small / Pane</td><td>Up to 3×3 ft</td><td>$6 – $8</td></tr>
       <tr><td>Standard</td><td>Up to 3×5 ft</td><td>$8 – $10</td></tr>
       <tr><td>Large / Bay</td><td>Over 3×5 ft</td><td>$12 – $20+</td></tr>
     </table>
-    <p><strong>Minimum Service:</strong> $80 (covers up to 10 small windows)</p>
-    <p><strong>Standard Rate:</strong> <span id="window-cleaning-price">Loading...</span></p>
+    <p><strong>Minimum:</strong> $80 (up to 10 small windows)</p>
+    <p><strong>Live Rate:</strong> <span id="window-cleaning-price">Loading...</span></p>
   </section>
 
-  <!-- Add-Ons -->
-  <section class="section" style="background-color: #F8F8F8;">
-    <h2 style="font-size: 2rem; color: #003366;">Add-On Services</h2>
+  <section style="background-color: #F8F8F8;">
+    <h2>Optional Add-On Services</h2>
     <ul>
-      <li><strong>Screen Cleaning:</strong> +$2 per screen</li>
-      <li><strong>Hard Water Removal:</strong> +$5 per window</li>
+      <li><strong>Screen Cleaning:</strong> +$2 each</li>
+      <li><strong>Hard Water Spot Removal:</strong> +$5 per window</li>
     </ul>
   </section>
 
-  <!-- Final CTA -->
-  <section class="section" style="background-color: var(--grey);">
-    <h2 style="font-size: 2rem; color: #003366;">We’ll Make It Shine ✨</h2>
-    <p>Text us a photo of your home, or let us know your window count — we’ll shoot back a quote quickly.</p>
+  <section style="background-color: var(--blue); color: white;">
+    <p style="max-width: 500px; margin: auto;">Text us your window count or a pic of your home — and get a quote in minutes.</p>
     <a href="../contact.html" class="cta-button">🚀 Get a Free Quote</a>
   </section>
 

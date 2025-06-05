@@ -11,7 +11,7 @@
     :root {
       --blue: #1f6feb;
       --yellow: #f9c80e;
-      --grey: #C7C7C7;
+      --grey: #F3F3F3;
       --white: #ffffff;
       --dark: #1a1a1a;
       --font-header: 'Paytone One', sans-serif;
@@ -19,7 +19,7 @@
 
     body {
       margin: 0;
-      font-family: sans-serif;
+      font-family: 'Segoe UI', sans-serif;
       background-color: var(--grey);
     }
 
@@ -27,12 +27,14 @@
       font-family: var(--font-header);
       text-align: center;
       color: var(--blue);
+      text-transform: uppercase;
+      letter-spacing: 1px;
     }
 
     .contact-section {
-      padding: 2rem 1rem;
+      padding: 3rem 1rem;
+      background-color: var(--white);
       text-align: center;
-      background-color: white;
     }
 
     .contact-methods {
@@ -40,30 +42,35 @@
       flex-wrap: wrap;
       justify-content: center;
       gap: 2rem;
-      margin-top: 2rem;
+      margin-top: 2.5rem;
     }
 
-    .contact-box {
+    .contact-link {
+      display: block;
       background-color: #E8F0FA;
-      padding: 1.5rem;
-      border-radius: 12px;
-      text-align: center;
-      width: 260px;
-      max-width: 90%;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-    }
-
-    .contact-box a {
+      padding: 2rem;
+      border-radius: 16px;
       text-decoration: none;
       color: var(--dark);
-      font-size: 1.1rem;
-      font-weight: bold;
-      display: block;
-      margin-top: 0.5rem;
+      width: 280px;
+      max-width: 90%;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, background-color 0.3s ease;
     }
 
-    .contact-box a:hover {
-      color: var(--blue);
+    .contact-link:hover {
+      transform: translateY(-6px);
+      background-color: #d2e9fd;
+    }
+
+    .contact-link h2 {
+      font-size: 1.6rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .contact-link span {
+      font-size: 1.2rem;
+      font-weight: bold;
     }
 
     .cta-button {
@@ -71,17 +78,23 @@
       color: black;
       font-weight: bold;
       padding: 1rem 2rem;
-      border-radius: 10px;
+      border-radius: 999px;
       text-decoration: none;
       display: inline-block;
-      margin-top: 2rem;
+      margin-top: 3rem;
+      font-size: 1.1rem;
+      transition: transform 0.2s ease;
+    }
+
+    .cta-button:hover {
+      transform: scale(1.05);
     }
 
     footer {
       text-align: center;
       background-color: var(--dark);
       color: white;
-      padding: 1rem;
+      padding: 1.5rem 1rem;
       font-size: 0.9rem;
     }
   </style>
@@ -90,18 +103,18 @@
   <div id="header"></div>
 
   <section class="contact-section">
-    <h1>Contact Us</h1>
-    <p style="max-width: 600px; margin: auto;">We're happy to answer questions, provide quotes, or help you figure out what your property needs. Get in touch below:</p>
+    <h1>Let's Talk!</h1>
+    <p style="max-width: 600px; margin: auto; font-size: 1.1rem;">We’re happy to answer questions, give quotes, or just help you figure out what your place needs.</p>
 
     <div class="contact-methods">
-      <div class="contact-box">
+      <a href="tel:3607706438" class="contact-link">
         <h2>📞 Call or Text</h2>
-        <h5 href="tel:3607706438">(360) 770-6438</h5>
-      </div>
-      <div class="contact-box">
+        <h4>(360) 770-6438</h4>
+      </a>
+      <a href="mailto:321blastoffpressurewashing@gmail.com" class="contact-link">
         <h2>📧 Email</h2>
-        <h5 href="mailto:321blastoffpressurewashing@gmail.com">321blastoffpressurewashing@gmail.com</h5>
-      </div>
+        <h4>321blastoffpressurewashing@gmail.com</h4>
+      </a>
     </div>
 
     <a href="mailto:321blastoffpressurewashing@gmail.com" class="cta-button">🚀 Send Us an Email</a>

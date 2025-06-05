@@ -22,10 +22,47 @@
       margin: 0;
       font-family: sans-serif;
       background-color: var(--grey);
+      overflow-x: hidden;
     }
 
     h1, h2 {
       font-family: var(--font-header);
+    }
+
+    .cta-button {
+      background-color: var(--yellow);
+      padding: 1rem 2rem;
+      border-radius: 999px;
+      font-weight: bold;
+      text-decoration: none;
+      color: black;
+      display: inline-block;
+      margin-top: 1rem;
+      transition: transform 0.3s ease;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    .cta-button:hover {
+      transform: scale(1.05);
+    }
+
+    .section {
+      padding: 2.5rem 1rem;
+      text-align: center;
+    }
+
+    .hero-img {
+      width: 100%;
+      max-width: 420px;
+      border-radius: 16px;
+      display: block;
+      margin: auto;
+      animation: fadeIn 1.2s ease-out forwards;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
     ol {
@@ -35,15 +72,25 @@
       padding-left: 1rem;
     }
 
-    .cta-button {
-      background-color: var(--yellow);
-      padding: 0.75rem 1.5rem;
-      border-radius: 8px;
-      font-weight: bold;
-      text-decoration: none;
-      color: black;
-      display: inline-block;
-      margin-top: 1rem;
+    .icon-blurb {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1.5rem;
+      margin-top: 1.5rem;
+    }
+
+    .icon-blurb div {
+      max-width: 220px;
+      background: #fff;
+      padding: 1rem;
+      border-radius: 14px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.04);
+      transition: transform 0.3s ease;
+    }
+
+    .icon-blurb div:hover {
+      transform: translateY(-4px);
     }
 
     footer {
@@ -54,29 +101,20 @@
       font-size: 0.9rem;
     }
 
-    .section {
-      padding: 2rem;
-      text-align: center;
-    }
+    @media (min-width: 768px) {
+      .hero-flex {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 2rem;
+        padding: 3rem 1.5rem;
+        background-color: white;
+      }
 
-    .hero-img {
-      width: 100%;
-      max-width: 400px;
-      border-radius: 12px;
-      display: block;
-      margin: auto;
-    }
-
-    .icon-blurb {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 2rem;
-      margin-top: 1rem;
-    }
-
-    .icon-blurb div {
-      max-width: 180px;
+      .hero-flex > div {
+        flex: 1;
+        min-width: 300px;
+      }
     }
   </style>
 </head>
@@ -85,15 +123,15 @@
   <div id="header"></div>
 
   <!-- Hero Section -->
-  <section class="section" style="display: flex; flex-wrap: wrap; align-items: center; justify-content: center;">
-    <div style="flex: 1; min-width: 300px; padding: 1rem; text-align: center;">
+  <section class="hero-flex">
+    <div style="text-align: center;">
       <h1 style="font-size: 2.5rem; color: #003366;">Pressure Wash That Driveway 🚿</h1>
       <p style="font-size: 1.2rem; max-width: 600px; margin: auto;">
         Say goodbye to oil stains, algae, and grime. We restore concrete to a like-new shine with care and consistency.
       </p>
       <a href="../contact.html" class="cta-button">🚀 Get a Free Quote</a>
     </div>
-    <div style="flex: 1; min-width: 300px; padding: 1rem;">
+    <div>
       <img 
         src="../images/driveway-cleaning.webp" 
         alt="Driveway cleaning in progress with pressure washer" 
@@ -104,8 +142,16 @@
     </div>
   </section>
 
+  <!-- Our Process & Pricing -->
+  <section class="section" style="background-color: var(--white);">
+    <h2 style="font-size: 2rem; color: #003366;">Our Process</h2>
+    <p><strong>Standard Two-Car Driveway: $250</strong><br/>
+    <span id="driveway-cleaning-price">Loading...</span></p>
+    <p style="max-width: 600px; margin: auto;">We price per square foot — most driveways range between 400–700 sq ft. Send us a quick photo or address and get a fast quote.</p>
+  </section>
+
   <!-- Why Clean -->
-  <section class="section" style="background-color: white;">
+  <section class="section" style="background-color: var(--grey);">
     <h2 style="font-size: 2rem; color: #003366;">Why Clean Your Driveway?</h2>
     <div class="icon-blurb">
       <div>🧼 <strong>Stain Removal</strong><br/>Get rid of oil spots, dirt, and algae.</div>
@@ -114,25 +160,22 @@
     </div>
   </section>
 
-  <!-- Pricing -->
-  <section class="section" style="background-color: white;">
-    <h2 style="font-size: 2rem; color: #003366;">Pricing</h2>
-    <p><strong>Standard Rate:</strong> <span id="pressure-washing-price">Loading...</span></p>
-    <p style="max-width: 600px; margin: auto;">We charge by square foot. Most driveways fall between 400–1200 sq ft. Send us a photo and we’ll quote fast!</p>
-  </section>
-
   <!-- Final CTA -->
-  <section class="section" style="background-color: var(--grey);">
-    <h2 style="font-size: 2rem; color: #003366;">Brother-Owned. Detail-Driven.</h2>
+  <section class="section" style="background-color: var(--blue); color: white;">
+    <h2 style="font-size: 2rem;">Brother-Owned. Detail-Driven.</h2>
     <p>We treat every job like it's our own home. Fast replies, clear pricing, and no nonsense.</p>
-    <a href="../contact.html" class="cta-button">🚀 Get a Free Quote</a>
+    <a href="../contact.html" class="cta-button">🚀 Book Your Spot</a>
   </section>
 
   <div id="footer"></div>
 
+  <footer>
+    &copy; 2024 Blastoff Pressure Washing LLC – Serving Arlington, WA and surrounding areas.
+  </footer>
+
   <script>
     document.addEventListener("DOMContentLoaded", () => {
-      const el = document.getElementById("pressure-washing-price");
+      const el = document.getElementById("driveway-cleaning-price");
       if (el && typeof pricing !== "undefined") {
         el.textContent = pricing.getPrice("Pressure Washing");
       }

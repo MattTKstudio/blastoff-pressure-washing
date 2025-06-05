@@ -28,47 +28,67 @@
       font-family: var(--font-header);
     }
 
-    ol {
-      max-width: 600px;
-      margin: auto;
-      text-align: left;
-      padding-left: 1rem;
+    .section {
+      padding: 2rem 1rem;
+      text-align: center;
     }
 
     .cta-button {
       background-color: var(--yellow);
-      padding: 0.75rem 1.5rem;
-      border-radius: 8px;
+      padding: 1rem 2rem;
+      border-radius: 999px;
       font-weight: bold;
       text-decoration: none;
       color: black;
       display: inline-block;
       margin-top: 1rem;
+      transition: transform 0.3s;
     }
 
-    .section {
-      padding: 2rem;
-      text-align: center;
+    .cta-button:hover {
+      transform: scale(1.05);
     }
 
     .hero-img {
       width: 100%;
-      max-width: 400px;
-      border-radius: 12px;
+      max-width: 420px;
+      border-radius: 14px;
       display: block;
       margin: auto;
+      animation: fadeIn 1.2s ease-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
     .icon-blurb {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 2rem;
-      margin-top: 1rem;
+      gap: 1.5rem;
+      margin-top: 1.5rem;
     }
 
     .icon-blurb div {
-      max-width: 180px;
+      max-width: 200px;
+      background: #fff;
+      padding: 1rem;
+      border-radius: 14px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+      transition: transform 0.3s ease;
+    }
+
+    .icon-blurb div:hover {
+      transform: translateY(-4px);
+    }
+
+    ol {
+      max-width: 600px;
+      margin: auto;
+      text-align: left;
+      padding-left: 1rem;
     }
 
     footer {
@@ -78,6 +98,22 @@
       padding: 1rem;
       font-size: 0.9rem;
     }
+
+    @media (min-width: 768px) {
+      .hero-flex {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 2rem;
+        padding: 3rem 1.5rem;
+        background-color: white;
+      }
+
+      .hero-flex > div {
+        flex: 1;
+        min-width: 300px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -85,15 +121,15 @@
   <div id="header"></div>
 
   <!-- Hero Section -->
-  <section class="section" style="display: flex; flex-wrap: wrap; align-items: center; justify-content: center;">
-    <div style="flex: 1; min-width: 300px; padding: 1rem; text-align: center;">
+  <section class="hero-flex">
+    <div style="text-align: center;">
       <h1 style="font-size: 2.5rem; color: #003366;">AC Unit Cleaning Done Right</h1>
       <p style="font-size: 1.2rem; max-width: 600px; margin: auto;">
         Clogged coils and dirty fins reduce cooling efficiency and raise energy bills. We keep your unit clean and your home cool.
       </p>
       <a href="../contact.html" class="cta-button">🚀 Get a Free Quote</a>
     </div>
-    <div style="flex: 1; min-width: 300px; padding: 1rem;">
+    <div>
       <img 
         src="../images/ac-unit-cleaning.webp" 
         alt="Professional AC Unit Cleaning" 
@@ -104,8 +140,15 @@
     </div>
   </section>
 
+  <!-- Pricing -->
+  <section class="section" style="background-color: var(--white);">
+    <h2 style="font-size: 2rem; color: #003366;">Pricing</h2>
+    <p><strong>Standard Rate:</strong> <span id="ac-unit-cleaning-price">Loading...</span></p>
+    <p style="max-width: 600px; margin: auto;">Includes full outdoor unit cleaning. Discounts available for multi-unit homes or duplexes — just ask!</p>
+  </section>
+
   <!-- Why Clean -->
-  <section class="section" style="background-color: white;">
+  <section class="section" style="background-color: var(--grey);">
     <h2 style="font-size: 2rem; color: #003366;">Why Clean Your AC Unit?</h2>
     <div class="icon-blurb">
       <div>💸 <strong>Lower Energy Bills</strong><br/>Dirty coils make your system work harder.</div>
@@ -116,26 +159,20 @@
 
   <!-- Our Process -->
   <section class="section" style="background-color: #E8F0FA;">
-    <h2 style="font-size: 2rem; color: #003366;">Our Process</h2>
+    <h2 style="font-size: 2rem; color: #003366;">Our Cleaning Process</h2>
     <ol>
-      <li><strong>Visual Inspection</strong> – Check fins, lines, and airflow zones.</li>
-      <li><strong>Debris Removal</strong> – Blow out leaves, dust, and insects.</li>
-      <li><strong>Coil Cleaning</strong> – Spray and scrub for optimal heat exchange.</li>
-      <li><strong>Final Rinse</strong> – Safe water rinse with no pressure damage.</li>
+      <li><strong>Power-Off Safety Check</strong> – Confirm the unit is safe to work on.</li>
+      <li><strong>Debris Removal</strong> – Clear leaves, dirt, and buildup from coils and casing.</li>
+      <li><strong>Fin Cleaning</strong> – Gentle brush and spray to straighten and clear airflow paths.</li>
+      <li><strong>Drain Check</strong> – Ensure condensate drainage is working correctly.</li>
+      <li><strong>Final Rinse</strong> – Restore the unit’s function and appearance.</li>
     </ol>
   </section>
 
-  <!-- Pricing -->
-  <section class="section" style="background-color: white;">
-    <h2 style="font-size: 2rem; color: #003366;">Pricing</h2>
-    <p><strong>Standard Rate:</strong> <span id="ac-unit-cleaning-price">Loading...</span></p>
-    <p style="max-width: 600px; margin: auto;">Price includes full outdoor unit cleaning. Multiple units? We offer discounted bundles for duplexes and multi-unit homes.</p>
-  </section>
-
   <!-- Final CTA -->
-  <section class="section" style="background-color: var(--grey);">
-    <h2 style="font-size: 2rem; color: #003366;">Breathe Easier. Run Cooler.</h2>
-    <p>We’re a brother-owned local crew — clean, careful, and clear on pricing.</p>
+  <section class="section" style="background-color: var(--blue); color: white;">
+    <h2 style="font-size: 2rem;">Brother-Owned. Detail-Driven.</h2>
+    <p>We treat every job like it's our own home. Fast replies, clear pricing, and no nonsense.</p>
     <a href="../contact.html" class="cta-button">🚀 Get a Free Quote</a>
   </section>
 

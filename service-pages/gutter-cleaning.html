@@ -22,10 +22,50 @@
       margin: 0;
       font-family: sans-serif;
       background-color: var(--grey);
+      overflow-x: hidden;
+      scroll-behavior: smooth;
     }
 
     h1, h2 {
       font-family: var(--font-header);
+      margin-bottom: 0.5rem;
+    }
+
+    .cta-button {
+      background-color: var(--yellow);
+      padding: 1rem 2rem;
+      border-radius: 999px;
+      font-weight: bold;
+      text-decoration: none;
+      color: black;
+      display: inline-block;
+      margin-top: 1rem;
+      transition: transform 0.3s ease;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    .cta-button:hover {
+      transform: scale(1.05);
+    }
+
+    .section {
+      padding: 2.5rem 1rem;
+      text-align: center;
+    }
+
+    .hero-img {
+      width: 100%;
+      max-width: 420px;
+      border-radius: 16px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+      display: block;
+      margin: auto;
+      animation: fadeIn 1.2s ease-out forwards;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
     ol {
@@ -35,40 +75,25 @@
       padding-left: 1rem;
     }
 
-    .cta-button {
-      background-color: var(--yellow);
-      padding: 0.75rem 1.5rem;
-      border-radius: 8px;
-      font-weight: bold;
-      text-decoration: none;
-      color: black;
-      display: inline-block;
-      margin-top: 1rem;
-    }
-
-    .section {
-      padding: 2rem;
-      text-align: center;
-    }
-
-    .hero-img {
-      width: 100%;
-      max-width: 400px;
-      border-radius: 12px;
-      display: block;
-      margin: auto;
-    }
-
     .icon-blurb {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 2rem;
-      margin-top: 1rem;
+      gap: 1.5rem;
+      margin-top: 1.5rem;
     }
 
     .icon-blurb div {
-      max-width: 180px;
+      max-width: 220px;
+      background: #fff;
+      padding: 1rem;
+      border-radius: 14px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.04);
+      transition: transform 0.3s ease;
+    }
+
+    .icon-blurb div:hover {
+      transform: translateY(-4px);
     }
 
     footer {
@@ -78,6 +103,22 @@
       padding: 1rem;
       font-size: 0.9rem;
     }
+
+    @media (min-width: 768px) {
+      .hero-flex {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 2rem;
+        padding: 3rem 1.5rem;
+        background-color: white;
+      }
+
+      .hero-flex > div {
+        flex: 1;
+        min-width: 300px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -85,20 +126,19 @@
   <div id="header"></div>
 
   <!-- Hero Section -->
-  <section class="section" style="display: flex; flex-wrap: wrap; align-items: center; justify-content: center;">
-    <div style="flex: 1; min-width: 300px; padding: 1rem; text-align: center;">
+  <section class="hero-flex">
+    <div style="text-align: center;">
       <h1 style="font-size: 2.5rem; color: #003366;">Gutters Cleaned. Homes Protected.</h1>
       <p style="font-size: 1.2rem; max-width: 600px; margin: auto;">
-        Clogged gutters lead to water damage, rot, and big bills. We clear them fast and leave no mess behind.
+        Clogged gutters lead to water damage, rot, and big bills. We clear them fast — and leave no mess behind.
       </p>
       <a href="../contact.html" class="cta-button">🚀 Get a Free Quote</a>
     </div>
-    <div style="flex: 1; min-width: 300px; padding: 1rem;">
+    <div>
       <img 
         src="../images/gutter-cleaning.webp" 
         alt="Gutter Cleaning in Progress" 
-        loading="lazy" 
-        width="400"
+        loading="lazy"
         class="hero-img"
       />
     </div>
@@ -116,12 +156,12 @@
 
   <!-- How We Clean -->
   <section class="section" style="background-color: #E8F0FA;">
-    <h2 style="font-size: 2rem; color: #003366;">How We Clean</h2>
+    <h2 style="font-size: 2rem; color: #003366;">Our Cleaning Process</h2>
     <ol>
-      <li><strong>Debris Scoop</strong> – We remove all leaves and clogs by hand.</li>
-      <li><strong>Rinse & Flush</strong> – Test downspouts for smooth flow.</li>
-      <li><strong>Bag & Haul Away</strong> – No debris left behind on your lawn.</li>
-      <li><strong>Photos Upon Request</strong> – See the results yourself.</li>
+      <li><strong>Debris Scoop</strong> – Remove leaves, needles, and clogs by hand.</li>
+      <li><strong>Rinse & Flush</strong> – Confirm all downspouts flow freely.</li>
+      <li><strong>Bag & Haul Away</strong> – No piles of leaves left on your lawn.</li>
+      <li><strong>Photo Proof</strong> – Optional: Get before/after shots for peace of mind.</li>
     </ol>
   </section>
 
@@ -129,20 +169,20 @@
   <section class="section" style="background-color: white;">
     <h2 style="font-size: 2rem; color: #003366;">Pricing</h2>
     <p><strong>Standard Rate:</strong> <span id="gutter-cleaning-price">Loading...</span></p>
-    <p style="max-width: 600px; margin: auto;">Pricing is based on total linear feet and gutter accessibility. Text us a photo or address to get a custom quote in minutes.</p>
+    <p style="max-width: 600px; margin: auto;">Pricing is based on total linear feet and ease of access. Send a photo or your address for a fast quote.</p>
   </section>
 
   <!-- Final CTA -->
-  <section class="section" style="background-color: var(--grey);">
-    <h2 style="font-size: 2rem; color: #003366;">Clean Gutters. Clear Mind.</h2>
-    <p>We’re a brother-owned local business. Honest quotes, real results, no hassle.</p>
-    <a href="../contact.html" class="cta-button">🚀 Get a Free Quote</a>
+  <section class="section" style="background-color: var(--blue); color: white;">
+    <h2 style="font-size: 2rem;">Clean Gutters. Clear Mind.</h2>
+    <p>We’re a brother-owned small business. Honest quotes, real results, and no upsell nonsense.</p>
+    <a href="../contact.html" class="cta-button">🚀 Text Us for a Free Estimate</a>
   </section>
 
   <div id="footer"></div>
 
   <footer>
-    &copy; 2024 Blastoff Pressure Washing LLC – Serving Arlington, WA and surrounding areas.
+    &copy; 2024 Blastoff Pressure Washing LLC – Based in Arlington, WA | Serving Snohomish & Skagit Counties
   </footer>
 
   <script>

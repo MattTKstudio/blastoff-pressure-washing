@@ -12,46 +12,60 @@
     :root {
       --blue: #1f6feb;
       --yellow: #f9c80e;
-      --gray: #C7C7C7;
+      --gray: #F3F3F3;
       --white: #ffffff;
       --dark: #1a1a1a;
+      --font-header: 'Paytone One', sans-serif;
     }
 
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
+      font-family: 'Segoe UI', sans-serif;
       background-color: var(--gray);
       color: var(--dark);
+    }
+
+    h1, h2, h3 {
+      font-family: var(--font-header);
     }
 
     main {
       padding: 8vh 1rem 4rem;
       text-align: center;
+      animation: fadeInUp 0.8s ease both;
     }
 
     h1 {
       color: var(--blue);
-      font-size: 2.5rem;
+      font-size: 3rem;
       margin-bottom: 0.5rem;
     }
 
     .intro-text {
       margin-bottom: 2rem;
-      font-size: 1.1rem;
+      font-size: 1.2rem;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
     }
 
     .grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 1.5rem;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
     }
 
     .card {
       background-color: white;
-      border-radius: 12px;
-      padding: 1rem;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      border-radius: 16px;
+      padding: 1.5rem;
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
       text-align: left;
+      transition: transform 0.2s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
     }
 
     .card img {
@@ -63,6 +77,7 @@
     .card h3 {
       margin: 0.5rem 0;
       color: var(--blue);
+      font-size: 1.5rem;
     }
 
     .card p {
@@ -70,13 +85,17 @@
     }
 
     .card a {
+      display: inline-block;
+      margin-top: 0.75rem;
       color: var(--blue);
       font-weight: bold;
       text-decoration: none;
+      transition: color 0.2s;
     }
 
     .card a:hover {
       text-decoration: underline;
+      color: #003366;
     }
 
     footer {
@@ -86,6 +105,17 @@
       padding: 1rem;
       font-size: 0.9rem;
     }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
   </style>
 </head>
 <body>
@@ -94,7 +124,7 @@
 
   <main>
     <h1>What We Offer</h1>
-    <p class="intro-text">Exterior cleaning services for homes, roofs, windows, gutters, and more — delivered with care.</p>
+    <p class="intro-text">Exterior cleaning services for homes, roofs, windows, gutters, and more — delivered with care and a rocket-fueled smile.</p>
 
     <div class="grid">
       <div class="card">
@@ -116,7 +146,7 @@
       <div class="card">
         <img src="images/roof-cleaning-moss.webp" alt="Roof Cleaning" loading="lazy">
         <h3>Roof Cleaning</h3>
-        <p>Remove moss and organic buildup safely.</p>
+        <p>Remove moss and organic buildup.</p>
         <p><strong id="roof-cleaning-price">Loading...</strong></p>
         <a href="service-pages/roof-cleaning-snohomish.html">Learn More →</a>
       </div>
@@ -124,7 +154,7 @@
       <div class="card">
         <img src="images/window-cleaning-clear.webp" alt="Window Cleaning" loading="lazy">
         <h3>Window Cleaning</h3>
-        <p>Crystal clear windows, inside and out.</p>
+        <p>Crystal clear windows.</p>
         <p><strong id="window-cleaning-price">Loading...</strong></p>
         <a href="service-pages/window-cleaning-marysville.html">Learn More →</a>
       </div>
@@ -148,6 +178,10 @@
   </main>
 
   <div id="footer"></div>
+
+  <footer>
+    &copy; 2024 Blastoff Pressure Washing LLC – Based in Arlington, WA | Serving Snohomish & Skagit County
+  </footer>
 
   <script>
     document.addEventListener("DOMContentLoaded", () => {
