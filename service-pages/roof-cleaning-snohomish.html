@@ -12,7 +12,7 @@
     :root {
       --blue: #1f6feb;
       --yellow: #f9c80e;
-      --grey: #C7C7C7;
+      --grey: #F3F3F3;
       --white: #ffffff;
       --dark: #1a1a1a;
       --font-header: 'Paytone One', sans-serif;
@@ -20,15 +20,16 @@
 
     body {
       margin: 0;
-      font-family: sans-serif;
+      font-family: 'Segoe UI', sans-serif;
       background-color: var(--grey);
-      overflow-x: hidden;
       scroll-behavior: smooth;
     }
 
     h1, h2 {
       font-family: var(--font-header);
-      margin-bottom: 0.5rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-size: clamp(2rem, 5vw, 3rem);
     }
 
     .cta-button {
@@ -36,65 +37,78 @@
       padding: 1rem 2rem;
       border-radius: 999px;
       font-weight: bold;
+      font-size: 1.1rem;
       text-decoration: none;
       color: black;
       display: inline-block;
-      margin-top: 1rem;
-      transition: transform 0.3s ease;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      margin-top: 1.5rem;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, background 0.3s ease;
     }
 
     .cta-button:hover {
       transform: scale(1.05);
+      background-color: #ffdd57;
     }
 
-    .section {
-      padding: 2.5rem 1rem;
+    section {
+      padding: 4rem 1.5rem;
       text-align: center;
     }
 
-    .hero-img {
-      width: 100%;
-      max-width: 420px;
-      border-radius: 16px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.06);
-      display: block;
-      margin: auto;
-      animation: fadeIn 1.2s ease-out forwards;
+    .hero-section {
+      background: radial-gradient(circle at center, #dff2ff, #f9f9f9);
+      display: flex;
+      flex-direction: column-reverse;
+      align-items: center;
+      justify-content: center;
+      gap: 2rem;
     }
 
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(30px); }
-      to { opacity: 1; transform: translateY(0); }
+    .hero-callout {
+      animation: fadeInUp 1.5s ease forwards;
+    }
+
+    .hero-section img {
+      width: 100%;
+      max-width: 420px;
+      border-radius: 18px;
+      animation: fadeIn 2s ease forwards;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+    }
+
+    .icon-blurb {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .icon-blurb div {
+      max-width: 300px;
+      background: #fff;
+      padding: 1.5rem;
+      border-radius: 14px;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.06);
+      transition: transform 0.4s ease;
+    }
+
+    .icon-blurb div:hover {
+      transform: scale(1.05);
     }
 
     ol {
       max-width: 600px;
       margin: auto;
       text-align: left;
-      padding-left: 1rem;
+      padding-left: 1.5rem;
       font-size: 1.05rem;
     }
 
-    .icon-blurb {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 1.5rem;
-      margin-top: 1.5rem;
-    }
-
-    .icon-blurb div {
-      max-width: 220px;
-      background: #fff;
-      padding: 1rem;
-      border-radius: 14px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.04);
-      transition: transform 0.3s ease;
-    }
-
-    .icon-blurb div:hover {
-      transform: translateY(-4px);
+    ul li::before {
+      content: '✨';
+      margin-right: 0.5rem;
     }
 
     footer {
@@ -105,79 +119,70 @@
       font-size: 0.9rem;
     }
 
-    @media (min-width: 768px) {
-      .hero-flex {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 2rem;
-        padding: 3rem 1.5rem;
-        background-color: white;
-      }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(40px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
 
-      .hero-flex > div {
-        flex: 1;
-        min-width: 300px;
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @media (min-width: 768px) {
+      .hero-section {
+        flex-direction: row;
+        text-align: left;
+        padding: 4rem;
+      }
+      .icon-blurb {
+        flex-direction: row;
+        justify-content: center;
       }
     }
   </style>
 </head>
 <body>
-
   <div id="header"></div>
 
-  <!-- Hero Section -->
-  <section class="hero-flex">
-    <div style="text-align: center;">
-      <h1 style="font-size: 2.5rem; color: #003366;">Roof Cleaning That Lasts</h1>
-      <p style="font-size: 1.2rem; max-width: 600px; margin: auto;">
-        Moss, mildew, and debris shorten roof life. We clean with precision and care, so you can stay dry and confident.
-      </p>
+  <section class="hero-section">
+    <div class="hero-callout">
+      <h1>🌿 Roof Cleaning That Lasts</h1>
+      <p style="font-size: 1.25rem; max-width: 500px; margin: auto;">We remove moss and grime with zero pressure and maximum care — because your roof deserves more than a rinse.</p>
       <a href="../contact.html" class="cta-button">🚀 Get a Free Quote</a>
     </div>
-    <div>
-      <img 
-        src="../images/roof-cleaning-moss.webp" 
-        alt="Roof Cleaning in Arlington, WA" 
-        loading="lazy"
-        class="hero-img"
-      />
-    </div>
+    <img src="../images/roof-cleaning-moss.webp" alt="Roof Cleaning" loading="lazy">
   </section>
 
-  <!-- Why Clean -->
-  <section class="section" style="background-color: white;">
-    <h2 style="color: #003366;">Why Clean Your Roof?</h2>
+  <section style="background-color: white;">
+    <h2>Why Clean Your Roof?</h2>
     <div class="icon-blurb">
-      <div>🌿 <strong>Stop Moss Growth</strong><br/>Protect shingles from root damage.</div>
-      <div>💧 <strong>Improve Drainage</strong><br/>Avoid clogs and leaks caused by buildup.</div>
-      <div>🏡 <strong>Boost Curb Appeal</strong><br/>A clean roof makes a clean impression.</div>
+      <div>🌱 <strong>Stop Moss Growth</strong><br/>Moss traps moisture and ruins shingles.</div>
+      <div>💧 <strong>Improve Drainage</strong><br/>Prevent water damage and clogs.</div>
+      <div>🏠 <strong>Boost Home Value</strong><br/>First impressions count, especially from above.</div>
     </div>
   </section>
 
-  <!-- How We Clean -->
-  <section class="section" style="background-color: #E8F0FA;">
-    <h2 style="color: #003366;">How We Clean</h2>
+  <section style="background-color: #E8F0FA;">
+    <h2>Our Gentle 4-Step Clean</h2>
     <ol>
-      <li><strong>Gentle Blow-Off</strong> – Remove loose debris without damage</li>
-      <li><strong>Moss Treatment</strong> – Biodegradable application to kill growth</li>
-      <li><strong>Detail Rinse (if needed)</strong> – Wash without pressure</li>
-      <li><strong>Final Inspection</strong> – Ensure roof health and cleanliness</li>
+      <li><strong>Debris Removal</strong> – Light blow-off of leaves and branches.</li>
+      <li><strong>Moss Treatment</strong> – Safe and effective chemical soak.</li>
+      <li><strong>Soft Rinse (if needed)</strong> – Rinse only when safe to do so.</li>
+      <li><strong>Inspection + Before/After Pics</strong> – Transparency every step of the way.</li>
     </ol>
   </section>
 
-  <!-- Pricing -->
-  <section class="section" style="background-color: white;">
-    <h2 style="color: #003366;">Pricing</h2>
-    <p><strong>Standard Rate:</strong> <span id="roof-cleaning-price">Loading...</span></p>
-    <p style="max-width: 600px; margin: auto;">We price roof cleaning by square footage, depending on pitch and material. Send us a photo or address — we’ll text back a fast, honest quote.</p>
+  <section style="background-color: white;">
+    <h2>Pricing</h2>
+    <p><strong>Live Rate:</strong> <span id="roof-cleaning-price">Loading...</span></p>
+    <p style="max-width: 600px; margin: auto;">Roof pricing is based on size, pitch, and moss condition. Text us a photo or your address — we’ll reply fast with a quote.</p>
   </section>
 
-  <!-- Final CTA -->
-  <section class="section" style="background-color: var(--blue); color: white;">
-    <h2 style="font-size: 2rem;">A Brother-Owned Business You Can Trust</h2>
-    <p>We don’t pressure wash roofs. Ever. Our soft clean method protects your home and your investment.</p>
-    <a href="../contact.html" class="cta-button">🚀 Text Us for a Free Estimate</a>
+  <section style="background-color: var(--blue); color: white;">
+    <h2>No Pressure, No Damage</h2>
+    <p style="max-width: 500px; margin: auto;">We never pressure wash roofs. Our soft wash method is the safest and most effective way to clean — backed by results and rave reviews.</p>
+    <a href="../contact.html" class="cta-button">🚀 Let's Get Your Roof Clean</a>
   </section>
 
   <div id="footer"></div>

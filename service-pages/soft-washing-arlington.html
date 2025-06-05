@@ -12,7 +12,7 @@
     :root {
       --blue: #1f6feb;
       --yellow: #f9c80e;
-      --grey: #C7C7C7;
+      --grey: #F3F3F3;
       --white: #ffffff;
       --dark: #1a1a1a;
       --font-header: 'Paytone One', sans-serif;
@@ -23,14 +23,13 @@
       font-family: 'Segoe UI', sans-serif;
       background-color: var(--grey);
       scroll-behavior: smooth;
-      overflow-x: hidden;
     }
 
     h1, h2 {
       font-family: var(--font-header);
       text-transform: uppercase;
       letter-spacing: 1px;
-      text-align: center;
+      font-size: clamp(2rem, 5vw, 3rem);
     }
 
     .cta-button {
@@ -44,20 +43,21 @@
       display: inline-block;
       margin-top: 1.5rem;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-      transition: transform 0.2s ease;
+      transition: transform 0.3s ease, background 0.3s ease;
     }
 
     .cta-button:hover {
       transform: scale(1.05);
+      background-color: #ffdd57;
     }
 
     section {
-      padding: 3rem 1.5rem;
+      padding: 4rem 1.5rem;
       text-align: center;
     }
 
     .hero-section {
-      background: linear-gradient(to right, #dff2ff, #f9f9f9);
+      background: radial-gradient(circle at center, #dff2ff, #f9f9f9);
       display: flex;
       flex-direction: column-reverse;
       align-items: center;
@@ -65,7 +65,11 @@
       gap: 2rem;
     }
 
-    .hero-img {
+    .hero-callout {
+      animation: fadeInUp 1.5s ease forwards;
+    }
+
+    .hero-section img {
       width: 100%;
       max-width: 420px;
       border-radius: 18px;
@@ -75,8 +79,8 @@
 
     .icon-blurb {
       display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
+      flex-direction: column;
+      align-items: center;
       gap: 2rem;
       margin-top: 2rem;
     }
@@ -87,11 +91,11 @@
       padding: 1.5rem;
       border-radius: 14px;
       box-shadow: 0 4px 14px rgba(0,0,0,0.06);
-      transition: transform 0.3s ease;
+      transition: transform 0.4s ease;
     }
 
     .icon-blurb div:hover {
-      transform: translateY(-5px);
+      transform: scale(1.05);
     }
 
     ol {
@@ -99,6 +103,12 @@
       margin: auto;
       text-align: left;
       padding-left: 1.5rem;
+      font-size: 1.05rem;
+    }
+
+    ul li::before {
+      content: '🧼';
+      margin-right: 0.5rem;
     }
 
     footer {
@@ -109,16 +119,21 @@
       font-size: 0.9rem;
     }
 
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(40px); }
       to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
     }
 
     @media (min-width: 768px) {
       .hero-section {
         flex-direction: row;
         text-align: left;
-        padding: 3rem;
+        padding: 4rem;
       }
       .icon-blurb {
         flex-direction: row;
@@ -130,49 +145,48 @@
 <body>
   <div id="header"></div>
 
-  <!-- Hero Section -->
+  <!-- Hero -->
   <section class="hero-section">
-    <div>
-      <h1 style="font-size: 3rem; color: #003366;">Soft Washing in Arlington</h1>
-      <p style="font-size: 1.25rem; max-width: 500px; margin: auto;">Safe for siding. Tough on grime. Our low-pressure cleaning restores beauty without damage.</p>
+    <div class="hero-callout">
+      <h1>🌊 Soft Washing, Serious Results</h1>
+      <p style="font-size: 1.25rem; max-width: 500px; margin: auto;">Low pressure, high impact. Clean your siding, fences, and outdoor spaces without damage.</p>
       <a href="../contact.html" class="cta-button">🚀 Get a Free Quote</a>
     </div>
-    <img src="../images/soft-washing-house.webp" alt="Soft Washing House Siding" loading="lazy" class="hero-img">
+    <img src="../images/soft-washing-house.webp" alt="Soft Washing House" loading="lazy">
   </section>
 
   <!-- Why Soft Wash -->
   <section style="background-color: white;">
     <h2>Why Soft Wash?</h2>
     <div class="icon-blurb">
-      <div>🏡 <strong>Safe for Homes</strong><br/>Perfect for siding, trim, and painted surfaces.</div>
-      <div>🧫 <strong>Kills Mold & Algae</strong><br/>Biodegradable soap neutralizes growth at the root.</div>
-      <div>🔧 <strong>Prevents Damage</strong><br/>No risk of blasting or water intrusion.</div>
+      <div>🧽 <strong>Preserve Paint & Surfaces</strong><br/>No chipping, no splintering — just a deep clean.</div>
+      <div>🦠 <strong>Remove Mold & Algae</strong><br/>Biodegradable treatments kill the root problem.</div>
+      <div>💧 <strong>Safe for Delicate Materials</strong><br/>Perfect for vinyl, stucco, wood, and even brick.</div>
     </div>
   </section>
 
-  <!-- How We Clean -->
+  <!-- Process -->
   <section style="background-color: #E8F0FA;">
-    <h2>Our 5-Step Method</h2>
+    <h2>Our 4-Step Soft Wash</h2>
     <ol>
-      <li><strong>Inspection & Prep</strong> – Protect electrical, cover delicate plants</li>
-      <li><strong>Soap Application</strong> – Eco-safe solution breaks down grime</li>
-      <li><strong>Soak & Sit</strong> – Let chemistry do the heavy lifting</li>
-      <li><strong>Low-Pressure Rinse</strong> – Soft spray rinses away residue</li>
-      <li><strong>Final Check</strong> – Ensure all surfaces look great</li>
+      <li><strong>Assessment</strong> – Walk-around and inspection of surfaces.</li>
+      <li><strong>Pre-Rinse</strong> – Wet surfaces to prep for treatment.</li>
+      <li><strong>Eco-Clean Application</strong> – Our mix destroys mildew, moss, algae, and more.</li>
+      <li><strong>Final Rinse + Detail</strong> – Gentle rinse and visual polish to finish strong.</li>
     </ol>
   </section>
 
   <!-- Pricing -->
   <section style="background-color: white;">
     <h2>Pricing</h2>
-    <p><strong>Standard Rate:</strong> <span id="soft-washing-price">Loading...</span></p>
-    <p style="max-width: 600px; margin: auto;">Our pricing is per square foot. We’ll measure your home and give a clear, fast quote via text or email.</p>
+    <p><strong>Live Rate:</strong> <span id="soft-washing-price">Loading...</span></p>
+    <p style="max-width: 600px; margin: auto;">Pricing is based on square footage and surface type. Send us a photo — we’ll send back a quick, honest quote.</p>
   </section>
 
   <!-- Final CTA -->
   <section style="background-color: var(--blue); color: white;">
-    <h2>Brother-Owned. Detail-Driven.</h2>
-    <p>We treat every job like it's our own home. Fast replies, clear pricing, and no nonsense.</p>
+    <h2>Done Right. No Damage. No Guesswork.</h2>
+    <p style="max-width: 500px; margin: auto;">We treat your home like it’s ours. Let us restore your exterior with care, skill, and clarity.</p>
     <a href="../contact.html" class="cta-button">🚀 Get a Free Quote</a>
   </section>
 

@@ -12,7 +12,7 @@
     :root {
       --blue: #1f6feb;
       --yellow: #f9c80e;
-      --grey: #C7C7C7;
+      --grey: #F3F3F3;
       --white: #ffffff;
       --dark: #1a1a1a;
       --font-header: 'Paytone One', sans-serif;
@@ -20,13 +20,16 @@
 
     body {
       margin: 0;
-      font-family: sans-serif;
+      font-family: 'Segoe UI', sans-serif;
       background-color: var(--grey);
-      overflow-x: hidden;
+      scroll-behavior: smooth;
     }
 
     h1, h2 {
       font-family: var(--font-header);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-size: clamp(2rem, 5vw, 3rem);
     }
 
     .cta-button {
@@ -34,63 +37,77 @@
       padding: 1rem 2rem;
       border-radius: 999px;
       font-weight: bold;
+      font-size: 1.1rem;
       text-decoration: none;
       color: black;
       display: inline-block;
-      margin-top: 1rem;
-      transition: transform 0.3s ease;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      margin-top: 1.5rem;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, background 0.3s ease;
     }
 
     .cta-button:hover {
       transform: scale(1.05);
+      background-color: #ffdd57;
     }
 
-    .section {
-      padding: 2.5rem 1rem;
+    section {
+      padding: 4rem 1.5rem;
       text-align: center;
     }
 
-    .hero-img {
+    .hero-section {
+      background: radial-gradient(circle at center, #dff2ff, #f9f9f9);
+      display: flex;
+      flex-direction: column-reverse;
+      align-items: center;
+      justify-content: center;
+      gap: 2rem;
+    }
+
+    .hero-callout {
+      animation: fadeInUp 1.5s ease forwards;
+    }
+
+    .hero-section img {
       width: 100%;
       max-width: 420px;
-      border-radius: 16px;
-      display: block;
-      margin: auto;
-      animation: fadeIn 1.2s ease-out forwards;
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(30px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    ol {
-      max-width: 600px;
-      margin: auto;
-      text-align: left;
-      padding-left: 1rem;
+      border-radius: 18px;
+      animation: fadeIn 2s ease forwards;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.1);
     }
 
     .icon-blurb {
       display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 1.5rem;
-      margin-top: 1.5rem;
+      flex-direction: column;
+      align-items: center;
+      gap: 2rem;
+      margin-top: 2rem;
     }
 
     .icon-blurb div {
-      max-width: 220px;
+      max-width: 300px;
       background: #fff;
-      padding: 1rem;
+      padding: 1.5rem;
       border-radius: 14px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.04);
-      transition: transform 0.3s ease;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.06);
+      transition: transform 0.4s ease;
     }
 
     .icon-blurb div:hover {
-      transform: translateY(-4px);
+      transform: scale(1.05);
+    }
+
+    ul, ol {
+      max-width: 600px;
+      margin: auto;
+      text-align: left;
+      padding-left: 1.5rem;
+    }
+
+    ul li::before {
+      content: '✨';
+      margin-right: 0.5rem;
     }
 
     footer {
@@ -101,76 +118,76 @@
       font-size: 0.9rem;
     }
 
-    @media (min-width: 768px) {
-      .hero-flex {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 2rem;
-        padding: 3rem 1.5rem;
-        background-color: white;
-      }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(40px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
 
-      .hero-flex > div {
-        flex: 1;
-        min-width: 300px;
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @media (min-width: 768px) {
+      .hero-section {
+        flex-direction: row;
+        text-align: left;
+        padding: 4rem;
+      }
+      .icon-blurb {
+        flex-direction: row;
+        justify-content: center;
       }
     }
   </style>
 </head>
 <body>
-
   <div id="header"></div>
 
-  <!-- Hero Section -->
-  <section class="hero-flex">
-    <div style="text-align: center;">
-      <h1 style="font-size: 2.5rem; color: #003366;">Pressure Wash That Driveway 🚿</h1>
-      <p style="font-size: 1.2rem; max-width: 600px; margin: auto;">
-        Say goodbye to oil stains, algae, and grime. We restore concrete to a like-new shine with care and consistency.
-      </p>
-      <a href="../contact.html" class="cta-button">🚀 Get a Free Quote</a>
+  <section class="hero-section">
+    <div class="hero-callout">
+      <h1>💥 Clean Concrete, Clean Look 💥</h1>
+      <p style="font-size: 1.25rem; max-width: 500px; margin: auto;">Grime, oil, and stains gone. Pressure washed to perfection.</p>
+      <a href="../contact.html" class="cta-button">🚀 Book Your Driveway Clean</a>
     </div>
-    <div>
-      <img 
-        src="../images/driveway-cleaning.webp" 
-        alt="Driveway cleaning in progress with pressure washer" 
-        loading="lazy" 
-        width="400"
-        class="hero-img"
-      />
-    </div>
+    <img src="../images/driveway-cleaning.webp" alt="Driveway Cleaning" loading="lazy">
   </section>
 
-  <!-- Our Process & Pricing -->
-  <section class="section" style="background-color: var(--white);">
-    <h2 style="font-size: 2rem; color: #003366;">Our Process</h2>
-    <p><strong>Standard Two-Car Driveway: $250</strong><br/>
-    <span id="driveway-cleaning-price">Loading...</span></p>
-    <p style="max-width: 600px; margin: auto;">We price per square foot — most driveways range between 400–700 sq ft. Send us a quick photo or address and get a fast quote.</p>
-  </section>
-
-  <!-- Why Clean -->
-  <section class="section" style="background-color: var(--grey);">
-    <h2 style="font-size: 2rem; color: #003366;">Why Clean Your Driveway?</h2>
+  <section style="background-color: white;">
+    <h2>Why Pressure Wash Your Driveway?</h2>
     <div class="icon-blurb">
-      <div>🧼 <strong>Stain Removal</strong><br/>Get rid of oil spots, dirt, and algae.</div>
-      <div>🏡 <strong>Boost Curb Appeal</strong><br/>Your home’s first impression starts with the driveway.</div>
-      <div>🛡️ <strong>Prevent Damage</strong><br/>Clean concrete lasts longer and is safer to walk on.</div>
+      <div>🧼 <strong>Stain Removal</strong><br/>Oil, algae, and rust — all gone.</div>
+      <div>💪 <strong>Protect the Surface</strong><br/>Prevent cracks from moss and mold growth.</div>
+      <div>🚗 <strong>Curb Appeal Boost</strong><br/>First impressions start with your driveway.</div>
     </div>
   </section>
 
-  <!-- Final CTA -->
-  <section class="section" style="background-color: var(--blue); color: white;">
-    <h2 style="font-size: 2rem;">Brother-Owned. Detail-Driven.</h2>
-    <p>We treat every job like it's our own home. Fast replies, clear pricing, and no nonsense.</p>
-    <a href="../contact.html" class="cta-button">🚀 Book Your Spot</a>
+  <section style="background-color: #E8F0FA;">
+    <h2>Our Pressure Washing Process</h2>
+    <ol>
+      <li><strong>Clear & Prep</strong> – Remove obstacles and sweep the area.</li>
+      <li><strong>Degreaser Soak</strong> – Break down the toughest stains.</li>
+      <li><strong>High Pressure Wash</strong> – Professional-grade tools. Perfect results.</li>
+      <li><strong>Spot Touch-Ups</strong> – Re-treat any areas that need more love.</li>
+    </ol>
+  </section>
+
+  <section style="background-color: white;">
+    <h2>Pricing</h2>
+    <p><strong>Live Estimate:</strong> <span id="driveway-cleaning-price">Loading...</span></p>
+    <p><strong>Standard Rate:</strong> $250 for a two-car driveway (approx. 600 sq ft).</p>
+    <p>Need more? We charge by square foot. Send a photo and get a quote in minutes.</p>
+  </section>
+
+  <section style="background-color: var(--blue); color: white;">
+    <p style="max-width: 500px; margin: auto;">Locally owned. Brother-run. We show up, clean fast, and leave it looking amazing.</p>
+    <a href="../contact.html" class="cta-button">🚀 Free Quote in Minutes</a>
   </section>
 
   <div id="footer"></div>
 
   <footer>
-    &copy; 2024 Blastoff Pressure Washing LLC – Serving Arlington, WA and surrounding areas.
+    &copy; 2024 Blastoff Pressure Washing LLC – Serving Arlington, WA and beyond.
   </footer>
 
   <script>

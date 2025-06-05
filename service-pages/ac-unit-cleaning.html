@@ -1,3 +1,10 @@
+<!-- Unified Design for All Service Pages (Based on Favorite Window Cleaning Page) -->
+<!-- This code includes versions for: AC Unit Cleaning, Driveway Cleaning, Roof Cleaning, Gutter Cleaning, and Soft Washing -->
+
+<!-- Each section will be modular and themed after the animated, polished, rounded, friendly style of the Window Cleaning page. I will begin generating each full page one by one. Starting with AC Unit Cleaning -->
+
+<!-- PAGE 1: AC UNIT CLEANING -->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,7 +19,7 @@
     :root {
       --blue: #1f6feb;
       --yellow: #f9c80e;
-      --grey: #C7C7C7;
+      --grey: #F3F3F3;
       --white: #ffffff;
       --dark: #1a1a1a;
       --font-header: 'Paytone One', sans-serif;
@@ -20,17 +27,16 @@
 
     body {
       margin: 0;
-      font-family: sans-serif;
+      font-family: 'Segoe UI', sans-serif;
       background-color: var(--grey);
+      scroll-behavior: smooth;
     }
 
     h1, h2 {
       font-family: var(--font-header);
-    }
-
-    .section {
-      padding: 2rem 1rem;
-      text-align: center;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-size: clamp(2rem, 5vw, 3rem);
     }
 
     .cta-button {
@@ -38,57 +44,77 @@
       padding: 1rem 2rem;
       border-radius: 999px;
       font-weight: bold;
+      font-size: 1.1rem;
       text-decoration: none;
       color: black;
       display: inline-block;
-      margin-top: 1rem;
-      transition: transform 0.3s;
+      margin-top: 1.5rem;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, background 0.3s ease;
     }
 
     .cta-button:hover {
       transform: scale(1.05);
+      background-color: #ffdd57;
     }
 
-    .hero-img {
+    section {
+      padding: 4rem 1.5rem;
+      text-align: center;
+    }
+
+    .hero-section {
+      background: radial-gradient(circle at center, #dff2ff, #f9f9f9);
+      display: flex;
+      flex-direction: column-reverse;
+      align-items: center;
+      justify-content: center;
+      gap: 2rem;
+    }
+
+    .hero-callout {
+      animation: fadeInUp 1.5s ease forwards;
+    }
+
+    .hero-section img {
       width: 100%;
       max-width: 420px;
-      border-radius: 14px;
-      display: block;
-      margin: auto;
-      animation: fadeIn 1.2s ease-out;
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
+      border-radius: 18px;
+      animation: fadeIn 2s ease forwards;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.1);
     }
 
     .icon-blurb {
       display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 1.5rem;
-      margin-top: 1.5rem;
+      flex-direction: column;
+      align-items: center;
+      gap: 2rem;
+      margin-top: 2rem;
     }
 
     .icon-blurb div {
-      max-width: 200px;
+      max-width: 300px;
       background: #fff;
-      padding: 1rem;
+      padding: 1.5rem;
       border-radius: 14px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.05);
-      transition: transform 0.3s ease;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.06);
+      transition: transform 0.4s ease;
     }
 
     .icon-blurb div:hover {
-      transform: translateY(-4px);
+      transform: scale(1.05);
     }
 
-    ol {
+    ul {
       max-width: 600px;
       margin: auto;
       text-align: left;
-      padding-left: 1rem;
+      padding-left: 1.5rem;
+    }
+
+    ul li::before {
+      content: '🔧';
+      margin-right: 0.5rem;
     }
 
     footer {
@@ -99,87 +125,75 @@
       font-size: 0.9rem;
     }
 
-    @media (min-width: 768px) {
-      .hero-flex {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 2rem;
-        padding: 3rem 1.5rem;
-        background-color: white;
-      }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(40px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
 
-      .hero-flex > div {
-        flex: 1;
-        min-width: 300px;
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @media (min-width: 768px) {
+      .hero-section {
+        flex-direction: row;
+        text-align: left;
+        padding: 4rem;
+      }
+      .icon-blurb {
+        flex-direction: row;
+        justify-content: center;
       }
     }
   </style>
 </head>
 <body>
-
   <div id="header"></div>
 
-  <!-- Hero Section -->
-  <section class="hero-flex">
-    <div style="text-align: center;">
-      <h1 style="font-size: 2.5rem; color: #003366;">AC Unit Cleaning Done Right</h1>
-      <p style="font-size: 1.2rem; max-width: 600px; margin: auto;">
-        Clogged coils and dirty fins reduce cooling efficiency and raise energy bills. We keep your unit clean and your home cool.
-      </p>
+  <section class="hero-section">
+    <div class="hero-callout">
+      <h1>🌀 Max Efficiency, Max Comfort</h1>
+      <p style="font-size: 1.25rem; max-width: 500px; margin: auto;">Clean coils = cool air. AC units run better and cheaper when spotless.</p>
       <a href="../contact.html" class="cta-button">🚀 Get a Free Quote</a>
     </div>
-    <div>
-      <img 
-        src="../images/ac-unit-cleaning.webp" 
-        alt="Professional AC Unit Cleaning" 
-        loading="lazy" 
-        width="400"
-        class="hero-img"
-      />
-    </div>
+    <img src="../images/ac-unit-cleaning.webp" alt="AC Unit Cleaning" loading="lazy">
   </section>
 
-  <!-- Pricing -->
-  <section class="section" style="background-color: var(--white);">
-    <h2 style="font-size: 2rem; color: #003366;">Pricing</h2>
-    <p><strong>Standard Rate:</strong> <span id="ac-unit-cleaning-price">Loading...</span></p>
-    <p style="max-width: 600px; margin: auto;">Includes full outdoor unit cleaning. Discounts available for multi-unit homes or duplexes — just ask!</p>
-  </section>
-
-  <!-- Why Clean -->
-  <section class="section" style="background-color: var(--grey);">
-    <h2 style="font-size: 2rem; color: #003366;">Why Clean Your AC Unit?</h2>
+  <section style="background-color: white;">
+    <h2>Why Clean Your AC?</h2>
     <div class="icon-blurb">
-      <div>💸 <strong>Lower Energy Bills</strong><br/>Dirty coils make your system work harder.</div>
-      <div>❄️ <strong>Cool More Efficiently</strong><br/>Air flows freely through clean fins and fans.</div>
-      <div>🛠 <strong>Prevent Costly Repairs</strong><br/>Reduce wear and tear on your compressor.</div>
+      <div>💨 <strong>Efficiency Boost</strong><br/>Better air flow, lower power bills.</div>
+      <div>🛡️ <strong>Protect Parts</strong><br/>Less wear on your compressor & fans.</div>
+      <div>🧼 <strong>Healthier Air</strong><br/>Cleaner system, less dust.</div>
     </div>
   </section>
 
-  <!-- Our Process -->
-  <section class="section" style="background-color: #E8F0FA;">
-    <h2 style="font-size: 2rem; color: #003366;">Our Cleaning Process</h2>
-    <ol>
-      <li><strong>Power-Off Safety Check</strong> – Confirm the unit is safe to work on.</li>
-      <li><strong>Debris Removal</strong> – Clear leaves, dirt, and buildup from coils and casing.</li>
-      <li><strong>Fin Cleaning</strong> – Gentle brush and spray to straighten and clear airflow paths.</li>
-      <li><strong>Drain Check</strong> – Ensure condensate drainage is working correctly.</li>
-      <li><strong>Final Rinse</strong> – Restore the unit’s function and appearance.</li>
-    </ol>
+  <section style="background-color: #E8F0FA;">
+    <h2>How We Clean</h2>
+    <ul>
+      <li><strong>Rinse Exterior</strong> – Clear loose debris from fins</li>
+      <li><strong>Coil Cleaning</strong> – Apply and rinse biodegradable cleaner</li>
+      <li><strong>Fan & Motor Area</strong> – Light scrub and vacuum</li>
+      <li><strong>Final Flush</strong> – Test function and water flow</li>
+    </ul>
   </section>
 
-  <!-- Final CTA -->
-  <section class="section" style="background-color: var(--blue); color: white;">
-    <h2 style="font-size: 2rem;">Brother-Owned. Detail-Driven.</h2>
-    <p>We treat every job like it's our own home. Fast replies, clear pricing, and no nonsense.</p>
-    <a href="../contact.html" class="cta-button">🚀 Get a Free Quote</a>
+  <section style="background-color: white;">
+    <h2>AC Cleaning Pricing</h2>
+    <p><strong>Base Rate:</strong> <span id="ac-unit-cleaning-price">Loading...</span></p>
+    <p style="max-width: 600px; margin: auto;">Price includes coil cleaning, base rinse, fan cover detail. Multi-unit discounts available.</p>
+  </section>
+
+  <section style="background-color: var(--blue); color: white;">
+    <p style="max-width: 500px; margin: auto;">Text us a photo or tell us your brand. We’ll confirm a custom quote within minutes.</p>
+    <a href="../contact.html" class="cta-button">🚀 Request Your Quote</a>
   </section>
 
   <div id="footer"></div>
 
   <footer>
-    &copy; 2024 Blastoff Pressure Washing LLC – Serving Arlington, WA and surrounding areas.
+    &copy; 2024 Blastoff Pressure Washing LLC – Based in Arlington, WA | Serving Snohomish & Skagit Counties
   </footer>
 
   <script>
