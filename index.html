@@ -12,10 +12,14 @@
     :root {
       --blue: #1f6feb;
       --yellow: #f9c80e;
-      --grey: #C7C7C7;
+      --grey: #F3F3F3;
       --white: #ffffff;
       --dark: #1a1a1a;
       --font-header: 'Paytone One', sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
     }
 
     body {
@@ -31,6 +35,7 @@
       text-transform: uppercase;
       letter-spacing: 1px;
       text-align: center;
+      font-size: clamp(2rem, 5vw, 3rem);
     }
 
     .cta-button {
@@ -44,36 +49,33 @@
       display: inline-block;
       margin-top: 1rem;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-      transition: transform 0.2s ease;
+      transition: transform 0.3s ease, background 0.3s ease;
     }
 
     .cta-button:hover {
       transform: scale(1.05);
+      background-color: #ffdd57;
     }
 
     .hero-section {
-      background: linear-gradient(to right, #dff2ff, #f9f9f9);
+      background: radial-gradient(circle at center, #dff2ff, #f9f9f9);
       display: flex;
-      flex-wrap: wrap;
+      flex-direction: column-reverse;
       align-items: center;
       justify-content: center;
       gap: 2rem;
-      padding: 3rem 1rem;
+      padding: 4rem 1.5rem;
       text-align: center;
     }
 
     .hero-callout {
-      animation: fadeInUp 1s ease forwards;
-      flex: 1;
-      min-width: 280px;
-      padding: 1rem;
+      animation: fadeInUp 1.5s ease forwards;
+      max-width: 600px;
     }
 
     .hero-section img {
-      flex: 1;
-      min-width: 280px;
-      max-width: 400px;
       width: 100%;
+      max-width: 420px;
       border-radius: 18px;
       animation: fadeIn 2s ease forwards;
       box-shadow: 0 8px 16px rgba(0,0,0,0.1);
@@ -81,7 +83,8 @@
 
     .services-block {
       background-color: #E8F0FA;
-      padding: 3rem 1rem;
+      padding: 4rem 1.5rem;
+      text-align: center;
     }
 
     .services-block img {
@@ -92,7 +95,7 @@
     .services-grid {
       display: flex;
       flex-wrap: wrap;
-      gap: 1rem;
+      gap: 1.5rem;
       justify-content: center;
       margin-top: 2rem;
     }
@@ -101,7 +104,7 @@
       background-color: var(--blue);
       color: white;
       text-align: center;
-      padding: 3rem 1rem;
+      padding: 4rem 1.5rem;
     }
 
     .stars {
@@ -111,6 +114,8 @@
 
     .review {
       display: none;
+      max-width: 600px;
+      margin: auto;
     }
 
     .review.active {
@@ -128,7 +133,7 @@
 
     .substack {
       background-color: var(--grey);
-      padding: 3rem 1rem;
+      padding: 4rem 1.5rem;
       text-align: center;
     }
 
@@ -149,73 +154,75 @@
       from { opacity: 0; }
       to { opacity: 1; }
     }
+
+    @media (min-width: 768px) {
+      .hero-section {
+        flex-direction: row;
+        text-align: left;
+      }
+    }
   </style>
 </head>
 <body>
-
   <div id="header"></div>
-<main class="page-content"></main>
-  <!-- Hero -->
-  <section class="hero-section">
-    <div class="hero-callout">
-      <h1>Local. Reliable. Brother-Owned.</h1>
-      <p>We clean roofs, windows, driveways, gutters, siding and more — with care and precision.</p>
-      <a href="contact.html" class="cta-button">🚀 Get a Free Quote</a>
-    </div>
-    <img src="images/matthew-james.webp" alt="James and Matthew - BPW Crew" loading="lazy" width="400">
-  </section>
+  <main class="page-content">
+    <section class="hero-section">
+      <div class="hero-callout">
+        <h1>Local. Reliable. Brother-Owned.</h1>
+        <p>We clean roofs, windows, driveways, gutters, siding and more — with care and precision.</p>
+        <a href="contact.html" class="cta-button">🚀 Get a Free Quote</a>
+      </div>
+      <img src="images/matthew-james.webp" alt="James and Matthew - BPW Crew" loading="lazy">
+    </section>
 
-  <!-- Services -->
-  <section class="services-block">
-    <h2>Our Services</h2>
-    <p>Explore everything we do: roof, gutters, siding, windows and more!</p>
-    <a href="services.html" class="cta-button">🔍 Go See All Services</a>
-    <div class="services-grid">
-      <img src="images/soft-washing-house.webp" alt="Soft Washing" loading="lazy">
-      <img src="images/roof-cleaning-moss.webp" alt="Roof Cleaning" loading="lazy">
-      <img src="images/window-cleaning-clear.webp" alt="Window Cleaning" loading="lazy">
-    </div>
-  </section>
+    <section class="services-block">
+      <h2>Our Services</h2>
+      <p>Explore everything we do: roof, gutters, siding, windows and more!</p>
+      <a href="services.html" class="cta-button">🔍 Go See All Services</a>
+      <div class="services-grid">
+        <img src="images/soft-washing-house.webp" alt="Soft Washing" loading="lazy">
+        <img src="images/roof-cleaning-moss.webp" alt="Roof Cleaning" loading="lazy">
+        <img src="images/window-cleaning-clear.webp" alt="Window Cleaning" loading="lazy">
+      </div>
+    </section>
 
-  <!-- Reviews -->
-  <section class="review-carousel">
-    <h2>5 Stars</h2>
-    <div class="review active">
-      <div class="stars">★★★★★</div>
-      <p>"Blast Off Pressure Washing did an exceptional job beautifying the Church and School campus... Fast, professional, and courteous."</p>
-      <div class="reviewer">– Caitlin Bowers</div>
-    </div>
-    <div class="review">
-      <div class="stars">★★★★★</div>
-      <p>"Superior service. Fair pricing. Clean truck. Great communication and professionalism. Exceeded my expectations!"</p>
-      <div class="reviewer">– Jody B</div>
-    </div>
-    <div class="review">
-      <div class="stars">★★★★★</div>
-      <p>"Restored our concrete walkways in Edmonds—night and day difference! Professional and efficient."</p>
-      <div class="reviewer">– Adam F</div>
-    </div>
-    <div class="review">
-      <div class="stars">★★★★★</div>
-      <p>"Fabulous work! Reliable and honest. Our driveway turned out beautifully."</p>
-      <div class="reviewer">– Dianne Stockwell</div>
-    </div>
-    <div class="carousel-controls">
-      <button onclick="prevReview()">‹</button>
-      <button onclick="nextReview()">›</button>
-    </div>
-  </section>
+    <section class="review-carousel">
+      <h2>5 Stars</h2>
+      <div class="review active">
+        <div class="stars">★★★★★</div>
+        <p>"Blast Off Pressure Washing did an exceptional job beautifying the Church and School campus... Fast, professional, and courteous."</p>
+        <div class="reviewer">– Caitlin Bowers</div>
+      </div>
+      <div class="review">
+        <div class="stars">★★★★★</div>
+        <p>"Superior service. Fair pricing. Clean truck. Great communication and professionalism. Exceeded my expectations!"</p>
+        <div class="reviewer">– Jody B</div>
+      </div>
+      <div class="review">
+        <div class="stars">★★★★★</div>
+        <p>"Restored our concrete walkways in Edmonds—night and day difference! Professional and efficient."</p>
+        <div class="reviewer">– Adam F</div>
+      </div>
+      <div class="review">
+        <div class="stars">★★★★★</div>
+        <p>"Fabulous work! Reliable and honest. Our driveway turned out beautifully."</p>
+        <div class="reviewer">– Dianne Stockwell</div>
+      </div>
+      <div class="carousel-controls">
+        <button onclick="prevReview()">‹</button>
+        <button onclick="nextReview()">›</button>
+      </div>
+    </section>
 
-  <!-- Substack Signup -->
-  <section class="substack">
-    <h2>Subscribe to Our Mission Logs</h2>
-    <p>Get seasonal cleaning tips, before/after stories, and homeowner advice from the crew at Blastoff Pressure Washing.</p>
-    <iframe src="https://blastoffpressurewashing.substack.com/embed" width="100%" height="320" style="border:1px solid #EEE; background:white;" frameborder="0" scrolling="no"></iframe>
-  </section>
-</main>
+    <section class="substack">
+      <h2>Subscribe to Our Mission Logs</h2>
+      <p>Get seasonal cleaning tips, before/after stories, and homeowner advice from the crew at Blastoff Pressure Washing.</p>
+      <iframe src="https://blastoffpressurewashing.substack.com/embed" width="100%" height="320" style="border:1px solid #EEE; background:white;" frameborder="0" scrolling="no"></iframe>
+    </section>
+  </main>
+
   <div id="footer"></div>
 
-  <!-- Reviews Script -->
   <script>
     const reviews = document.querySelectorAll('.review');
     let currentReview = 0;

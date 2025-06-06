@@ -7,52 +7,51 @@
   <link rel="icon" type="image/png" href="favicon.png">
   <link rel="stylesheet" href="style.css">
   <script src="assets/injectPartials.js" defer></script>
-  <script src="pricing/pricing.js" defer></script>
+  <script src="pricing/pricing.js?v=3" defer></script>
   <style>
-    :root {
-      --blue: #1f6feb;
-      --yellow: #f9c80e;
-      --gray: #F3F3F3;
-      --white: #ffffff;
-      --dark: #1a1a1a;
-      --font-header: 'Paytone One', sans-serif;
+    * {
+      box-sizing: border-box;
     }
 
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background-color: var(--gray);
-      color: var(--dark);
+    .content-wrapper {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 2rem 1rem;
     }
 
-    h1, h2, h3 {
-      font-family: var(--font-header);
-    }
-
-    main {
-      padding: 8vh 1rem 4rem;
+    .hero-section h1,
+    .hero-section p,
+    .hero-section h2,
+    .hero-section h5 {
       text-align: center;
-      animation: fadeInUp 0.8s ease both;
-    }
-
-    h1 {
-      color: var(--blue);
-      font-size: 3rem;
-      margin-bottom: 0.5rem;
-    }
-
-    .intro-text {
-      margin-bottom: 2rem;
-      font-size: 1.2rem;
-      max-width: 600px;
       margin-left: auto;
       margin-right: auto;
     }
 
-    .grid {
+    .price-tags {
+      margin-top: 2rem;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+    }
+
+    .price-tag {
+      background: var(--yellow);
+      padding: 1rem 1.5rem;
+      border-radius: 12px;
+      font-weight: bold;
+      color: black;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    .services-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 2rem;
+      padding: 3rem 1rem;
+      width: 100%;
+      margin: 0 auto;
     }
 
     .card {
@@ -60,12 +59,13 @@
       border-radius: 16px;
       padding: 1.5rem;
       box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
-      text-align: left;
-      transition: transform 0.2s ease;
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
     .card:hover {
-      transform: translateY(-6px);
+      transform: translateY(-8px);
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
     }
 
     .card img {
@@ -74,7 +74,7 @@
       margin-bottom: 1rem;
     }
 
-    .card h3 {
+    .card h2 {
       margin: 0.5rem 0;
       color: var(--blue);
       font-size: 1.5rem;
@@ -84,106 +84,258 @@
       margin: 0.3rem 0;
     }
 
-    .card a {
-      display: inline-block;
-      margin-top: 0.75rem;
-      color: var(--blue);
-      font-weight: bold;
-      text-decoration: none;
-      transition: color 0.2s;
+    .card .cta-button {
+      margin: 1rem auto 0;
     }
 
-    .card a:hover {
-      text-decoration: underline;
-      color: #003366;
+    @media (max-width: 768px) {
+      .hero-section img {
+        margin: 1.5rem auto;
+        display: block;
+        max-width: 90%;
+      }
+
+      .card {
+        padding: 1rem;
+      }
+
+      .price-tags {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+
+        :root {
+      --blue: #1f6feb;
+      --yellow: #f9c80e;
+      --grey: #F3F3F3;
+      --white: #ffffff;
+      --dark: #1a1a1a;
+      --font-header: 'Paytone One', sans-serif;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: var(--grey);
+      scroll-behavior: smooth;
+    }
+
+    h1, h2 {
+      font-family: var(--font-header);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-size: clamp(2rem, 5vw, 3rem);
+    }
+
+    .cta-button {
+      background-color: var(--yellow);
+      padding: 1rem 2rem;
+      border-radius: 999px;
+      font-weight: bold;
+      font-size: 1.1rem;
+      text-decoration: none;
+      color: black;
+      display: inline-block;
+      margin-top: 1.5rem;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, background 0.3s ease;
+    }
+
+    .cta-button:hover {
+      transform: scale(1.05);
+      background-color: #ffdd57;
+    }
+
+    section {
+      padding: 4rem 1.5rem;
+      text-align: center;
+    }
+
+    .hero-section {
+      background: radial-gradient(circle at center, #dff2ff, #f9f9f9);
+      display: flex;
+      flex-direction: column-reverse;
+      align-items: center;
+      justify-content: center;
+      gap: 2rem;
+    }
+
+    .hero-callout {
+      animation: fadeInUp 1.5s ease forwards;
+    }
+
+    .hero-section img {
+      width: 100%;
+      max-width: 420px;
+      border-radius: 18px;
+      animation: fadeIn 2s ease forwards;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+    }
+
+    .icon-blurb {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .icon-blurb div {
+      max-width: 300px;
+      background: #fff;
+      padding: 1.5rem;
+      border-radius: 14px;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.06);
+      transition: transform 0.4s ease;
+    }
+
+    .icon-blurb div:hover {
+      transform: scale(1.05);
+    }
+
+    table {
+      width: 100%;
+      max-width: 600px;
+      margin: 2rem auto;
+      border-collapse: collapse;
+      background: #fff;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    th, td {
+      border: 1px solid #ccc;
+      padding: 1rem;
+    }
+
+    th {
+      background-color: var(--blue);
+      color: white;
+    }
+
+    ul, ol {
+      max-width: 600px;
+      margin: auto;
+      text-align: left;
+      padding-left: 1.5rem;
+    }
+
+    ul li::before {
+      content: '✨';
+      margin-right: 0.5rem;
     }
 
     footer {
       background-color: var(--dark);
-      color: white;
+      color: var(--white);
       text-align: center;
       padding: 1rem;
       font-size: 0.9rem;
     }
 
     @keyframes fadeInUp {
-      from {
-        opacity: 0;
-        transform: translateY(40px);
+      from { opacity: 0; transform: translateY(40px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @media (min-width: 768px) {
+      .hero-section {
+        flex-direction: row;
+        text-align: left;
+        padding: 4rem;
       }
-      to {
-        opacity: 1;
-        transform: translateY(0);
+      .icon-blurb {
+        flex-direction: row;
+        justify-content: center;
       }
     }
   </style>
 </head>
 <body>
+ <div id="header"></div>
+<main class="page-content"></main>
 
-  <div id="header"></div>
-
-  <main class="page-content">
-    <h1>What We Offer</h1>
-    <p class="intro-text">Exterior cleaning services for homes, roofs, windows, gutters, and more — delivered with care and a rocket-fueled smile.</p>
-
-    <div class="grid">
-      <div class="card">
-        <img src="images/driveway-cleaning.webp" alt="Driveway Cleaning" loading="lazy">
-        <h3>Pressure Washing</h3>
-        <p>Restore curb appeal with a clean driveway.</p>
-        <p><strong id="driveway-cleaning-price">Loading...</strong></p>
-        <a href="service-pages/driveway-cleaning.html">Learn More →</a>
+  <section class="hero-section" style="background-color: white;">
+    <div class="content-wrapper">
+      <div class="hero-callout">
+        <h1 class="floaty">🚀 Explore Our Services</h1>
+        <p>From driveways to windows</p>
+        <a href="contact.html" class="cta-button">Get a Free Quote</a>
       </div>
-
-      <div class="card">
-        <img src="images/soft-washing-house.webp" alt="Soft Washing" loading="lazy">
-        <h3>Soft Washing</h3>
-        <p>Gentle siding and exterior cleaning.</p>
-        <p><strong id="soft-washing-price">Loading...</strong></p>
-        <a href="service-pages/soft-washing-arlington.html">Learn More →</a>
-      </div>
-
-      <div class="card">
-        <img src="images/roof-cleaning-moss.webp" alt="Roof Cleaning" loading="lazy">
-        <h3>Roof Cleaning</h3>
-        <p>Remove moss and organic buildup.</p>
-        <p><strong id="roof-cleaning-price">Loading...</strong></p>
-        <a href="service-pages/roof-cleaning-snohomish.html">Learn More →</a>
-      </div>
-
-      <div class="card">
-        <img src="images/window-cleaning-clear.webp" alt="Window Cleaning" loading="lazy">
-        <h3>Window Cleaning</h3>
-        <p>Crystal clear windows.</p>
-        <p><strong id="window-cleaning-price">Loading...</strong></p>
-        <a href="service-pages/window-cleaning-marysville.html">Learn More →</a>
-      </div>
-
-      <div class="card">
-        <img src="images/gutter-cleaning.webp" alt="Gutter Cleaning" loading="lazy">
-        <h3>Gutter Cleaning</h3>
-        <p>Clear clogs and keep water flowing right.</p>
-        <p><strong id="gutter-cleaning-price">Loading...</strong></p>
-        <a href="service-pages/gutter-cleaning.html">Learn More →</a>
-      </div>
-
-      <div class="card">
-        <img src="images/ac-unit-cleaning.webp" alt="AC Unit Cleaning" loading="lazy">
-        <h3>HVAC Unit Cleaning</h3>
-        <p>Improve airflow and efficiency by removing built-up grime.</p>
-        <p><strong id="ac-unit-cleaning-price">Loading...</strong></p>
-        <a href="service-pages/ac-unit-cleaning.html">Learn More →</a>
-      </div>
+    <div class="icon-blurb">
+      <div>🏡 <strong>🚗 Driveway</strong><br/>(2-car): $250</div>
+      <div>💡 <strong>🪟 Windows</strong><br/>(10): $80</div>
+      <div>🛡 <strong>🏠 Roof Cleaning</strong><br/>$300–500</div>
     </div>
-  </main>
+          <h5 style="margin-top: 1rem;">These are just general prices and will vary with the job size. See more details below.</h5>
+    </div>
+    </div>
+  </section>
 
-  <div id="footer"></div>
+  <section class="services-grid">
+    <div class="card visible">
+      <img src="images/driveway-cleaning.webp" alt="Driveway Cleaning">
+      <h2>Driveway Cleaning</h2>
+      <p>Oil stains, tire marks, grime — gone. Standard 2-car: <strong>$250</strong></p>
+      <a href="service-pages/driveway-cleaning.html" class="cta-button">More Info</a>
+    </div>
+
+    <div class="card visible">
+      <img src="images/soft-washing-house.webp" alt="Soft Washing">
+      <h2>Soft Washing</h2>
+      <p>Low-pressure, no-damage exterior cleaning that’s safe for siding and plants.</p>
+      <a href="service-pages/soft-washing-arlington.html" class="cta-button">More Info</a>
+    </div>
+
+    <div class="card visible">
+      <img src="images/roof-cleaning-moss.webp" alt="Roof Cleaning">
+      <h2>Roof Cleaning</h2>
+      <p>Remove moss, debris, and buildup without harming shingles. Avg: <strong>$300–$500</strong></p>
+      <a href="service-pages/roof-cleaning-snohomish.html" class="cta-button">More Info</a>
+    </div>
+
+    <div class="card visible">
+      <img src="images/window-cleaning-clear.webp" alt="Window Cleaning">
+      <h2>Window Cleaning</h2>
+      <p>Crystal-clear inside & out. Up to 10 windows: <strong>$80</strong></p>
+      <a href="service-pages/window-cleaning-marysville.html" class="cta-button">More Info</a>
+    </div>
+
+    <div class="card visible">
+      <img src="images/gutter-cleaning.webp" alt="Gutter Cleaning">
+      <h2>Gutter Cleaning</h2>
+      <p>Prevent overflow and protect your foundation with seasonal maintenance.</p>
+      <a href="service-pages/gutter-cleaning.html" class="cta-button">More Info</a>
+    </div>
+
+    <div class="card visible">
+      <img src="images/ac-unit-cleaning.webp" alt="AC Unit Cleaning">
+      <h2>AC Unit Cleaning</h2>
+      <p>Boost efficiency and prolong your system's life by removing built-up grime.</p>
+      <a href="service-pages/ac-unit-cleaning.html" class="cta-button">More Info</a>
+    </div>
+  </section>
+
+  <section style="text-align:center; padding: 2rem; background-color: var(--white);">
+    <p><strong>Need help deciding?</strong> Text us a photo of your home, roof, or driveway and we’ll send you a ballpark quote.</p>
+    <a href="contact.html" class="cta-button">Text Us Now</a>
+  </section>
+</main>
+
+<div id="footer"></div>
+
 
   <script>
     document.addEventListener("DOMContentLoaded", () => {
       const services = [
-        { id: "soft-washing-price", name: "Soft Washing" },
         { id: "driveway-cleaning-price", name: "Driveway Cleaning" },
+        { id: "soft-washing-price", name: "Soft Washing" },
         { id: "roof-cleaning-price", name: "Roof Cleaning" },
         { id: "window-cleaning-price", name: "Window Cleaning" },
         { id: "gutter-cleaning-price", name: "Gutter Cleaning" },
