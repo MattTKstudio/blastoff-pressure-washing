@@ -16,7 +16,7 @@ const pricing = {
     },
     "Roof Cleaning": {
       type: "sqFt",
-      price: 0.5,
+      price: 0.50,
       sale: false,
       salePrice: 0.35
     },
