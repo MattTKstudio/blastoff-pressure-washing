@@ -34,9 +34,9 @@ const pricing = {
     },
     "AC Unit Cleaning": {
       type: "perUnit",
-      price: 85.0,
+      price: 120.0,
       sale: true,
-      salePrice: 60.0
+      salePrice: 99.0
     }
   },
 
